@@ -7,7 +7,7 @@
 
 Official open-source code snippets, examples, and tests for AnySnippet Market.
 
-This repository contains reusable, test-backed code snippets for Python, TypeScript, Go, Rust, Sql and more. 
+This repository contains reusable, test-backed code snippets for AnySnippet Market. It currently starts with Python and is designed to expand to TypeScript, Go, Rust, SQL, and more.
 
 Every snippet is published with source code, tests, metadata, and verification notes so developers can inspect quality before using it.
 
@@ -49,9 +49,7 @@ These snippets are published here as open-source references. If you want to brow
 ### Languages
 
 - Python code snippets for automation, file operations, scripting, and utilities
-- TypeScript snippets for frontend helpers, rendering, formatting, and UI workflows
-- Go examples for APIs, validation, middleware, and backend services
-- Rust examples for web services, error handling, and systems utilities
+- Planned expansion for TypeScript, Go, Rust, SQL, and other practical developer workflows
 
 ### Categories
 
@@ -69,7 +67,4 @@ The table below is a human-friendly index for discovery. Each snippet should hav
 
 | Snippet | Language | Description | Path | Tests | Status |
 | --- | --- | --- | --- | --- | --- |
-| Copy Directory Files in Python | Python | Copy files from one directory to another while preserving nested structure. | `snippets/python/copy-directory-files/` | `pytest` or `unittest` | Verified |
-| Golang Request Validator Starter | Go | Validate API request payloads with Gin and return normalized errors. | `snippets/go/request-validator-starter/` | `go test` | Verified |
-| Actix-Web Unified Error Mapping | Rust | Map domain errors to stable HTTP responses and keep handlers lean. | `snippets/rust/actix-error-mapping/` | `cargo test` | Verified |
-| TypeScript Markdown Preview Panel | TypeScript | Render Markdown input to HTML in real time for docs and knowledge-base UIs. | `snippets/typescript/markdown-preview-panel/` | `vitest` | Verified |
+| Calculate Large File Hashes with Python | Python | Calculate file hashes in fixed-size chunks so large files can be processed without loading them fully into memory. | `snippets/python/calculate-large-file-hashes-with-python/` | `unittest` | Verified |

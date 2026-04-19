@@ -12,3 +12,17 @@ CLOUD.md
 .zed/
 .fleet/
 .history/
+.venv/
+
+# Local utility directories
+tests/
+scripts/
+
+# Python cache and test artifacts
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Snippet-local Python cache
+snippets/**/__pycache__/
+snippets/**/*.pyc
