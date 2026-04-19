@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "slug": "refactor-large-if-elif-dispatch-in-python",
+  "use_case_key": "refactor-large-if-elif-dispatch",
+  "title": "Refactor Large If Elif Dispatch in Python",
+  "language": "Python",
+  "summary": "Replace a long if and elif dispatch block with a handler registry that routes work by key.",
+  "tags": ["refactoring", "dispatch", "strategy", "maintainability", "architecture"],
+  "highlights": [
+    "Replaces branching logic with a handler mapping",
+    "Supports custom handler injection",
+    "Normalizes dispatch keys before lookup"
+  ],
+  "repo_path": "snippets/python/refactor-large-if-elif-dispatch-in-python",
+  "entry_file": "src/dispatch_notification.py",
+  "source_files": ["src/dispatch_notification.py"],
+  "test_files": ["tests/test_dispatch_notification.py"],
+  "dependencies": [],
+  "test_environment": {
+    "runtime": "Python 3.9",
+    "os": ["macOS", "Linux", "Windows"]
+  },
+  "test_type": "UnitTest",
+  "test_framework": "unittest",
+  "test_case_count": 7,
+  "verification_workdir": ".",
+  "verification_setup": [],
+  "verification_command": "python -m unittest discover -s tests -p \"test_*.py\"",
+  "verification_notes": "Executed from the snippet root with Python 3.9 on macOS. Verified behavior includes normalized dispatch lookup, custom handler injection, and payload-copy isolation.",
+  "status": "Verified"
+}

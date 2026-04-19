@@ -68,3 +68,9 @@ The table below is a human-friendly index for discovery. Each snippet should hav
 | Snippet | Language | Description | Path | Tests | Status |
 | --- | --- | --- | --- | --- | --- |
 | Calculate Large File Hashes with Python | Python | Calculate file hashes in fixed-size chunks so large files can be processed without loading them fully into memory. | `snippets/python/calculate-large-file-hashes-with-python/` | `unittest` | Verified |
+| Find Files by Extension with Python | Python | Recursively find files by one or more extensions, then return absolute paths plus total, matched, and skipped file counts. | `snippets/python/find-files-by-extension-with-python/` | `unittest` | Verified |
+| Calculate Directory Size with Python | Python | Recursively calculate total byte size and counts for files and subdirectories in a directory tree. | `snippets/python/calculate-directory-size-with-python/` | `unittest` | Verified |
+| Process Large CSV Files in Chunks with pandas | Python | Read large CSV files in pandas chunks and process each chunk without loading the full dataset into memory. | `snippets/python/process-large-csv-files-in-chunks-with-python/` | `unittest` | Verified |
+| Limit Concurrent Tasks with Python | Python | Run a batch of tasks with a fixed concurrency limit and return ordered success and failure results. | `snippets/python/limit-concurrent-tasks-in-python/` | `unittest` | Verified |
+| Refactor Large If Elif Dispatch in Python | Python | Replace a long if and elif dispatch block with a handler registry that routes work by key. | `snippets/python/refactor-large-if-elif-dispatch-in-python/` | `unittest` | Verified |
+| Replace Nested If Else with Config Mapping in Python | Python | Replace nested branching rules with a configuration mapping that is easier to extend and review. | `snippets/python/replace-nested-if-else-with-config-mapping-in-python/` | `unittest` | Verified |

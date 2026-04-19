@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "slug": "find-files-by-extension-with-python",
+  "use_case_key": "find-files-by-extension",
+  "title": "Find Files by Extension with Python",
+  "language": "Python",
+  "summary": "Recursively find files by one or more extensions, then return absolute paths plus total, matched, and skipped file counts.",
+  "tags": ["filesystem", "os.walk", "filtering", "extensions", "paths"],
+  "highlights": [
+    "Traverses nested directories with os.walk",
+    "Normalizes extension inputs such as txt to .txt",
+    "Supports case-insensitive matching for simple and compound suffixes"
+  ],
+  "repo_path": "snippets/python/find-files-by-extension-with-python",
+  "entry_file": "src/find_files_by_extension.py",
+  "source_files": ["src/find_files_by_extension.py"],
+  "test_files": ["tests/test_find_files_by_extension.py"],
+  "dependencies": [],
+  "test_environment": {
+    "runtime": "Python 3.9",
+    "os": ["macOS", "Linux", "Windows"]
+  },
+  "test_type": "UnitTest",
+  "test_framework": "unittest",
+  "test_case_count": 13,
+  "verification_workdir": ".",
+  "verification_setup": [],
+  "verification_command": "python -m unittest discover -s tests -p \"test_*.py\"",
+  "verification_notes": "Executed from the snippet root with Python 3.9 on macOS. Verified behavior includes extension normalization, case-insensitive matching, normalized absolute path output, deterministic traversal order, root symlink rejection, symlink path preservation, nested symlink directory skipping, and walk error propagation.",
+  "status": "Verified"
+}

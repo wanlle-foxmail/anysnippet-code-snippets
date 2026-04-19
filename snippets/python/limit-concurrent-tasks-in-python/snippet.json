@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "slug": "limit-concurrent-tasks-in-python",
+  "use_case_key": "limit-concurrent-tasks",
+  "title": "Limit Concurrent Tasks with Python",
+  "language": "Python",
+  "summary": "Run a batch of tasks with a fixed concurrency limit and return ordered success and failure results.",
+  "tags": ["concurrency", "threadpoolexecutor", "batch-processing", "parallelism", "automation"],
+  "highlights": [
+    "Caps concurrent work with ThreadPoolExecutor",
+    "Preserves input order in the returned results",
+    "Captures task failures without aborting the full batch"
+  ],
+  "repo_path": "snippets/python/limit-concurrent-tasks-in-python",
+  "entry_file": "src/limit_concurrent_tasks.py",
+  "source_files": ["src/limit_concurrent_tasks.py"],
+  "test_files": ["tests/test_limit_concurrent_tasks.py"],
+  "dependencies": [],
+  "test_environment": {
+    "runtime": "Python 3.9",
+    "os": ["macOS", "Linux", "Windows"]
+  },
+  "test_type": "UnitTest",
+  "test_framework": "unittest",
+  "test_case_count": 7,
+  "verification_workdir": ".",
+  "verification_setup": [],
+  "verification_command": "python -m unittest discover -s tests -p \"test_*.py\"",
+  "verification_notes": "Executed from the snippet root with Python 3.9 on macOS. Verified behavior includes ordered result output, per-task error capture, and concurrency limit enforcement.",
+  "status": "Verified"
+}

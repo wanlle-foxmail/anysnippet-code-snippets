@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "slug": "process-large-csv-files-in-chunks-with-python",
+  "use_case_key": "process-large-csv-files-in-chunks",
+  "title": "Process Large CSV Files in Chunks with pandas",
+  "language": "Python",
+  "summary": "Read large CSV files in pandas chunks and process each chunk without loading the full dataset into memory.",
+  "tags": ["pandas", "csv", "data-processing", "chunks", "streaming"],
+  "highlights": [
+    "Uses pandas read_csv with an explicit chunk size",
+    "Returns processed results in chunk order",
+    "Supports read_csv passthrough options like usecols and dtype"
+  ],
+  "repo_path": "snippets/python/process-large-csv-files-in-chunks-with-python",
+  "entry_file": "src/process_csv_in_chunks.py",
+  "source_files": ["src/process_csv_in_chunks.py"],
+  "test_files": ["tests/test_process_csv_in_chunks.py"],
+  "dependencies": ["pandas"],
+  "test_environment": {
+    "runtime": "Python 3.9",
+    "os": ["macOS", "Linux", "Windows"]
+  },
+  "test_type": "UnitTest",
+  "test_framework": "unittest",
+  "test_case_count": 9,
+  "verification_workdir": ".",
+  "verification_setup": ["python -m pip install pandas"],
+  "verification_command": "python -m unittest discover -s tests -p \"test_*.py\"",
+  "verification_notes": "Executed from the snippet root with Python 3.9 on macOS after installing pandas. Verified behavior includes chunk order preservation, read_csv option passthrough, header-only CSV handling, and chunk processor error propagation.",
+  "status": "Verified"
+}

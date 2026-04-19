@@ -15,8 +15,8 @@ CLOUD.md
 .venv/
 
 # Local utility directories
-tests/
-scripts/
+/tests/
+/scripts/
 
 # Python cache and test artifacts
 __pycache__/

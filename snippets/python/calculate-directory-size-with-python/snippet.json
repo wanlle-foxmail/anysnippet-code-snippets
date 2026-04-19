@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "slug": "calculate-directory-size-with-python",
+  "use_case_key": "calculate-directory-size",
+  "title": "Calculate Directory Size with Python",
+  "language": "Python",
+  "summary": "Recursively calculate total byte size and counts for files and subdirectories in a directory tree.",
+  "tags": ["filesystem", "os.walk", "directory-size", "paths", "automation"],
+  "highlights": [
+    "Recursively sums file sizes across a directory tree",
+    "Separates file_count from subdirectory_count",
+    "Includes hidden files and hidden directories in the totals"
+  ],
+  "repo_path": "snippets/python/calculate-directory-size-with-python",
+  "entry_file": "src/calculate_directory_size.py",
+  "source_files": ["src/calculate_directory_size.py"],
+  "test_files": ["tests/test_calculate_directory_size.py"],
+  "dependencies": [],
+  "test_environment": {
+    "runtime": "Python 3.9",
+    "os": ["macOS", "Linux", "Windows"]
+  },
+  "test_type": "UnitTest",
+  "test_framework": "unittest",
+  "test_case_count": 11,
+  "verification_workdir": ".",
+  "verification_setup": [],
+  "verification_command": "python -m unittest discover -s tests -p \"test_*.py\"",
+  "verification_notes": "Executed from the snippet root with Python 3.9 on macOS. Verified behavior includes recursive size accumulation, hidden path inclusion, normalized absolute root paths, root symlink rejection, nested symlink skipping, walk error propagation, and subdirectory counting that excludes the root directory.",
+  "status": "Verified"
+}
