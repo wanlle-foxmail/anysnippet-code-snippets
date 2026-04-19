@@ -15,10 +15,17 @@ If you found this repository while searching for Python code snippets, TypeScrip
 
 ## Browse AnySnippet
 
+Want to do more than copy and paste?
+
+These snippets are published here as open-source references. If you want to browse, save, organize, and sync them across devices, use AnySnippet Market and import the published version into your workspace.
+
+
 - [Browse in AnySnippet Market](https://www.anysnippet.com/market)
 - [Learn more about AnySnippet](https://www.anysnippet.com/market)
 - [Open a contribution proposal](https://github.com/wanlle-foxmail/anysnippet-code-snippets/issues/new)
 - [Report an issue](https://github.com/wanlle-foxmail/anysnippet-code-snippets/issues)
+
+![AnySnippet](/images/AnySnippet.png)
 
 ## Why this repository exists
 

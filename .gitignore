@@ -1,0 +1,14 @@
+# macOS
+.DS_Store
+
+# Local agent notes
+AGENTS.md
+CLOUD.md
+
+# Editor settings and metadata
+.vscode/
+.idea/
+.cursor/
+.zed/
+.fleet/
+.history/
