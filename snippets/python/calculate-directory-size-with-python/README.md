@@ -1,15 +1,14 @@
 # Calculate Directory Size with Python
 
-Recursively calculate total file size and count how many files and subdirectories exist under a target directory.
+Walk a directory tree and return total bytes, file count, and subdirectory count.
 
 This snippet is useful when you need a quick directory inventory for build output checks, upload preparation, cleanup automation, or storage audits.
 
 ## Highlights
 
-- Traverses nested directories with `os.walk`
-- Sums total file bytes across the full directory tree
-- Reports file and subdirectory counts separately
-- Includes hidden files and hidden directories in the totals
+- Walks nested directories
+- Adds file sizes
+- Counts files and folders
 
 ## Use Cases
 
@@ -20,24 +19,21 @@ This snippet is useful when you need a quick directory inventory for build outpu
 ## Code
 
 ```python
-from pathlib import Path
-
 from src.calculate_directory_size import calculate_directory_size
 
 
-result = calculate_directory_size(Path("build"))
+result = calculate_directory_size("build")
 print(result["total_bytes"])
 print(result["file_count"])
+print(result["subdirectory_count"])
 ```
 
 ## Notes
 
 - `total_bytes` sums file sizes only; directory metadata size is not included.
 - `subdirectory_count` counts directories under the root directory and excludes the root itself.
-- Hidden files and hidden directories are included in the reported totals.
-- The root path must be a real directory; nested symlinked files and directories are skipped.
-- Symlinked files and symlinked directories are skipped so the result stays scoped to the scanned tree.
-- Traversal errors such as unreadable descendant directories are raised instead of being silently ignored.
+- Hidden files and hidden directories are included when `os.walk` sees them.
+- Pass a real directory path.
 
 ## Verification
 
@@ -49,14 +45,10 @@ python -m unittest discover -s tests -p "test_*.py"
 
 The verified test suite covers:
 
-- flat directory size calculation
-- recursive size accumulation across nested directories
+- flat directory totals
+- nested directory totals
 - empty directory handling
 - zero-byte file counting
-- hidden file and hidden directory inclusion
-- subdirectory counting that excludes the root directory
-- absolute root directory reporting
-- missing directory errors
 - non-directory path errors
 
 ## Files

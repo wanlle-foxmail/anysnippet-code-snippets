@@ -1,47 +1,32 @@
-from os import PathLike
-from pathlib import Path
-from typing import Any, Callable, List, Mapping, Optional, TypeVar, Union
+from typing import Callable
 
-import pandas as pd
-
-
-ProcessedChunk = TypeVar("ProcessedChunk")
-CsvPath = Union[str, PathLike[str]]
+import pandas
 
 
 def process_csv_in_chunks(
-    csv_path: CsvPath,
-    chunk_processor: Callable[[pd.DataFrame], ProcessedChunk],
-    *,
+    csv_path: str,
+    chunk_processor: Callable[[pandas.DataFrame], object],
     chunk_size: int = 10000,
-    read_csv_kwargs: Optional[Mapping[str, Any]] = None,
-) -> List[ProcessedChunk]:
+) -> list[object]:
+    """Read a CSV in chunks and return one processed result per chunk."""
     if isinstance(chunk_size, bool) or not isinstance(chunk_size, int) or chunk_size <= 0:
         raise ValueError("chunk_size must be a positive integer")
 
-    if not callable(chunk_processor):
-        raise ValueError("chunk_processor must be callable")
+    results = []
+    chunk_iter = pandas.read_csv(csv_path, chunksize=chunk_size)
 
-    if read_csv_kwargs is None:
-        reader_kwargs = {}
-    else:
-        if not isinstance(read_csv_kwargs, Mapping):
-            raise ValueError("read_csv_kwargs must be a mapping")
-        if "chunksize" in read_csv_kwargs:
-            raise ValueError("read_csv_kwargs must not include chunksize")
-        reader_kwargs = dict(read_csv_kwargs)
+    for chunk in chunk_iter:
+        if chunk.empty:
+            continue
+        results.append(chunk_processor(chunk))
 
-    try:
-        normalized_path = Path(csv_path)
-    except TypeError as exc:
-        raise ValueError("csv_path must be a string or Path-like value") from exc
+    return results
 
-    processed_results = []
 
-    with pd.read_csv(normalized_path, chunksize=chunk_size, **reader_kwargs) as chunk_reader:
-        for chunk in chunk_reader:
-            if chunk.empty:
-                continue
-            processed_results.append(chunk_processor(chunk))
+if __name__ == "__main__":
+    def to_rows(chunk: pandas.DataFrame) -> list[dict[str, object]]:
+        return chunk.to_dict(orient="records")
 
-    return processed_results
+
+    result = process_csv_in_chunks("your_file.csv", to_rows)
+    print(result)

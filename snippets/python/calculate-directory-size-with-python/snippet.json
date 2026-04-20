@@ -4,12 +4,12 @@
   "use_case_key": "calculate-directory-size",
   "title": "Calculate Directory Size with Python",
   "language": "Python",
-  "summary": "Recursively calculate total byte size and counts for files and subdirectories in a directory tree.",
-  "tags": ["filesystem", "os.walk", "directory-size", "paths", "automation"],
+  "summary": "Walk a directory tree and return total bytes, file count, and subdirectory count.",
+  "tags": ["filesystem", "directory-size", "os.walk", "automation"],
   "highlights": [
-    "Recursively sums file sizes across a directory tree",
-    "Separates file_count from subdirectory_count",
-    "Includes hidden files and hidden directories in the totals"
+    "Walks nested directories",
+    "Adds file sizes",
+    "Counts files and folders"
   ],
   "repo_path": "snippets/python/calculate-directory-size-with-python",
   "entry_file": "src/calculate_directory_size.py",
@@ -22,10 +22,10 @@
   },
   "test_type": "UnitTest",
   "test_framework": "unittest",
-  "test_case_count": 11,
+  "test_case_count": 5,
   "verification_workdir": ".",
   "verification_setup": [],
   "verification_command": "python -m unittest discover -s tests -p \"test_*.py\"",
-  "verification_notes": "Executed from the snippet root with Python 3.9 on macOS. Verified behavior includes recursive size accumulation, hidden path inclusion, normalized absolute root paths, root symlink rejection, nested symlink skipping, walk error propagation, and subdirectory counting that excludes the root directory.",
+  "verification_notes": "Executed from the snippet root with Python 3.9 on macOS. Verified behavior covers flat directory totals, nested directory totals, empty directories, zero-byte files, and non-directory path validation.",
   "status": "Verified"
 }

@@ -1,17 +1,17 @@
 # AnySnippet Code Snippets
 
 ![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)
-![Tests Required](https://img.shields.io/badge/tests-required-blue.svg)
+![Verification Required](https://img.shields.io/badge/verification-required-blue.svg)
 ![Verified Snippets](https://img.shields.io/badge/snippets-verified-orange.svg)
-![Languages](https://img.shields.io/badge/languages-Python%20%7C%20TypeScript%20%7C%20Go%20%7C%20Rust-blue.svg)
+![Languages](https://img.shields.io/badge/languages-Python%20%7C%20SQL%20%7C%20Go%20%7C%20Config%20%7C%20Shell-blue.svg)
 
-Official open-source code snippets, examples, and tests for AnySnippet Market.
+Official open-source code snippets, examples, and verification notes for AnySnippet Market.
 
-This repository contains reusable, test-backed code snippets for AnySnippet Market. It currently starts with Python and is designed to expand to TypeScript, Go, Rust, SQL, and more.
+This repository contains reusable code snippets for AnySnippet Market. It currently includes Python, Go, SQL, configuration, and shell snippets and is designed to expand to TypeScript, Rust, and more.
 
-Every snippet is published with source code, tests, metadata, and verification notes so developers can inspect quality before using it.
+Every snippet is published with source code, metadata, and verification notes so developers can inspect quality before using it. Most verified snippets also include automated tests.
 
-If you found this repository while searching for Python code snippets, TypeScript examples, Go backend snippets, Rust web examples, or reusable developer utilities, start with the snippet index below.
+If you found this repository while searching for Python code snippets, SQL query patterns, Go backend snippets, Redis configuration snippets, Rust web examples, or reusable developer utilities, start with the snippet index below.
 
 ## Browse AnySnippet
 
@@ -49,7 +49,11 @@ These snippets are published here as open-source references. If you want to brow
 ### Languages
 
 - Python code snippets for automation, file operations, scripting, and utilities
-- Planned expansion for TypeScript, Go, Rust, SQL, and other practical developer workflows
+- Configuration snippets for Redis and deployment baselines
+- Shell snippets for CLI workflows and reusable command recipes
+- SQL snippets for query patterns, reporting techniques, and database workflows
+- Go backend snippets for service handlers and infrastructure patterns
+- Planned expansion for TypeScript, Rust, and other practical developer workflows
 
 ### Categories
 
@@ -63,14 +67,24 @@ These snippets are published here as open-source references. If you want to brow
 
 ## Snippet Index
 
-The table below is a human-friendly index for discovery. Each snippet should have its own folder with source code, tests, metadata, and a local README.
+The table below is a human-friendly index for discovery. Each snippet should have its own folder with source code, tests or deterministic verification, metadata, and a local README.
 
-| Snippet | Language | Description | Path | Tests | Status |
+| Snippet | Language | Description | Path | Verification | Status |
 | --- | --- | --- | --- | --- | --- |
-| Calculate Large File Hashes with Python | Python | Calculate file hashes in fixed-size chunks so large files can be processed without loading them fully into memory. | `snippets/python/calculate-large-file-hashes-with-python/` | `unittest` | Verified |
-| Find Files by Extension with Python | Python | Recursively find files by one or more extensions, then return absolute paths plus total, matched, and skipped file counts. | `snippets/python/find-files-by-extension-with-python/` | `unittest` | Verified |
-| Calculate Directory Size with Python | Python | Recursively calculate total byte size and counts for files and subdirectories in a directory tree. | `snippets/python/calculate-directory-size-with-python/` | `unittest` | Verified |
-| Process Large CSV Files in Chunks with pandas | Python | Read large CSV files in pandas chunks and process each chunk without loading the full dataset into memory. | `snippets/python/process-large-csv-files-in-chunks-with-python/` | `unittest` | Verified |
-| Limit Concurrent Tasks with Python | Python | Run a batch of tasks with a fixed concurrency limit and return ordered success and failure results. | `snippets/python/limit-concurrent-tasks-in-python/` | `unittest` | Verified |
-| Refactor Large If Elif Dispatch in Python | Python | Replace a long if and elif dispatch block with a handler registry that routes work by key. | `snippets/python/refactor-large-if-elif-dispatch-in-python/` | `unittest` | Verified |
-| Replace Nested If Else with Config Mapping in Python | Python | Replace nested branching rules with a configuration mapping that is easier to extend and review. | `snippets/python/replace-nested-if-else-with-config-mapping-in-python/` | `unittest` | Verified |
+| Calculate Large File Hashes with Python | Python | Hash a large file in chunks with SHA-256 or MD5. | `snippets/python/calculate-large-file-hashes-with-python/` | `unittest` | Verified |
+| Find Files by Extension with Python | Python | Walk through a directory and collect files whose extensions match a target list. | `snippets/python/find-files-by-extension-with-python/` | `unittest` | Verified |
+| Calculate Directory Size with Python | Python | Walk a directory tree and return total bytes, file count, and subdirectory count. | `snippets/python/calculate-directory-size-with-python/` | `unittest` | Verified |
+| Process Large CSV Files in Chunks with pandas | Python | Read a large CSV with pandas in chunks and return one processed result per chunk. | `snippets/python/process-large-csv-files-in-chunks-with-python/` | `unittest` | Verified |
+| Read Headerless CSV in Chunks with pandas | Python | Read a headerless CSV file in chunks and yield row dictionaries. | `snippets/python/read-headerless-csv-in-chunks-with-pandas/` | `unittest` | Verified |
+| Limit I/O Concurrency in Python | Python | Run I/O-bound tasks with ThreadPoolExecutor and a fixed worker limit. | `snippets/python/limit-concurrent-tasks-in-python/` | `unittest` | Verified |
+| Refactor If Elif Dispatch to a Handler Map in Python | Python | Replace a long if and elif dispatch chain with a handler mapping for email, sms, and webhook notifications. | `snippets/python/refactor-large-if-elif-dispatch-in-python/` | `unittest` | Verified |
+| Refactor Nested If Else to a Config Map in Python | Python | Replace nested if else decision logic with a config mapping for support ticket routing. | `snippets/python/replace-nested-if-else-with-config-mapping-in-python/` | `unittest` | Verified |
+| Download Large File with Python | Python | Stream-download a large file with requests, compute MD5 on the fly, and clean up on failure. | `snippets/python/download-large-file-with-python/` | `unittest` | Verified |
+| FastAPI Health Check Endpoint with Python | Python | A /health endpoint that checks database and Redis, then returns aggregated service status. | `snippets/python/fastapi-health-check-endpoint-with-python/` | `unittest` | Verified |
+| Echo Health Check Endpoint with Go | Go | A /health endpoint that checks database, Redis, and disk space with uptime reporting. | `snippets/go/echo-health-check-endpoint-with-go/` | `go test` | Verified |
+| Redis Baseline Config for New Deployment | Configuration | A small redis.conf baseline with security, persistence, and logging settings for a new Redis deployment. | `snippets/config/recommended-redis-conf-settings-for-new-deployment/` | `manual verification` | Draft |
+| Redis systemd Unit for New Deployment | Configuration | A Linux systemd unit for running Redis in the foreground with automatic restarts and an example resource cap. | `snippets/config/recommended-redis-systemd-service-for-new-deployment/` | `manual verification` | Draft |
+| Download YouTube Video with yt-dlp | Shell | A commented yt-dlp command for downloading one YouTube video with resumable fragments, explicit format sorting, and optional proxy support. | `snippets/shell/download-youtube-video-with-yt-dlp/` | `manual verification` | Draft |
+| Upsert Tenant Contacts via SQLite ON CONFLICT | SQL | Idempotently insert or update tenant-scoped contacts by the unique key tenant_id plus email in SQLite. | `snippets/sql/upsert-rows-on-conflict-with-sql/` | `unittest` | Verified |
+| Compute Order and Refund Metrics in SQLite | SQL | Aggregate order counts, paid revenue, and refunds for one reporting window in SQLite. | `snippets/sql/build-dashboard-metrics-with-sql/` | `unittest` | Verified |
+| Select Latest Row per Group with ROW_NUMBER() | SQL | Return one newest status row per device with ROW_NUMBER() and a stable tie-break on event_id. | `snippets/sql/select-latest-row-per-group-with-sql/` | `unittest` | Verified |

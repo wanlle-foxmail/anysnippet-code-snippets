@@ -1,15 +1,14 @@
 # Find Files by Extension with Python
 
-Recursively traverse a directory, filter files by one or more extensions, and return absolute paths with traversal counts.
+Walk through a directory and collect files whose extensions match a target list.
 
 This snippet is useful when you need to build a file inventory for automation, packaging, static checks, or batch processing tasks.
 
 ## Highlights
 
-- Traverses nested directories with `os.walk`
-- Accepts one or many extensions and normalizes them automatically
-- Matches file suffixes case-insensitively, including compound suffixes such as `.tar.gz`
-- Returns total, matched, and skipped file counts in one dictionary
+- Walks nested directories
+- Counts scanned and matched files
+- Returns matched file paths
 
 ## Use Cases
 
@@ -20,25 +19,20 @@ This snippet is useful when you need to build a file inventory for automation, p
 ## Code
 
 ```python
-from pathlib import Path
-
 from src.find_files_by_extension import find_files_by_extension
 
 
-result = find_files_by_extension(Path("project"), ["py", ".md"])
-print(result["matched_files"])
-print(result["matching_file_paths"])
+result = find_files_by_extension("project", [".py", ".md"])
+print(result["hit"])
+print(result["items"])
 ```
 
 ## Notes
 
-- Extension inputs are normalized, so `txt` becomes `.txt`.
-- The root path must be a real directory and cannot be a symlinked directory.
-- Matching is case-insensitive, so `.txt` also matches filenames such as `README.TXT`.
-- Returned file paths are normalized absolute paths and follow deterministic traversal order based on sorted directory and file names.
-- Symlinked files are reported by the path found inside the scanned directory, not by the resolved target path.
-- Symlinked directories are not traversed.
-- Traversal errors such as unreadable descendant directories are raised instead of being silently ignored.
+- `count` is the number of files scanned.
+- `hit` is the number of matched files.
+- `items` contains the matched file paths.
+- Put a leading dot in each extension, such as `.csv` or `.txt`.
 
 ## Verification
 
@@ -50,16 +44,11 @@ python -m unittest discover -s tests -p "test_*.py"
 
 The verified test suite covers:
 
-- single-extension filtering with counts
-- nested directory traversal with multiple extensions
-- extension normalization and deduplication
-- compound suffix matching such as `.tar.gz`
-- case-insensitive suffix matching
-- deterministic ordering of returned paths
-- hidden file inclusion
+- single-extension filtering
+- nested directory traversal
+- multiple extension matching
+- no-match results
 - empty directory handling
-- missing directory errors
-- invalid directory or extension input
 
 ## Files
 

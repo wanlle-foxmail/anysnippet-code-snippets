@@ -3,7 +3,7 @@
 
 # Local agent notes
 AGENTS.md
-CLOUD.md
+CLAUDE.md
 
 # Editor settings and metadata
 .vscode/
@@ -13,10 +13,12 @@ CLOUD.md
 .fleet/
 .history/
 .venv/
+.claude/
 
 # Local utility directories
 /tests/
 /scripts/
+/docs/
 
 # Python cache and test artifacts
 __pycache__/
@@ -26,3 +28,6 @@ __pycache__/
 # Snippet-local Python cache
 snippets/**/__pycache__/
 snippets/**/*.pyc
+
+# Local Go build artifacts
+snippets/go/**/echo-health-check

@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "slug": "read-headerless-csv-in-chunks-with-pandas",
+  "use_case_key": "read-headerless-csv-in-chunks",
+  "title": "Read Headerless CSV in Chunks with pandas",
+  "language": "Python",
+  "summary": "Read a headerless CSV file in chunks and yield row dictionaries.",
+  "tags": ["csv", "pandas", "headerless", "chunks"],
+  "highlights": [
+    "Reads headerless CSV files",
+    "Defines column names",
+    "Yields row dicts"
+  ],
+  "repo_path": "snippets/python/read-headerless-csv-in-chunks-with-pandas",
+  "entry_file": "src/read_headerless_csv_in_chunks.py",
+  "source_files": ["src/read_headerless_csv_in_chunks.py"],
+  "test_files": ["tests/test_read_headerless_csv_in_chunks.py"],
+  "dependencies": ["pandas"],
+  "test_environment": {
+    "runtime": "Python 3.9",
+    "os": ["macOS", "Linux", "Windows"]
+  },
+  "test_type": "UnitTest",
+  "test_framework": "unittest",
+  "test_case_count": 5,
+  "verification_workdir": ".",
+  "verification_setup": ["python -m pip install pandas"],
+  "verification_command": "python -m unittest discover -s tests -p \"test_*.py\"",
+  "verification_notes": "Executed from the snippet root with Python 3.9 on macOS after installing pandas. Verified behavior covers row dictionaries for single-chunk input, multi-chunk iteration in order, empty file handling, single-row CSV handling, and missing file behavior.",
+  "status": "Verified"
+}

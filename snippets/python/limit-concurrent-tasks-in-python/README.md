@@ -1,15 +1,14 @@
-# Limit Concurrent Tasks with Python
+# Limit I/O Concurrency in Python
 
-Run a batch of tasks with a fixed concurrency limit and return ordered success and failure results.
+Run I/O-bound tasks with ThreadPoolExecutor and a fixed worker limit.
 
 This snippet is useful when you need to process many I/O-bound tasks without overwhelming an API, a file system, or a remote service.
 
 ## Highlights
 
-- Uses `ThreadPoolExecutor` to cap concurrent work
-- Preserves input order in the returned results
-- Captures task failures without stopping the whole batch
-- Returns summary counts together with per-task outcomes
+- Caps thread concurrency
+- Keeps result order
+- Uses Python stdlib only
 
 ## Use Cases
 
@@ -28,14 +27,13 @@ def fetch_user(user_id):
 
 
 result = limit_concurrent_tasks([101, 102, 103], fetch_user, max_workers=3)
-print(result["succeeded_count"])
-print(result["results"])
+print(result)
 ```
 
 ## Notes
 
-- Results keep the same order as the input items even if tasks finish out of order.
-- Individual task exceptions are captured per result instead of aborting the full batch.
+- `ThreadPoolExecutor.map` keeps the output in the same order as the input items.
+- Worker exceptions are raised back to the caller.
 - This snippet targets I/O-bound work; use a process-based approach for CPU-bound tasks.
 
 ## Verification
@@ -48,13 +46,12 @@ python -m unittest discover -s tests -p "test_*.py"
 
 The verified test suite covers:
 
-- successful batch execution and summary counts
+- successful batch execution
 - stable result ordering despite out-of-order completion
-- per-task error capture without aborting the whole batch
+- worker error propagation
 - invalid `max_workers` values
 - empty input handling
 - concurrency limit enforcement
-- generator input support
 
 ## Files
 

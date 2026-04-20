@@ -1,15 +1,14 @@
 # Calculate Large File Hashes with Python
 
-Calculate a file hash without loading the whole file into memory.
+Hash a large file in chunks with SHA-256 or MD5.
 
 This snippet is useful when you need a stable checksum for large files such as backups, release archives, or imported datasets.
 
 ## Highlights
 
-- Reads files in fixed-size chunks to keep memory usage stable
-- Accepts both `str` and `Path` inputs
-- Supports `sha256` and `md5` with explicit validation
-- Uses only the Python standard library
+- Reads files chunk by chunk
+- Supports sha256 and md5
+- Uses Python stdlib only
 
 ## Use Cases
 
@@ -20,19 +19,18 @@ This snippet is useful when you need a stable checksum for large files such as b
 ## Code
 
 ```python
-from pathlib import Path
-
 from src.calculate_large_file_hash import calculate_large_file_hash
 
 
-digest = calculate_large_file_hash(Path("release.tar.gz"), algorithm="sha256")
+digest = calculate_large_file_hash("release.tar.gz")
 print(digest)
 ```
 
 ## Notes
 
 - `sha256` is the default and recommended option for modern integrity checks.
-- `md5` is included for compatibility with legacy systems and non-security workflows. Do not use it for security-sensitive verification.
+- `md5` is included for compatibility with older workflows.
+- `chunk_size` controls how many bytes are read at a time.
 
 ## Verification
 
@@ -46,11 +44,7 @@ The verified test suite covers:
 
 - SHA-256 hashing for a small file
 - chunked hashing for a multi-chunk file
-- hashing an empty file
 - MD5 compatibility mode
-- `str` and `Path` input handling
-- directory path validation
-- missing file errors
 - invalid algorithm errors
 - invalid chunk size errors
 

@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "slug": "fastapi-health-check-endpoint-with-python",
+  "use_case_key": "fastapi-health-check-endpoint",
+  "title": "FastAPI Health Check Endpoint with Python",
+  "language": "Python",
+  "summary": "A /health endpoint that checks database and Redis, then returns aggregated service status.",
+  "tags": ["fastapi", "health-check", "api", "monitoring", "backend"],
+  "highlights": [
+    "Shows real dependency check pattern",
+    "Aggregates multiple health checks",
+    "Ready to plug in DB and Redis"
+  ],
+  "repo_path": "snippets/python/fastapi-health-check-endpoint-with-python",
+  "entry_file": "src/health_check.py",
+  "source_files": ["src/health_check.py"],
+  "test_files": ["tests/test_health_check.py"],
+  "dependencies": ["fastapi", "uvicorn", "httpx"],
+  "test_environment": {
+    "runtime": "Python 3.9",
+    "os": ["macOS", "Linux", "Windows"]
+  },
+  "test_type": "UnitTest",
+  "test_framework": "unittest",
+  "test_case_count": 6,
+  "verification_workdir": ".",
+  "verification_setup": ["pip install fastapi uvicorn httpx"],
+  "verification_command": "python -m unittest discover -s tests -p \"test_*.py\"",
+  "verification_notes": "All 6 tests pass with Python 3.9 on macOS. Tests use unittest.mock.AsyncMock to stub dependency checks.",
+  "status": "Verified"
+}

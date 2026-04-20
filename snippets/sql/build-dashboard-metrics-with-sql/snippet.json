@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "slug": "build-dashboard-metrics-with-sql",
+  "use_case_key": "build-dashboard-metrics",
+  "title": "Compute Order and Refund Metrics in SQLite",
+  "language": "SQL",
+  "summary": "Aggregate order counts, paid revenue, and refunds for one reporting window in SQLite.",
+  "tags": ["sql", "sqlite", "dashboard", "metrics", "orders", "refunds"],
+  "highlights": [
+    "Counts order states in one query",
+    "Sums paid and refunded amounts",
+    "Tracks refunds by refunded_at"
+  ],
+  "repo_path": "snippets/sql/build-dashboard-metrics-with-sql",
+  "entry_file": "src/build_dashboard_metrics.sql",
+  "source_files": ["src/build_dashboard_metrics.sql"],
+  "test_files": ["tests/test_build_dashboard_metrics.py"],
+  "dependencies": [],
+  "test_environment": {
+    "runtime": "Python 3.9.6 + SQLite 3.51.0",
+    "os": ["macOS", "Linux", "Windows"]
+  },
+  "test_type": "IntegrationTest",
+  "test_framework": "unittest",
+  "test_case_count": 6,
+  "verification_workdir": ".",
+  "verification_setup": [],
+  "verification_command": "python -m unittest discover -s tests -p \"test_*.py\"",
+  "verification_notes": "Executed from the snippet root with Python 3.9.6 and SQLite 3.51.0 on macOS. Verified behavior covers status counts, paid revenue, refunds filtered by refunded_at, empty windows, null amount handling, and start-inclusive end-exclusive filtering for created_at and refunded_at.",
+  "status": "Verified"
+}

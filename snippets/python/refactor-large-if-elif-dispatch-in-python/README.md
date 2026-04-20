@@ -1,15 +1,14 @@
-# Refactor Large If Elif Dispatch in Python
+# Refactor If Elif Dispatch to a Handler Map in Python
 
-Replace a long `if`/`elif` dispatch block with a handler registry that routes work by key.
+Replace a long `if`/`elif` dispatch chain with a handler mapping for email, SMS, and webhook notifications.
 
 This snippet is useful when channel names, action types, or event names decide which block of code should run and the branch list is getting hard to maintain.
 
 ## Highlights
 
-- Replaces large branching blocks with a handler mapping
-- Normalizes dispatch keys before lookup
-- Supports custom handler injection without editing core dispatch logic
-- Passes a payload copy into handlers to reduce accidental caller mutation
+- Maps channels to handlers
+- Keeps handler logic separate
+- Uses plain dict lookup
 
 ## Use Cases
 
@@ -38,8 +37,8 @@ print(result["output"])
 
 ## Notes
 
-- The dispatcher normalizes channel names with `strip().lower()` before lookup.
-- Custom handlers can be added by passing a `handlers` mapping.
+- Add new channels by putting another function in the `handlers` mapping.
+- Each handler receives the payload for one channel.
 - This snippet focuses on dispatch structure, not transport-specific networking code.
 
 ## Verification
@@ -52,13 +51,11 @@ python -m unittest discover -s tests -p "test_*.py"
 
 The verified test suite covers:
 
-- default email dispatch
-- channel-specific SMS behavior
-- normalized channel lookup
+- email dispatch
+- default email subject handling
+- SMS dispatch
+- webhook dispatch
 - unknown channel rejection
-- custom handler injection
-- payload-copy isolation
-- blank channel validation
 
 ## Files
 

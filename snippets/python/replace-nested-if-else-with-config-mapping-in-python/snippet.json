@@ -2,14 +2,14 @@
   "schema_version": 1,
   "slug": "replace-nested-if-else-with-config-mapping-in-python",
   "use_case_key": "replace-nested-if-else-with-config-mapping",
-  "title": "Replace Nested If Else with Config Mapping in Python",
+  "title": "Refactor Nested If Else to a Config Map in Python",
   "language": "Python",
-  "summary": "Replace nested branching rules with a configuration mapping that is easier to extend and review.",
-  "tags": ["refactoring", "config-mapping", "lookup-table", "maintainability", "routing"],
+  "summary": "Replace nested if else decision logic with a config mapping for support ticket routing.",
+  "tags": ["refactoring", "support-routing", "config-mapping", "lookup-table"],
   "highlights": [
-    "Moves decision logic into a rule mapping",
-    "Supports exact, wildcard, and default matches",
-    "Returns rule copies so callers cannot mutate shared config"
+    "Moves rules into config",
+    "Uses tuple keys for lookup",
+    "Falls back to a default route"
   ],
   "repo_path": "snippets/python/replace-nested-if-else-with-config-mapping-in-python",
   "entry_file": "src/route_support_ticket.py",
@@ -22,10 +22,10 @@
   },
   "test_type": "UnitTest",
   "test_framework": "unittest",
-  "test_case_count": 7,
+  "test_case_count": 5,
   "verification_workdir": ".",
   "verification_setup": [],
   "verification_command": "python -m unittest discover -s tests -p \"test_*.py\"",
-  "verification_notes": "Executed from the snippet root with Python 3.9 on macOS. Verified behavior includes exact and wildcard rule matching, default fallback selection, and rule-copy isolation.",
+  "verification_notes": "Executed from the snippet root with Python 3.9 on macOS. Verified behavior covers enterprise billing routing, pro login routing, enterprise security phone routing, default fallback selection, and rule-copy isolation.",
   "status": "Verified"
 }

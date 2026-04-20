@@ -1,0 +1,38 @@
+[Unit]
+Description=Redis in-memory data store
+Documentation=https://redis.io/documentation
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=notify
+User=redis
+Group=redis
+UMask=0077
+# Let systemd create the runtime, state, and log directories with the expected ownership.
+RuntimeDirectory=redis
+RuntimeDirectoryMode=0750
+StateDirectory=redis
+StateDirectoryMode=0750
+LogsDirectory=redis
+LogsDirectoryMode=0750
+# Use systemd readiness notification, and keep Redis in the foreground with --daemonize no.
+# Prefer this over a forking daemon model for new deployments.
+ExecStart=/usr/bin/redis-server /etc/redis/redis.conf --supervised systemd --daemonize no
+ExecStop=/bin/kill -s TERM $MAINPID
+# Restart after crashes, but not after an intentional systemctl stop.
+Restart=on-failure
+RestartSec=3
+TimeoutStartSec=120
+TimeoutStopSec=120
+# Size these limits for your host, workload, and Redis maxmemory plan.
+LimitNOFILE=65535
+MemoryMax=8G
+# Apply a small hardening baseline without switching Redis to a constrained sandbox.
+NoNewPrivileges=yes
+PrivateTmp=yes
+PrivateDevices=yes
+ProtectHome=yes
+
+[Install]
+WantedBy=multi-user.target

@@ -2,14 +2,14 @@
   "schema_version": 1,
   "slug": "refactor-large-if-elif-dispatch-in-python",
   "use_case_key": "refactor-large-if-elif-dispatch",
-  "title": "Refactor Large If Elif Dispatch in Python",
+  "title": "Refactor If Elif Dispatch to a Handler Map in Python",
   "language": "Python",
-  "summary": "Replace a long if and elif dispatch block with a handler registry that routes work by key.",
-  "tags": ["refactoring", "dispatch", "strategy", "maintainability", "architecture"],
+  "summary": "Replace a long if and elif dispatch chain with a handler mapping for email, sms, and webhook notifications.",
+  "tags": ["refactoring", "dispatch", "handler-mapping", "email", "sms", "webhook"],
   "highlights": [
-    "Replaces branching logic with a handler mapping",
-    "Supports custom handler injection",
-    "Normalizes dispatch keys before lookup"
+    "Maps channels to handlers",
+    "Keeps handler logic separate",
+    "Uses plain dict lookup"
   ],
   "repo_path": "snippets/python/refactor-large-if-elif-dispatch-in-python",
   "entry_file": "src/dispatch_notification.py",
@@ -22,10 +22,10 @@
   },
   "test_type": "UnitTest",
   "test_framework": "unittest",
-  "test_case_count": 7,
+  "test_case_count": 5,
   "verification_workdir": ".",
   "verification_setup": [],
   "verification_command": "python -m unittest discover -s tests -p \"test_*.py\"",
-  "verification_notes": "Executed from the snippet root with Python 3.9 on macOS. Verified behavior includes normalized dispatch lookup, custom handler injection, and payload-copy isolation.",
+  "verification_notes": "Executed from the snippet root with Python 3.9 on macOS. Verified behavior covers email dispatch, default email subjects, SMS dispatch, webhook dispatch, and unknown channel rejection.",
   "status": "Verified"
 }

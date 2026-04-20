@@ -4,12 +4,12 @@
   "use_case_key": "calculate-large-file-hashes",
   "title": "Calculate Large File Hashes with Python",
   "language": "Python",
-  "summary": "Calculate file hashes in fixed-size chunks so large files can be processed without loading them fully into memory.",
-  "tags": ["hashing", "files", "checksum", "integrity", "pathlib"],
+  "summary": "Hash a large file in chunks with SHA-256 or MD5.",
+  "tags": ["hashing", "checksum", "sha256", "md5", "files"],
   "highlights": [
-    "Streams file reads in fixed-size chunks",
-    "Supports sha256 and md5 with explicit validation",
-    "Uses only the Python standard library"
+    "Reads files chunk by chunk",
+    "Supports sha256 and md5",
+    "Uses Python stdlib only"
   ],
   "repo_path": "snippets/python/calculate-large-file-hashes-with-python",
   "entry_file": "src/calculate_large_file_hash.py",
@@ -22,10 +22,10 @@
   },
   "test_type": "UnitTest",
   "test_framework": "unittest",
-  "test_case_count": 9,
+  "test_case_count": 5,
   "verification_workdir": ".",
   "verification_setup": [],
   "verification_command": "python -m unittest discover -s tests -p \"test_*.py\"",
-  "verification_notes": "Executed from the snippet root with Python 3.9 on macOS. Verified behavior includes a stable ValueError contract for directory paths.",
+  "verification_notes": "Executed from the snippet root with Python 3.9 on macOS. Verified behavior covers SHA-256 hashing, multi-chunk reads, MD5 hashing, invalid algorithm errors, and invalid chunk-size validation.",
   "status": "Verified"
 }

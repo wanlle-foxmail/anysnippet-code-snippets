@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "slug": "select-latest-row-per-group-with-sql",
+  "use_case_key": "select-latest-row-per-group",
+  "title": "Select Latest Row per Group with ROW_NUMBER()",
+  "language": "SQL",
+  "summary": "Return one newest status row per device with ROW_NUMBER() and a stable tie-break on event_id.",
+  "tags": ["sql", "sqlite", "window-functions", "row-number", "latest-row", "device-status", "history-table"],
+  "highlights": [
+    "Uses ROW_NUMBER per group",
+    "Breaks timestamp ties safely",
+    "Keeps group ordering stable"
+  ],
+  "repo_path": "snippets/sql/select-latest-row-per-group-with-sql",
+  "entry_file": "src/select_latest_row_per_group.sql",
+  "source_files": ["src/select_latest_row_per_group.sql"],
+  "test_files": ["tests/test_select_latest_row_per_group.py"],
+  "dependencies": [],
+  "test_environment": {
+    "runtime": "Python 3.9.6 + SQLite 3.51.0",
+    "os": ["macOS", "Linux", "Windows"]
+  },
+  "test_type": "IntegrationTest",
+  "test_framework": "unittest",
+  "test_case_count": 6,
+  "verification_workdir": ".",
+  "verification_setup": [],
+  "verification_command": "python -m unittest discover -s tests -p \"test_*.py\"",
+  "verification_notes": "Executed from the snippet root with Python 3.9.6 and SQLite 3.51.0 on macOS. Verified behavior covers latest-row selection, tie-breaking, single-row groups, empty tables, stable ordering, and rejection of older rows.",
+  "status": "Verified"
+}

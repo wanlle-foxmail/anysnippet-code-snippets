@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "slug": "upsert-rows-on-conflict-with-sql",
+  "use_case_key": "upsert-rows-on-conflict",
+  "title": "Upsert Tenant Contacts via SQLite ON CONFLICT",
+  "language": "SQL",
+  "summary": "Idempotently insert or update tenant-scoped contacts by the unique key tenant_id plus email in SQLite.",
+  "tags": ["sql", "sqlite", "upsert", "on-conflict", "idempotent-write", "contacts", "sync"],
+  "highlights": [
+    "Uses composite conflict keys",
+    "Updates matching rows in place",
+    "Works for single or batch writes"
+  ],
+  "repo_path": "snippets/sql/upsert-rows-on-conflict-with-sql",
+  "entry_file": "src/upsert_rows_on_conflict.sql",
+  "source_files": ["src/upsert_rows_on_conflict.sql"],
+  "test_files": ["tests/test_upsert_rows_on_conflict.py"],
+  "dependencies": [],
+  "test_environment": {
+    "runtime": "Python 3.9.6 + SQLite 3.51.0",
+    "os": ["macOS", "Linux", "Windows"]
+  },
+  "test_type": "IntegrationTest",
+  "test_framework": "unittest",
+  "test_case_count": 6,
+  "verification_workdir": ".",
+  "verification_setup": [],
+  "verification_command": "python -m unittest discover -s tests -p \"test_*.py\"",
+  "verification_notes": "Executed from the snippet root with Python 3.9.6 and SQLite 3.51.0 on macOS. Verified behavior covers insert, update, tenant-scoped uniqueness, null updates, batch execution, and isolation of unrelated rows.",
+  "status": "Verified"
+}

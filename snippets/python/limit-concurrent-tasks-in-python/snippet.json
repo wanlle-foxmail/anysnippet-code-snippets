@@ -2,14 +2,14 @@
   "schema_version": 1,
   "slug": "limit-concurrent-tasks-in-python",
   "use_case_key": "limit-concurrent-tasks",
-  "title": "Limit Concurrent Tasks with Python",
+  "title": "Limit I/O Concurrency in Python",
   "language": "Python",
-  "summary": "Run a batch of tasks with a fixed concurrency limit and return ordered success and failure results.",
-  "tags": ["concurrency", "threadpoolexecutor", "batch-processing", "parallelism", "automation"],
+  "summary": "Run I/O-bound tasks with ThreadPoolExecutor and a fixed worker limit.",
+  "tags": ["concurrency", "threadpoolexecutor", "io-bound", "batch-processing"],
   "highlights": [
-    "Caps concurrent work with ThreadPoolExecutor",
-    "Preserves input order in the returned results",
-    "Captures task failures without aborting the full batch"
+    "Caps thread concurrency",
+    "Keeps result order",
+    "Uses Python stdlib only"
   ],
   "repo_path": "snippets/python/limit-concurrent-tasks-in-python",
   "entry_file": "src/limit_concurrent_tasks.py",
@@ -22,10 +22,10 @@
   },
   "test_type": "UnitTest",
   "test_framework": "unittest",
-  "test_case_count": 7,
+  "test_case_count": 6,
   "verification_workdir": ".",
   "verification_setup": [],
   "verification_command": "python -m unittest discover -s tests -p \"test_*.py\"",
-  "verification_notes": "Executed from the snippet root with Python 3.9 on macOS. Verified behavior includes ordered result output, per-task error capture, and concurrency limit enforcement.",
+  "verification_notes": "Executed from the snippet root with Python 3.9 on macOS. Verified behavior covers successful execution, stable result ordering, worker error propagation, invalid max_workers values, empty input handling, and concurrency limit enforcement.",
   "status": "Verified"
 }

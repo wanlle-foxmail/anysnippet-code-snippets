@@ -4,12 +4,12 @@
   "use_case_key": "find-files-by-extension",
   "title": "Find Files by Extension with Python",
   "language": "Python",
-  "summary": "Recursively find files by one or more extensions, then return absolute paths plus total, matched, and skipped file counts.",
-  "tags": ["filesystem", "os.walk", "filtering", "extensions", "paths"],
+  "summary": "Walk through a directory and collect files whose extensions match a target list.",
+  "tags": ["filesystem", "extensions", "file-search", "automation"],
   "highlights": [
-    "Traverses nested directories with os.walk",
-    "Normalizes extension inputs such as txt to .txt",
-    "Supports case-insensitive matching for simple and compound suffixes"
+    "Walks nested directories",
+    "Counts scanned and matched files",
+    "Returns matched file paths"
   ],
   "repo_path": "snippets/python/find-files-by-extension-with-python",
   "entry_file": "src/find_files_by_extension.py",
@@ -22,10 +22,10 @@
   },
   "test_type": "UnitTest",
   "test_framework": "unittest",
-  "test_case_count": 13,
+  "test_case_count": 5,
   "verification_workdir": ".",
   "verification_setup": [],
   "verification_command": "python -m unittest discover -s tests -p \"test_*.py\"",
-  "verification_notes": "Executed from the snippet root with Python 3.9 on macOS. Verified behavior includes extension normalization, case-insensitive matching, normalized absolute path output, deterministic traversal order, root symlink rejection, symlink path preservation, nested symlink directory skipping, and walk error propagation.",
+  "verification_notes": "Executed from the snippet root with Python 3.9 on macOS. Verified behavior includes single-extension filtering, nested directory traversal, multiple extension matching, no-match results, and empty directory handling.",
   "status": "Verified"
 }

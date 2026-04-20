@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "slug": "download-youtube-video-with-yt-dlp",
+  "use_case_key": "download-youtube-video-with-yt-dlp",
+  "title": "Download YouTube Video with yt-dlp",
+  "language": "Shell",
+  "summary": "A commented yt-dlp command for downloading one YouTube video with resumable fragments, explicit format sorting, and optional proxy support.",
+  "tags": ["yt-dlp", "youtube", "shell", "cli", "video-download", "proxy", "ffmpeg"],
+  "highlights": [
+    "Comments explain each option",
+    "Avoids accidental playlist grabs",
+    "Keeps merged output predictable"
+  ],
+  "repo_path": "snippets/shell/download-youtube-video-with-yt-dlp",
+  "entry_file": "src/download_youtube_video_with_yt_dlp.sh",
+  "source_files": ["src/download_youtube_video_with_yt_dlp.sh"],
+  "test_files": [],
+  "dependencies": ["yt-dlp", "ffmpeg"],
+  "test_environment": {
+    "runtime": "yt-dlp stable release with ffmpeg",
+    "os": ["macOS", "Linux"]
+  },
+  "test_type": "ManualVerification",
+  "test_framework": "manual verification",
+  "test_case_count": 0,
+  "verification_workdir": ".",
+  "verification_setup": [
+    "Install yt-dlp and ffmpeg before running the command.",
+    "Replace the proxy URL and YouTube URL placeholders, or remove the proxy line if you do not need one.",
+    "Run the command from a writable directory."
+  ],
+  "verification_command": "Manual verification only; see README.md for the substitution and execution checklist.",
+  "verification_notes": "Not executed. Command contains placeholder values for the proxy URL and YouTube video URL. Actual verification requires yt-dlp, ffmpeg, network access, and a real video URL.",
+  "status": "Draft"
+}

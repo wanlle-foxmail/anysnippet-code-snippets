@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "slug": "echo-health-check-endpoint-with-go",
+  "use_case_key": "echo-health-check-endpoint",
+  "title": "Echo Health Check Endpoint with Go",
+  "language": "Go",
+  "summary": "A /health endpoint that checks database, Redis, and disk space, then returns aggregated service status with uptime.",
+  "tags": ["echo", "health-check", "api", "monitoring", "backend"],
+  "highlights": [
+    "Checks DB, Redis, and disk space",
+    "Includes server uptime",
+    "Uses Go stdlib for disk stats"
+  ],
+  "repo_path": "snippets/go/echo-health-check-endpoint-with-go",
+  "entry_file": "health_check.go",
+  "source_files": ["health_check.go"],
+  "test_files": ["health_check_test.go"],
+  "dependencies": ["github.com/labstack/echo/v4"],
+  "test_environment": {
+    "runtime": "Go 1.24",
+    "os": ["macOS", "Linux"]
+  },
+  "test_type": "UnitTest",
+  "test_framework": "go test",
+  "test_case_count": 6,
+  "verification_workdir": ".",
+  "verification_setup": ["go mod tidy"],
+  "verification_command": "go test -v ./...",
+  "verification_notes": "All 6 tests pass with Go 1.24 on macOS. Tests swap package-level check functions to simulate failures.",
+  "status": "Verified"
+}
