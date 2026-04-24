@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "slug": "reject-unknown-json-fields-with-go",
+  "use_case_key": "reject-unknown-json-fields",
+  "title": "Reject Unknown JSON Fields with Go",
+  "language": "Go",
+  "summary": "Decode one JSON body in Go while rejecting fields that are not declared on the target struct.",
+  "tags": ["go", "json", "validation", "strict-decoding", "api"],
+  "highlights": [
+    "Rejects unknown JSON fields",
+    "Accepts only one JSON value",
+    "Stays separate from validation"
+  ],
+  "repo_path": "snippets/go/reject-unknown-json-fields-with-go",
+  "entry_file": "reject_unknown_json_fields.go",
+  "source_files": ["reject_unknown_json_fields.go"],
+  "test_files": ["reject_unknown_json_fields_test.go"],
+  "dependencies": [],
+  "test_environment": {
+    "runtime": "Go 1.24.4",
+    "os": ["macOS", "Linux", "Windows"]
+  },
+  "test_type": "UnitTest",
+  "test_framework": "go test",
+  "test_case_count": 6,
+  "verification_workdir": ".",
+  "verification_setup": [],
+  "verification_command": "go test ./...",
+  "verification_notes": "Executed from the snippet root with Go 1.24.4 on macOS. Verified behavior covers valid known fields, unknown fields, malformed JSON, multiple JSON values, nil readers, and nil targets.",
+  "status": "Verified"
+}

@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "slug": "readiness-check-endpoint-with-dependency-gates-in-fastapi-and-python",
+  "use_case_key": "readiness-check-endpoint-with-dependency-gates-in-fastapi",
+  "title": "Readiness Check Endpoint with Dependency Gates in FastAPI",
+  "language": "Python",
+  "summary": "Gate a FastAPI readiness endpoint on required dependencies and return 503 until the service is ready.",
+  "tags": ["fastapi", "readiness", "health-check", "dependencies", "python"],
+  "highlights": [
+    "Separates required and optional gates",
+    "Returns 503 until service is ready",
+    "Reports gate status in one payload"
+  ],
+  "repo_path": "snippets/python/readiness-check-endpoint-with-dependency-gates-in-fastapi-and-python",
+  "entry_file": "src/readiness_check.py",
+  "source_files": ["src/readiness_check.py"],
+  "test_files": ["tests/test_readiness_check.py"],
+  "dependencies": ["fastapi", "uvicorn", "httpx"],
+  "test_environment": {
+    "runtime": "Python 3.9.6",
+    "os": ["macOS", "Linux", "Windows"]
+  },
+  "test_type": "UnitTest",
+  "test_framework": "unittest",
+  "test_case_count": 6,
+  "verification_workdir": ".",
+  "verification_setup": [
+    "Install fastapi, uvicorn, and httpx in the active Python environment."
+  ],
+  "verification_command": "python -m unittest discover -s tests -p \"test_*.py\"",
+  "verification_notes": "Validated with Python 3.9.6 on macOS using unittest and FastAPI TestClient. Verified behavior covers all required gates ready, database failure, migration failure, optional cache failure, multiple required failures, and required versus optional gate markers.",
+  "status": "Verified"
+}

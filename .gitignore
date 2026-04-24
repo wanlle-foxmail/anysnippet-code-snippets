@@ -32,3 +32,7 @@ snippets/go/limit-request-rate-with-token-bucket-in-echo/limit-request-rate-with
 snippets/go/return-problem-json-errors-with-echo/return-problem-json-errors-with-echo
 snippets/go/cache-http-responses-with-etag-in-go/cache-http-responses-with-etag-in-go
 snippets/go/stream-jsonl-http-responses-with-go/stream-jsonl-http-responses-with-go
+snippets/go/load-typed-environment-settings-with-go/loadtypedenvsettings
+snippets/go/rbac-middleware-with-role-to-route-mapping-in-echo/rbacmiddlewarewithroletoroutemappinginecho
+snippets/go/reject-unknown-json-fields-with-go/rejectunknownjsonfields
+snippets/go/validate-multipart-uploads-with-echo/validatemultipartuploadswithecho

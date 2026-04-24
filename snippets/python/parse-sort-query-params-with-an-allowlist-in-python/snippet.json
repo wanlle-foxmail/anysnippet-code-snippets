@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "slug": "parse-sort-query-params-with-an-allowlist-in-python",
+  "use_case_key": "parse-sort-query-params-with-an-allowlist",
+  "title": "Parse Sort Query Params with an Allowlist in Python",
+  "language": "Python",
+  "summary": "Parse a comma-separated sort query parameter against a fixed allowlist of field names in Python.",
+  "tags": ["python", "sort", "query-params", "allowlist", "api"],
+  "highlights": [
+    "Parses asc and desc terms",
+    "Rejects unknown sort fields",
+    "Prevents duplicate sort keys"
+  ],
+  "repo_path": "snippets/python/parse-sort-query-params-with-an-allowlist-in-python",
+  "entry_file": "src/parse_sort_query_params.py",
+  "source_files": ["src/parse_sort_query_params.py"],
+  "test_files": ["tests/test_parse_sort_query_params.py"],
+  "dependencies": [],
+  "test_environment": {
+    "runtime": "Python 3.9",
+    "os": ["macOS", "Linux", "Windows"]
+  },
+  "test_type": "UnitTest",
+  "test_framework": "unittest",
+  "test_case_count": 6,
+  "verification_workdir": ".",
+  "verification_setup": [],
+  "verification_command": "python -m unittest discover -s tests -p \"test_*.py\"",
+  "verification_notes": "Executed from the snippet root with Python 3.9.6 on macOS. Verified behavior covers one ascending field, multiple mixed-direction fields, a missing sort param, unknown fields, empty terms, and repeated fields.",
+  "status": "Verified"
+}

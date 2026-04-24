@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "slug": "load-typed-environment-settings-with-go",
+  "use_case_key": "load-typed-env-settings",
+  "title": "Load Typed Environment Settings with Go",
+  "language": "Go",
+  "summary": "Load APP_ENV, PORT, and DEBUG from environment variables with string, integer, and boolean parsing in Go.",
+  "tags": ["go", "environment", "settings", "configuration", "validation"],
+  "highlights": [
+    "Parses text, int, and bool",
+    "Uses sensible defaults",
+    "Reads OS env or a test map"
+  ],
+  "repo_path": "snippets/go/load-typed-environment-settings-with-go",
+  "entry_file": "load_typed_env_settings.go",
+  "source_files": ["load_typed_env_settings.go"],
+  "test_files": ["load_typed_env_settings_test.go"],
+  "dependencies": [],
+  "test_environment": {
+    "runtime": "Go 1.24.4",
+    "os": ["macOS", "Linux", "Windows"]
+  },
+  "test_type": "UnitTest",
+  "test_framework": "go test",
+  "test_case_count": 6,
+  "verification_workdir": ".",
+  "verification_setup": [],
+  "verification_command": "go test ./...",
+  "verification_notes": "Executed from the snippet root with Go 1.24.4 on macOS. Verified behavior covers required values, optional defaults, invalid integer input, invalid boolean input, and reading from the OS environment when the input map is nil.",
+  "status": "Verified"
+}

@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "slug": "validate-multipart-uploads-with-echo",
+  "use_case_key": "validate-multipart-uploads-with-echo",
+  "title": "Validate Multipart Uploads with Echo",
+  "language": "Go",
+  "summary": "Validate one multipart upload in Echo with filename, content type, and file size checks.",
+  "tags": ["echo", "multipart", "upload", "validation", "go"],
+  "highlights": [
+    "Checks filename and MIME type",
+    "Rejects empty or large files",
+    "Returns accepted file metadata"
+  ],
+  "repo_path": "snippets/go/validate-multipart-uploads-with-echo",
+  "entry_file": "upload_validation_handler.go",
+  "source_files": ["upload_validation_handler.go"],
+  "test_files": ["upload_validation_handler_test.go"],
+  "dependencies": ["github.com/labstack/echo/v4"],
+  "test_environment": {
+    "runtime": "Go 1.24.4",
+    "os": ["macOS", "Linux", "Windows"]
+  },
+  "test_type": "UnitTest",
+  "test_framework": "go test",
+  "test_case_count": 8,
+  "verification_workdir": ".",
+  "verification_setup": ["go mod tidy"],
+  "verification_command": "go test ./...",
+  "verification_notes": "Executed from the snippet root with Go 1.24.4 on macOS. Verified behavior covers valid uploads, blank filenames, unsupported content types, empty files, oversized files, exact-limit files, sanitized basenames, and the explicit content-type allowlist.",
+  "status": "Verified"
+}

@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "slug": "rbac-middleware-with-role-to-route-mapping-in-echo",
+  "use_case_key": "rbac-middleware-with-role-to-route-mapping-in-echo",
+  "title": "RBAC Middleware with Role-to-Route Mapping in Echo",
+  "language": "Go",
+  "summary": "Protect Echo routes with a fixed role-to-route mapping.",
+  "tags": ["echo", "rbac", "authorization", "middleware", "go"],
+  "highlights": [
+    "Maps routes to allowed roles",
+    "Rejects missing roles with 401",
+    "Denies unmapped routes by default"
+  ],
+  "repo_path": "snippets/go/rbac-middleware-with-role-to-route-mapping-in-echo",
+  "entry_file": "rbac_middleware.go",
+  "source_files": ["rbac_middleware.go"],
+  "test_files": ["rbac_middleware_test.go"],
+  "dependencies": ["github.com/labstack/echo/v4"],
+  "test_environment": {
+    "runtime": "Go 1.24.4",
+    "os": ["macOS", "Linux", "Windows"]
+  },
+  "test_type": "UnitTest",
+  "test_framework": "go test",
+  "test_case_count": 6,
+  "verification_workdir": ".",
+  "verification_setup": ["go mod tidy"],
+  "verification_command": "go test ./...",
+  "verification_notes": "Executed from the snippet root with Go 1.24.4 on macOS. Verified behavior covers an allowed role on a mapped route, a missing role header, a forbidden role, a shared route with multiple allowed roles, an unmapped route, and whitespace plus case normalization.",
+  "status": "Verified"
+}

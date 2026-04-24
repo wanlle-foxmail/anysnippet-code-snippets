@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "slug": "deduplicate-post-requests-with-idempotency-keys-in-fastapi-and-python",
+  "use_case_key": "deduplicate-post-requests-with-idempotency-keys",
+  "title": "Deduplicate POST Requests with Idempotency Keys in FastAPI",
+  "language": "Python",
+  "summary": "Deduplicate one FastAPI POST endpoint with an Idempotency-Key header and a single-process in-memory store.",
+  "tags": ["fastapi", "idempotency", "post", "middleware", "python"],
+  "highlights": [
+    "Replays successful POST responses",
+    "Returns 409 while work runs",
+    "Keeps storage in one process"
+  ],
+  "repo_path": "snippets/python/deduplicate-post-requests-with-idempotency-keys-in-fastapi-and-python",
+  "entry_file": "src/idempotency_middleware.py",
+  "source_files": ["src/idempotency_middleware.py"],
+  "test_files": ["tests/test_idempotency_middleware.py"],
+  "dependencies": ["fastapi", "uvicorn", "httpx"],
+  "test_environment": {
+    "runtime": "Python 3.9.6",
+    "os": ["macOS", "Linux", "Windows"]
+  },
+  "test_type": "UnitTest",
+  "test_framework": "unittest",
+  "test_case_count": 8,
+  "verification_workdir": ".",
+  "verification_setup": [
+    "Install fastapi, uvicorn, and httpx in the active Python environment."
+  ],
+  "verification_command": "python -m unittest discover -s tests -p \"test_*.py\"",
+  "verification_notes": "Validated with Python 3.9.6 on macOS using unittest and FastAPI TestClient. Verified behavior covers requiring Idempotency-Key on POST, replaying successful responses, separating different keys, returning 409 while work is in progress, not caching failed responses, bypassing non-POST requests, separating user scopes, and normalizing authorization scope.",
+  "status": "Verified"
+}

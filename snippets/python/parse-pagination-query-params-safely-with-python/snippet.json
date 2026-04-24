@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "slug": "parse-pagination-query-params-safely-with-python",
+  "use_case_key": "parse-pagination-query-params-safely",
+  "title": "Parse Pagination Query Params Safely with Python",
+  "language": "Python",
+  "summary": "Parse page and page_size query parameters with defaults, validation, and a fixed maximum in Python.",
+  "tags": ["python", "pagination", "query-params", "validation", "api"],
+  "highlights": [
+    "Uses safe pagination defaults",
+    "Caps large page sizes",
+    "Returns a ready offset value"
+  ],
+  "repo_path": "snippets/python/parse-pagination-query-params-safely-with-python",
+  "entry_file": "src/parse_pagination_query_params.py",
+  "source_files": ["src/parse_pagination_query_params.py"],
+  "test_files": ["tests/test_parse_pagination_query_params.py"],
+  "dependencies": [],
+  "test_environment": {
+    "runtime": "Python 3.9",
+    "os": ["macOS", "Linux", "Windows"]
+  },
+  "test_type": "UnitTest",
+  "test_framework": "unittest",
+  "test_case_count": 6,
+  "verification_workdir": ".",
+  "verification_setup": [],
+  "verification_command": "python -m unittest discover -s tests -p \"test_*.py\"",
+  "verification_notes": "Executed from the snippet root with Python 3.9.6 on macOS. Verified behavior covers valid page and page_size parsing, missing values, page size capping, invalid integers, non-positive values, and surrounding whitespace.",
+  "status": "Verified"
+}
