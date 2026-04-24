@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "slug": "paginate-rows-with-cursor-tokens-in-sql",
+  "use_case_key": "paginate-rows-with-cursor-tokens",
+  "title": "Paginate Rows with Cursor Tokens in MySQL",
+  "language": "SQL",
+  "summary": "Return the next stable page of rows in MySQL with keyset pagination on created_at and item_id.",
+  "tags": ["sql", "mysql", "pagination", "cursor", "keyset", "order-by"],
+  "highlights": [
+    "Uses keyset pagination",
+    "Keeps timestamp ties stable",
+    "Avoids large OFFSET scans"
+  ],
+  "repo_path": "snippets/sql/paginate-rows-with-cursor-tokens-in-sql",
+  "entry_file": "src/paginate_rows_with_cursor_tokens.sql",
+  "source_files": ["src/paginate_rows_with_cursor_tokens.sql"],
+  "test_files": ["tests/test_paginate_rows_with_cursor_tokens.py"],
+  "dependencies": ["mysql"],
+  "test_environment": {
+    "runtime": "Python 3.9.6 + MySQL 8.4.0",
+    "os": ["macOS", "Linux"]
+  },
+  "test_type": "IntegrationTest",
+  "test_framework": "unittest",
+  "test_case_count": 5,
+  "verification_workdir": ".",
+  "verification_setup": [
+    "Ensure mysql, mysqladmin, and mysqld are available on PATH."
+  ],
+  "verification_command": "python -m unittest discover -s tests -p \"test_*.py\"",
+  "verification_notes": "Executed from the snippet root with Python 3.9.6 and MySQL 8.4.0 on macOS. The tests start a temporary MySQL instance with local mysql binaries, then verify next-page retrieval, page size limits, tie-breaking on item_id, partial pages, and empty results after the cursor.",
+  "status": "Verified"
+}

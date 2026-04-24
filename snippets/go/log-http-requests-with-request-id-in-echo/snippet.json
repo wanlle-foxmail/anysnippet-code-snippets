@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "slug": "log-http-requests-with-request-id-in-echo",
+  "use_case_key": "log-http-requests-with-request-id",
+  "title": "Log HTTP Requests with Request ID in Echo",
+  "language": "Go",
+  "summary": "Log one Echo request with method, path, status, duration, client IP, and request ID.",
+  "tags": ["echo", "logging", "request-id", "middleware", "slog"],
+  "highlights": [
+    "Logs one structured access line",
+    "Reuses request or response IDs",
+    "Preserves handler error flow"
+  ],
+  "repo_path": "snippets/go/log-http-requests-with-request-id-in-echo",
+  "entry_file": "request_logger_with_id.go",
+  "source_files": ["request_logger_with_id.go"],
+  "test_files": ["request_logger_with_id_test.go"],
+  "dependencies": ["github.com/labstack/echo/v4"],
+  "test_environment": {
+    "runtime": "Go 1.24.4",
+    "os": ["macOS", "Linux", "Windows"]
+  },
+  "test_type": "UnitTest",
+  "test_framework": "go test",
+  "test_case_count": 5,
+  "verification_workdir": ".",
+  "verification_setup": ["go mod tidy"],
+  "verification_command": "go test -race ./...",
+  "verification_notes": "Executed from the snippet root with Go 1.24.4 on macOS. Verified behavior covers successful requests with incoming request IDs, response-generated request IDs, missing request IDs, explicit HTTP errors, and generic handler errors logged as status 500.",
+  "status": "Verified"
+}

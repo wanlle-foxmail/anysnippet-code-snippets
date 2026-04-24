@@ -17,7 +17,12 @@ var readRandom = rand.Read
 func RequestIDMiddleware() echo.MiddlewareFunc {
 	return func(next echo.HandlerFunc) echo.HandlerFunc {
 		return func(c echo.Context) error {
-			// Flow: read X-Request-Id header -> keep it or generate one (return error on failure) -> store it in context + response header -> call next
+			// Flow:
+			//   read X-Request-Id header
+			//      |
+			//      +-> present -> use it
+			//      `-> missing -> generate one or return error
+			//   store it in context and response header -> call next
 			requestID := strings.TrimSpace(c.Request().Header.Get(echo.HeaderXRequestID))
 			if requestID == "" {
 				generatedRequestID, err := generateRequestID()

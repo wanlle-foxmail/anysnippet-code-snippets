@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "slug": "deduplicate-post-requests-with-idempotency-keys-in-echo",
+  "use_case_key": "deduplicate-post-requests-with-idempotency-keys",
+  "title": "Deduplicate POST Requests with Idempotency Keys in Echo",
+  "language": "Go",
+  "summary": "Deduplicate one Echo POST endpoint with an Idempotency-Key header and a single-process in-memory store.",
+  "tags": ["echo", "idempotency", "post", "middleware", "api"],
+  "highlights": [
+    "Replays successful POST responses",
+    "Returns 409 while work runs",
+    "Keeps storage in one process"
+  ],
+  "repo_path": "snippets/go/deduplicate-post-requests-with-idempotency-keys-in-echo",
+  "entry_file": "idempotency_middleware.go",
+  "source_files": ["idempotency_middleware.go"],
+  "test_files": ["idempotency_middleware_test.go"],
+  "dependencies": ["github.com/labstack/echo/v4"],
+  "test_environment": {
+    "runtime": "Go 1.24.4",
+    "os": ["macOS", "Linux", "Windows"]
+  },
+  "test_type": "UnitTest",
+  "test_framework": "go test",
+  "test_case_count": 9,
+  "verification_workdir": ".",
+  "verification_setup": ["go mod tidy"],
+  "verification_command": "go test -race ./...",
+  "verification_notes": "Executed from the snippet root with Go 1.24.4 on macOS. Verified behavior covers missing idempotency keys on POST, caching and replaying successful responses, separate keys, replaying a response that completes between store checks, separating caller scopes with the same key, normalizing the Authorization header scope for the same caller, conflict responses for in-progress duplicates, retries after failed responses, and bypassing non-POST requests.",
+  "status": "Verified"
+}

@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "slug": "validate-multipart-uploads-with-fastapi-and-python",
+  "use_case_key": "validate-multipart-uploads-with-fastapi",
+  "title": "Validate Multipart Uploads with FastAPI",
+  "language": "Python",
+  "summary": "Validate one multipart upload in FastAPI with filename, content type, and file size checks.",
+  "tags": ["fastapi", "multipart", "upload", "validation", "python"],
+  "highlights": [
+    "Checks filename and MIME type",
+    "Rejects empty or oversized files",
+    "Returns accepted file metadata"
+  ],
+  "repo_path": "snippets/python/validate-multipart-uploads-with-fastapi-and-python",
+  "entry_file": "src/upload_validation.py",
+  "source_files": ["src/upload_validation.py"],
+  "test_files": ["tests/test_upload_validation.py"],
+  "dependencies": ["fastapi", "uvicorn", "httpx", "python-multipart"],
+  "test_environment": {
+    "runtime": "Python 3.9.6",
+    "os": ["macOS", "Linux", "Windows"]
+  },
+  "test_type": "UnitTest",
+  "test_framework": "unittest",
+  "test_case_count": 8,
+  "verification_workdir": ".",
+  "verification_setup": [
+    "Install fastapi, uvicorn, httpx, and python-multipart in the active Python environment."
+  ],
+  "verification_command": "python -m unittest discover -s tests -p \"test_*.py\"",
+  "verification_notes": "Validated with Python 3.9.6 on macOS using unittest and FastAPI TestClient. Verified behavior covers valid uploads, blank filenames, unsupported content types, empty files, oversized files, exact-limit files, sanitized basenames, and the explicit content-type allowlist.",
+  "status": "Verified"
+}

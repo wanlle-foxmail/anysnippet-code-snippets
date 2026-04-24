@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "slug": "load-typed-env-settings-with-python",
+  "use_case_key": "load-typed-env-settings",
+  "title": "Load Typed Environment Settings with Python",
+  "language": "Python",
+  "summary": "Load APP_ENV, PORT, and DEBUG from environment variables with string, integer, and boolean parsing.",
+  "tags": ["environment", "settings", "configuration", "validation", "python"],
+  "highlights": [
+    "Parses text, int, and bool",
+    "Supports sensible defaults",
+    "Fails fast on bad values"
+  ],
+  "repo_path": "snippets/python/load-typed-env-settings-with-python",
+  "entry_file": "src/load_typed_env_settings.py",
+  "source_files": ["src/load_typed_env_settings.py"],
+  "test_files": ["tests/test_load_typed_env_settings.py"],
+  "dependencies": [],
+  "test_environment": {
+    "runtime": "Python 3.9",
+    "os": ["macOS", "Linux", "Windows"]
+  },
+  "test_type": "UnitTest",
+  "test_framework": "unittest",
+  "test_case_count": 6,
+  "verification_workdir": ".",
+  "verification_setup": [],
+  "verification_command": "python -m unittest discover -s tests -p \"test_*.py\"",
+  "verification_notes": "Executed from the snippet root with Python 3.9.6 on macOS. Verified behavior covers required values, optional defaults, invalid integer input, invalid boolean input, and loading from a custom environment mapping.",
+  "status": "Verified"
+}

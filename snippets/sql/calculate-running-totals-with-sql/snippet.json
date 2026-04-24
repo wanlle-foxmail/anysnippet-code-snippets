@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "slug": "calculate-running-totals-with-sql",
+  "use_case_key": "calculate-running-totals",
+  "title": "Calculate Running Totals in SQLite",
+  "language": "SQL",
+  "summary": "Return one running total per row in SQLite with SUM() OVER (...) and a stable tie-break on transaction_id.",
+  "tags": ["sql", "sqlite", "window-functions", "running-total", "ledger", "analytics"],
+  "highlights": [
+    "Uses SUM() as a window function",
+    "Keeps ordering deterministic",
+    "Separates totals by account"
+  ],
+  "repo_path": "snippets/sql/calculate-running-totals-with-sql",
+  "entry_file": "src/calculate_running_totals.sql",
+  "source_files": ["src/calculate_running_totals.sql"],
+  "test_files": ["tests/test_calculate_running_totals.py"],
+  "dependencies": [],
+  "test_environment": {
+    "runtime": "Python 3.9.6 + SQLite 3.51.0",
+    "os": ["macOS", "Linux", "Windows"]
+  },
+  "test_type": "IntegrationTest",
+  "test_framework": "unittest",
+  "test_case_count": 6,
+  "verification_workdir": ".",
+  "verification_setup": [],
+  "verification_command": "python -m unittest discover -s tests -p \"test_*.py\"",
+  "verification_notes": "Executed from the snippet root with Python 3.9.6 and SQLite 3.51.0 on macOS. Verified behavior covers per-account running totals, tie-breaking for matching timestamps, single-row accounts, empty tables, grouped output ordering, and negative amounts.",
+  "status": "Verified"
+}

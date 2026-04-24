@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "slug": "verify-jwt-bearer-tokens-with-echo",
+  "use_case_key": "verify-jwt-bearer-tokens",
+  "title": "Verify JWT Bearer Tokens with Echo",
+  "language": "Go",
+  "summary": "Protect one Echo route by validating HS256 bearer tokens and exposing claims to the handler.",
+  "tags": ["echo", "jwt", "authentication", "bearer-token", "middleware"],
+  "highlights": [
+    "Validates HS256 bearer tokens",
+    "Rejects bad or expired tokens",
+    "Exposes claims to handlers"
+  ],
+  "repo_path": "snippets/go/verify-jwt-bearer-tokens-with-echo",
+  "entry_file": "jwt_bearer_auth.go",
+  "source_files": ["jwt_bearer_auth.go"],
+  "test_files": ["jwt_bearer_auth_test.go"],
+  "dependencies": ["github.com/golang-jwt/jwt/v5", "github.com/labstack/echo/v4"],
+  "test_environment": {
+    "runtime": "Go 1.24.4",
+    "os": ["macOS", "Linux", "Windows"]
+  },
+  "test_type": "UnitTest",
+  "test_framework": "go test",
+  "test_case_count": 10,
+  "verification_workdir": ".",
+  "verification_setup": ["go mod tidy"],
+  "verification_command": "go test -race ./...",
+  "verification_notes": "Executed from the snippet root with Go 1.24.4 on macOS. Verified behavior covers a valid token, four missing or malformed authorization header cases, malformed JWT strings, invalid signatures, expired tokens, missing exp claims, and unexpected signing methods.",
+  "status": "Verified"
+}

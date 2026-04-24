@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "slug": "retry-http-requests-with-go",
+  "use_case_key": "retry-http-requests",
+  "title": "Retry HTTP GET Requests with Go",
+  "language": "Go",
+  "summary": "Retry an HTTP GET request on transport errors, 429 responses, and 5xx responses with a fixed delay.",
+  "tags": ["go", "http", "retry", "get", "resilience"],
+  "highlights": [
+    "Retries transport failures",
+    "Retries 429 and 5xx",
+    "Closes retryable response bodies"
+  ],
+  "repo_path": "snippets/go/retry-http-requests-with-go",
+  "entry_file": "retry_http_get.go",
+  "source_files": ["retry_http_get.go"],
+  "test_files": ["retry_http_get_test.go"],
+  "dependencies": [],
+  "test_environment": {
+    "runtime": "Go 1.24.4",
+    "os": ["macOS", "Linux", "Windows"]
+  },
+  "test_type": "UnitTest",
+  "test_framework": "go test",
+  "test_case_count": 8,
+  "verification_workdir": ".",
+  "verification_setup": [],
+  "verification_command": "go test -race ./...",
+  "verification_notes": "Executed from the snippet root with Go 1.24.4 on macOS. Verified behavior covers first-response success, retry on 500, retry on 429, no retry on 400, retry on transport errors, cleanup of retryable response bodies, returning the final 5xx response when retries run out, and invalid input handling.",
+  "status": "Verified"
+}

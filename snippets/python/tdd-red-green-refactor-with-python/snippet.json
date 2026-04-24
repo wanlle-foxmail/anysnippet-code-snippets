@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "slug": "tdd-red-green-refactor-with-python",
+  "use_case_key": "tdd-red-green-refactor",
+  "title": "TDD Red Green Refactor with Python",
+  "language": "Python",
+  "summary": "Practice a simple RED GREEN REFACTOR loop in Python with a tiny shipping fee function and executable tests.",
+  "tags": ["tdd", "python", "testing", "unittest", "refactoring"],
+  "highlights": [
+    "Shows one RED GREEN loop",
+    "Uses a tiny business rule",
+    "Ends with a safe refactor"
+  ],
+  "repo_path": "snippets/python/tdd-red-green-refactor-with-python",
+  "entry_file": "tdd-red-green-refactor.md",
+  "source_files": ["tdd-red-green-refactor.md", "src/calculate_shipping_fee.py"],
+  "test_files": ["tests/test_calculate_shipping_fee.py"],
+  "dependencies": [],
+  "test_environment": {
+    "runtime": "Python 3.9",
+    "os": ["macOS", "Linux", "Windows"]
+  },
+  "test_type": "UnitTest",
+  "test_framework": "unittest",
+  "test_case_count": 7,
+  "verification_workdir": ".",
+  "verification_setup": [],
+  "verification_command": "python -m unittest discover -s tests -p \"test_*.py\"",
+  "verification_notes": "Executed from the snippet root with Python 3.9.6 on macOS. Verified behavior covers the first passing standard case, threshold free shipping, premium free shipping, negative subtotal rejection, bool subtotal rejection, unknown tier rejection, and the just-below-threshold boundary.",
+  "status": "Verified"
+}

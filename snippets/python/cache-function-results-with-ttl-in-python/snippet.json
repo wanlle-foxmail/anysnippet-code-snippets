@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "slug": "cache-function-results-with-ttl-in-python",
+  "use_case_key": "cache-function-results-with-ttl",
+  "title": "Cache Function Results with TTL in Python",
+  "language": "Python",
+  "summary": "Cache successful function results in memory until a short TTL expires.",
+  "tags": ["cache", "ttl", "decorator", "performance", "python"],
+  "highlights": [
+    "Caches results in memory",
+    "Reuses results within the TTL",
+    "Skips caching failed calls"
+  ],
+  "repo_path": "snippets/python/cache-function-results-with-ttl-in-python",
+  "entry_file": "src/cache_function_results_with_ttl.py",
+  "source_files": ["src/cache_function_results_with_ttl.py"],
+  "test_files": ["tests/test_cache_function_results_with_ttl.py"],
+  "dependencies": [],
+  "test_environment": {
+    "runtime": "Python 3.9",
+    "os": ["macOS", "Linux", "Windows"]
+  },
+  "test_type": "UnitTest",
+  "test_framework": "unittest",
+  "test_case_count": 6,
+  "verification_workdir": ".",
+  "verification_setup": [],
+  "verification_command": "python -m unittest discover -s tests -p \"test_*.py\"",
+  "verification_notes": "Executed from the snippet root with Python 3.9.6 on macOS. Verified behavior covers cache hits within the TTL, cache refresh after expiry, argument-specific cache entries, keyword argument normalization, exceptions that are not cached, and invalid TTL input.",
+  "status": "Verified"
+}

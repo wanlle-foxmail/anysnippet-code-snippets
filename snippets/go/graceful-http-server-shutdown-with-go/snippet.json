@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "slug": "graceful-http-server-shutdown-with-go",
+  "use_case_key": "graceful-http-server-shutdown",
+  "title": "Graceful HTTP Server Shutdown with Go",
+  "language": "Go",
+  "summary": "Run an HTTP server until a context is canceled, then finish in-flight requests within a shutdown timeout.",
+  "tags": ["go", "http", "shutdown", "graceful-shutdown", "server"],
+  "highlights": [
+    "Shuts down on context cancel",
+    "Waits for in-flight requests",
+    "Returns timeout errors clearly"
+  ],
+  "repo_path": "snippets/go/graceful-http-server-shutdown-with-go",
+  "entry_file": "graceful_http_server_shutdown.go",
+  "source_files": ["graceful_http_server_shutdown.go"],
+  "test_files": ["graceful_http_server_shutdown_test.go"],
+  "dependencies": [],
+  "test_environment": {
+    "runtime": "Go 1.24.4",
+    "os": ["macOS", "Linux", "Windows"]
+  },
+  "test_type": "UnitTest",
+  "test_framework": "go test",
+  "test_case_count": 6,
+  "verification_workdir": ".",
+  "verification_setup": [],
+  "verification_command": "go test -race ./...",
+  "verification_notes": "Executed from the snippet root with Go 1.24.4 on macOS. Verified behavior covers serving requests before shutdown, waiting for an in-flight request, shutdown timeout errors, serve errors from a bad listener, and invalid input for the server, listener, or timeout.",
+  "status": "Verified"
+}

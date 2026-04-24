@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "slug": "acquire-redis-locks-with-go",
+  "use_case_key": "acquire-redis-locks",
+  "title": "Acquire Redis Locks with Go",
+  "language": "Go",
+  "summary": "Acquire and release a Redis lock in Go with SET NX and a compare-and-delete release step.",
+  "tags": ["redis", "locking", "concurrency", "go", "distributed-lock"],
+  "highlights": [
+    "Uses SET NX for lock acquire",
+    "Releases only matching owners",
+    "Keeps Redis calls testable"
+  ],
+  "repo_path": "snippets/go/acquire-redis-locks-with-go",
+  "entry_file": "redis_lock.go",
+  "source_files": ["redis_lock.go"],
+  "test_files": ["redis_lock_test.go"],
+  "dependencies": ["github.com/redis/go-redis/v9"],
+  "test_environment": {
+    "runtime": "Go 1.24.4",
+    "os": ["macOS", "Linux", "Windows"]
+  },
+  "test_type": "UnitTest",
+  "test_framework": "go test",
+  "test_case_count": 6,
+  "verification_workdir": ".",
+  "verification_setup": ["go mod tidy"],
+  "verification_command": "go test -race ./...",
+  "verification_notes": "Executed from the snippet root with Go 1.24.4 on macOS. Verified behavior covers successful lock acquisition, lock contention, wrapped store errors, release with a matching owner token, refusing release for a different owner token, and invalid input handling. The tests use a fake store rather than a live Redis instance.",
+  "status": "Verified"
+}

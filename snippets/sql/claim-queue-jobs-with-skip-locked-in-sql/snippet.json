@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "slug": "claim-queue-jobs-with-skip-locked-in-sql",
+  "use_case_key": "claim-queue-jobs-with-skip-locked",
+  "title": "Claim Queue Jobs with SKIP LOCKED in MySQL",
+  "language": "SQL",
+  "summary": "Claim a small batch of queued jobs in MySQL with FOR UPDATE SKIP LOCKED inside one transaction.",
+  "tags": ["sql", "mysql", "queue", "skip-locked", "transactions", "workers"],
+  "highlights": [
+    "Uses SKIP LOCKED for claims",
+    "Keeps claim and update atomic",
+    "Returns the claimed job batch"
+  ],
+  "repo_path": "snippets/sql/claim-queue-jobs-with-skip-locked-in-sql",
+  "entry_file": "src/claim_queue_jobs_with_skip_locked.sql",
+  "source_files": ["src/claim_queue_jobs_with_skip_locked.sql"],
+  "test_files": ["tests/test_claim_queue_jobs_with_skip_locked.py"],
+  "dependencies": ["mysql"],
+  "test_environment": {
+    "runtime": "Python 3.9.6 + MySQL 8.4.0",
+    "os": ["macOS", "Linux"]
+  },
+  "test_type": "IntegrationTest",
+  "test_framework": "unittest",
+  "test_case_count": 5,
+  "verification_workdir": ".",
+  "verification_setup": [
+    "Ensure mysql, mysqladmin, and mysqld are available on PATH."
+  ],
+  "verification_command": "python -m unittest discover -s tests -p \"test_*.py\"",
+  "verification_notes": "Executed from the snippet root with Python 3.9.6 and MySQL 8.4.0 on macOS. The tests start a temporary MySQL instance with local mysql binaries, then verify priority-based claims, skipping locked rows, fixed batch size, tie-breaking on job_id, and ignoring non-queued jobs.",
+  "status": "Verified"
+}

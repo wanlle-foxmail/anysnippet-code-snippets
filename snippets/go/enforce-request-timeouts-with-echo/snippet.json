@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "slug": "enforce-request-timeouts-with-echo",
+  "use_case_key": "enforce-request-timeouts",
+  "title": "Enforce Request Timeouts with Echo",
+  "language": "Go",
+  "summary": "Cap one Echo request with a fixed deadline and return 503 when the handler runs too long.",
+  "tags": ["echo", "timeout", "middleware", "context", "http"],
+  "highlights": [
+    "Applies one fixed request deadline",
+    "Returns 503 on slow handlers",
+    "Drops late handler writes"
+  ],
+  "repo_path": "snippets/go/enforce-request-timeouts-with-echo",
+  "entry_file": "request_timeout_middleware.go",
+  "source_files": ["request_timeout_middleware.go"],
+  "test_files": ["request_timeout_middleware_test.go"],
+  "dependencies": ["github.com/labstack/echo/v4"],
+  "test_environment": {
+    "runtime": "Go 1.24.4",
+    "os": ["macOS", "Linux", "Windows"]
+  },
+  "test_type": "UnitTest",
+  "test_framework": "go test",
+  "test_case_count": 6,
+  "verification_workdir": ".",
+  "verification_setup": ["go mod tidy"],
+  "verification_command": "go test -race ./...",
+  "verification_notes": "Executed from the snippet root with Go 1.24.4 on macOS. Verified behavior covers on-time responses, timeout responses, request context cancellation, independent per-request deadlines, invalid timeout configuration, and handler error passthrough.",
+  "status": "Verified"
+}
