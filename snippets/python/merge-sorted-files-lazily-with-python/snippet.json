@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "slug": "merge-sorted-files-lazily-with-python",
+  "use_case_key": "merge-sorted-files-lazily",
+  "title": "Merge Sorted Files Lazily with Python",
+  "language": "Python",
+  "summary": "Lazily merge multiple sorted UTF-8 text files into one sorted output stream.",
+  "tags": ["files", "streaming", "merge", "heapq", "sorting"],
+  "highlights": [
+    "Merges files lazily",
+    "Preserves duplicate lines",
+    "Uses heap-based ordering"
+  ],
+  "repo_path": "snippets/python/merge-sorted-files-lazily-with-python",
+  "entry_file": "src/merge_sorted_files.py",
+  "source_files": ["src/merge_sorted_files.py"],
+  "test_files": ["tests/test_merge_sorted_files.py"],
+  "dependencies": [],
+  "test_environment": {
+    "runtime": "Python 3.9",
+    "os": ["macOS", "Linux", "Windows"]
+  },
+  "test_type": "UnitTest",
+  "test_framework": "unittest",
+  "test_case_count": 6,
+  "verification_workdir": ".",
+  "verification_setup": [],
+  "verification_command": "python -m unittest discover -s tests -p \"test_*.py\"",
+  "verification_notes": "Executed from the snippet root with Python 3.9 on macOS. Verified behavior covers two-file merges, duplicate lines, empty files, empty path lists, missing files, and Unicode lines.",
+  "status": "Verified"
+}

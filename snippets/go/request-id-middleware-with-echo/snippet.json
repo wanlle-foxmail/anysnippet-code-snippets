@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "slug": "request-id-middleware-with-echo",
+  "use_case_key": "request-id-middleware",
+  "title": "Request ID Middleware with Echo",
+  "language": "Go",
+  "summary": "Ensure every Echo request has an X-Request-ID header and a matching context value.",
+  "tags": ["echo", "middleware", "request-id", "http", "api"],
+  "highlights": [
+    "Reuses incoming request IDs",
+    "Generates IDs when missing",
+    "Stores ID in Echo context"
+  ],
+  "repo_path": "snippets/go/request-id-middleware-with-echo",
+  "entry_file": "request_id_middleware.go",
+  "source_files": ["request_id_middleware.go"],
+  "test_files": ["request_id_middleware_test.go"],
+  "dependencies": ["github.com/labstack/echo/v4"],
+  "test_environment": {
+    "runtime": "Go 1.24.4",
+    "os": ["macOS", "Linux", "Windows"]
+  },
+  "test_type": "UnitTest",
+  "test_framework": "go test",
+  "test_case_count": 8,
+  "verification_workdir": ".",
+  "verification_setup": ["go mod tidy"],
+  "verification_command": "go test ./...",
+  "verification_notes": "Executed from the snippet root with Go 1.24.4 on macOS. Verified behavior covers incoming IDs, generated IDs, empty and whitespace-only headers, response headers, handler access, per-request uniqueness, generated ID format, and ID-generation failures.",
+  "status": "Verified"
+}

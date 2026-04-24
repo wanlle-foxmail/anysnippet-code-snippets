@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "slug": "graceful-shutdown-worker-with-python",
+  "use_case_key": "graceful-shutdown-worker",
+  "title": "Graceful Worker Shutdown in Python",
+  "language": "Python",
+  "summary": "Run a queue-based worker that finishes accepted work, rejects new submissions during shutdown, and runs cleanup once.",
+  "tags": ["threading", "queue", "signals", "shutdown", "worker"],
+  "highlights": [
+    "Finishes queued work before exit",
+    "Rejects new work after shutdown",
+    "Restores signal handlers cleanly"
+  ],
+  "repo_path": "snippets/python/graceful-shutdown-worker-with-python",
+  "entry_file": "src/graceful_worker_shutdown.py",
+  "source_files": ["src/graceful_worker_shutdown.py"],
+  "test_files": ["tests/test_graceful_worker_shutdown.py"],
+  "dependencies": [],
+  "test_environment": {
+    "runtime": "Python 3.9",
+    "os": ["macOS", "Linux", "Windows"]
+  },
+  "test_type": "UnitTest",
+  "test_framework": "unittest",
+  "test_case_count": 7,
+  "verification_workdir": ".",
+  "verification_setup": [],
+  "verification_command": "python -m unittest discover -s tests -p \"test_*.py\"",
+  "verification_notes": "Executed from the snippet root with Python 3.9 on macOS. Verified behavior covers queued work execution, submission rejection after shutdown, draining accepted work, cleanup after queue drain, shutdown timeout handling, worker recovery after handler exceptions, and signal handler installation plus restore.",
+  "status": "Verified"
+}

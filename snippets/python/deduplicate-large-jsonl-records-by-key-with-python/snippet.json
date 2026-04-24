@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "slug": "deduplicate-large-jsonl-records-by-key-with-python",
+  "use_case_key": "deduplicate-large-jsonl-records-by-key",
+  "title": "Deduplicate Large JSONL Records by Key with Python",
+  "language": "Python",
+  "summary": "Read a large JSONL file and write only the first record for each unique top-level string key.",
+  "tags": ["jsonl", "deduplication", "streaming", "files", "etl"],
+  "highlights": [
+    "Keeps first record per key",
+    "Preserves original order",
+    "Reports bad input lines"
+  ],
+  "repo_path": "snippets/python/deduplicate-large-jsonl-records-by-key-with-python",
+  "entry_file": "src/deduplicate_jsonl_records_by_key.py",
+  "source_files": ["src/deduplicate_jsonl_records_by_key.py"],
+  "test_files": ["tests/test_deduplicate_jsonl_records_by_key.py"],
+  "dependencies": [],
+  "test_environment": {
+    "runtime": "Python 3.9",
+    "os": ["macOS", "Linux", "Windows"]
+  },
+  "test_type": "UnitTest",
+  "test_framework": "unittest",
+  "test_case_count": 7,
+  "verification_workdir": ".",
+  "verification_setup": [],
+  "verification_command": "python -m unittest discover -s tests -p \"test_*.py\"",
+  "verification_notes": "Executed from the snippet root with Python 3.9 on macOS. Verified behavior covers first-record deduplication, blank-line skipping, Unicode preservation, missing input files, invalid JSON lines, missing key errors, and invalid key-name or key-value errors.",
+  "status": "Verified"
+}

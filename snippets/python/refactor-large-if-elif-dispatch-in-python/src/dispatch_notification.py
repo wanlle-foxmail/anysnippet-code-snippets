@@ -24,15 +24,16 @@ def send_webhook(payload: dict[str, str]) -> dict[str, object]:
     }
 
 
+NOTIFICATION_HANDLERS: dict[str, Callable[[dict[str, str]], dict[str, object]]] = {
+    "email": send_email,
+    "sms": send_sms,
+    "webhook": send_webhook,
+}
+
+
 def dispatch_notification(channel: str, payload: dict[str, str]) -> dict[str, object]:
     """Replace if/elif dispatch with a handler mapping."""
-    handlers: dict[str, Callable[[dict[str, str]], dict[str, object]]] = {
-        "email": send_email,
-        "sms": send_sms,
-        "webhook": send_webhook,
-    }
-
-    handler = handlers.get(channel)
+    handler = NOTIFICATION_HANDLERS.get(channel)
     if handler is None:
         raise ValueError(f"Unsupported channel: {channel}")
 

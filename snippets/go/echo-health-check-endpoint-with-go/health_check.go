@@ -38,6 +38,7 @@ var CheckDisk = func() map[string]interface{} {
 
 // HealthCheck handles GET /health.
 func HealthCheck(c echo.Context) error {
+	// Flow: run database, redis, and disk checks -> scan statuses -> set healthy or unhealthy -> return JSON
 	checks := map[string]interface{}{
 		"database": CheckDatabase(),
 		"redis":    CheckRedis(),

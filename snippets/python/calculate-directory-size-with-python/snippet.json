@@ -8,7 +8,7 @@
   "tags": ["filesystem", "directory-size", "os.walk", "automation"],
   "highlights": [
     "Walks nested directories",
-    "Adds file sizes",
+    "Sums file sizes via os.walk",
     "Counts files and folders"
   ],
   "repo_path": "snippets/python/calculate-directory-size-with-python",

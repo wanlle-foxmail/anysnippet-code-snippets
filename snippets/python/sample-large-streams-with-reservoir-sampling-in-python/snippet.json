@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "slug": "sample-large-streams-with-reservoir-sampling-in-python",
+  "use_case_key": "sample-large-streams-with-reservoir-sampling",
+  "title": "Sample Large Streams with Reservoir Sampling in Python",
+  "language": "Python",
+  "summary": "Sample a fixed number of items from a large stream without loading it all into memory.",
+  "tags": ["sampling", "reservoir-sampling", "streaming", "algorithms", "large-data"],
+  "highlights": [
+    "Samples without full buffering",
+    "Works with one-pass iterables",
+    "Supports repeatable tests"
+  ],
+  "repo_path": "snippets/python/sample-large-streams-with-reservoir-sampling-in-python",
+  "entry_file": "src/reservoir_sampling.py",
+  "source_files": ["src/reservoir_sampling.py"],
+  "test_files": ["tests/test_reservoir_sampling.py"],
+  "dependencies": [],
+  "test_environment": {
+    "runtime": "Python 3.9",
+    "os": ["macOS", "Linux", "Windows"]
+  },
+  "test_type": "UnitTest",
+  "test_framework": "unittest",
+  "test_case_count": 6,
+  "verification_workdir": ".",
+  "verification_setup": [],
+  "verification_command": "python -m unittest discover -s tests -p \"test_*.py\"",
+  "verification_notes": "Executed from the snippet root with Python 3.9 on macOS. Verified behavior covers deterministic sampling with a seed, short streams, empty input, generator input, full-length sampling, and invalid sample-size errors.",
+  "status": "Verified"
+}

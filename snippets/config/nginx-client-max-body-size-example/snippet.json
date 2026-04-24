@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "slug": "nginx-client-max-body-size-example",
+  "use_case_key": "nginx-client-max-body-size",
+  "title": "Nginx Client Max Body Size Example",
+  "language": "Configuration",
+  "summary": "Increase the allowed request body size in Nginx.",
+  "tags": ["nginx", "uploads", "request-body", "configuration", "http", "devops"],
+  "highlights": [
+    "Shows 413 body-size behavior",
+    "Uses location-level limit",
+    "Keeps upload scope narrow"
+  ],
+  "repo_path": "snippets/config/nginx-client-max-body-size-example",
+  "entry_file": "nginx-client-max-body-size.md",
+  "source_files": ["nginx-client-max-body-size.md"],
+  "test_files": [],
+  "dependencies": [],
+  "test_environment": {
+    "runtime": "Nginx 1.24+",
+    "os": ["Linux"]
+  },
+  "test_type": "ManualVerification",
+  "test_framework": "manual verification",
+  "test_case_count": 0,
+  "verification_workdir": ".",
+  "verification_setup": [
+    "Install Nginx on a staging host.",
+    "Replace the sample upstream with a real upload handler before validation.",
+    "Adjust the size limit for the target upload path before validation."
+  ],
+  "verification_command": "Manual verification only; see README.md for the staging checklist.",
+  "verification_notes": "Not executed. The example follows the official client_max_body_size directive syntax, but it still requires nginx -t and real upload requests on a staging host before use.",
+  "status": "Draft"
+}

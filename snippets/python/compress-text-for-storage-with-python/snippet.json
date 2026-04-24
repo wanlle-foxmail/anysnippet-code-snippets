@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "slug": "compress-text-for-storage-with-python",
+  "use_case_key": "compress-text-for-storage",
+  "title": "Compress Text for Storage with Python",
+  "language": "Python",
+  "summary": "Compress structured text into a base64-encoded gzip string so it uses less space in text-only storage.",
+  "tags": ["compression", "gzip", "base64", "storage", "text-processing"],
+  "highlights": [
+    "Base64 gzip string output",
+    "Saves space for JSON text",
+    "Unicode-safe round-trip"
+  ],
+  "repo_path": "snippets/python/compress-text-for-storage-with-python",
+  "entry_file": "src/compress_text_for_storage.py",
+  "source_files": ["src/compress_text_for_storage.py"],
+  "test_files": ["tests/test_compress_text_for_storage.py"],
+  "dependencies": [],
+  "test_environment": {
+    "runtime": "Python 3.9",
+    "os": ["macOS", "Linux", "Windows"]
+  },
+  "test_type": "UnitTest",
+  "test_framework": "unittest",
+  "test_case_count": 8,
+  "verification_workdir": ".",
+  "verification_setup": [],
+  "verification_command": "python -m unittest discover -s tests -p \"test_*.py\"",
+  "verification_notes": "Executed from the snippet root with Python 3.9 on macOS. Verified behavior covers JSON text round-trip, empty strings, Unicode text, size reduction for repetitive JSON, invalid base64 errors, invalid gzip payload errors, and non-string input rejection for both functions.",
+  "status": "Verified"
+}

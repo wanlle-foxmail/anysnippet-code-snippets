@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "slug": "split-large-csv-files-by-row-count-with-python",
+  "use_case_key": "split-large-csv-files-by-row-count",
+  "title": "Split Large CSV Files by Row Count with Python",
+  "language": "Python",
+  "summary": "Split a large CSV file into smaller UTF-8 CSV files with a fixed number of data rows per part.",
+  "tags": ["csv", "files", "splitting", "imports", "automation"],
+  "highlights": [
+    "Repeats the header row",
+    "Creates output parts in order",
+    "Uses Python stdlib only"
+  ],
+  "repo_path": "snippets/python/split-large-csv-files-by-row-count-with-python",
+  "entry_file": "src/split_csv_file_by_row_count.py",
+  "source_files": ["src/split_csv_file_by_row_count.py"],
+  "test_files": ["tests/test_split_csv_file_by_row_count.py"],
+  "dependencies": [],
+  "test_environment": {
+    "runtime": "Python 3.9",
+    "os": ["macOS", "Linux", "Windows"]
+  },
+  "test_type": "UnitTest",
+  "test_framework": "unittest",
+  "test_case_count": 6,
+  "verification_workdir": ".",
+  "verification_setup": [],
+  "verification_command": "python -m unittest discover -s tests -p \"test_*.py\"",
+  "verification_notes": "Executed from the snippet root with Python 3.9 on macOS. Verified behavior covers multi-part splits with repeated headers, output directory creation, large row limits, header-only input, missing input files, and invalid row-limit errors.",
+  "status": "Verified"
+}

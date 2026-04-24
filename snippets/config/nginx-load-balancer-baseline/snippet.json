@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "slug": "nginx-load-balancer-baseline",
+  "use_case_key": "nginx-load-balancer-baseline",
+  "title": "Nginx Load Balancer Baseline",
+  "language": "Configuration",
+  "summary": "Simple Nginx load balancer example.",
+  "tags": ["nginx", "load-balancing", "reverse-proxy", "configuration", "markdown", "devops"],
+  "highlights": [
+    "Shows request flow visually",
+    "Uses one upstream block",
+    "Adds inline config notes"
+  ],
+  "repo_path": "snippets/config/nginx-load-balancer-baseline",
+  "entry_file": "nginx-load-balancer.md",
+  "source_files": ["nginx-load-balancer.md"],
+  "test_files": [],
+  "dependencies": [],
+  "test_environment": {
+    "runtime": "Nginx 1.24+",
+    "os": ["Linux"]
+  },
+  "test_type": "ManualVerification",
+  "test_framework": "manual verification",
+  "test_case_count": 0,
+  "verification_workdir": ".",
+  "verification_setup": [
+    "Install Nginx on a staging host.",
+    "Replace the sample upstream addresses with reachable backend servers before validation.",
+    "Place the example inside the active http context or an included site config before running nginx -t."
+  ],
+  "verification_command": "Manual verification only; see README.md for the staging checklist.",
+  "verification_notes": "Not executed. The Markdown guide and example config still require validation with nginx -t and live backend traffic on a staging Nginx host.",
+  "status": "Draft"
+}

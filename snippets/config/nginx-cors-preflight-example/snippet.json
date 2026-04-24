@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "slug": "nginx-cors-preflight-example",
+  "use_case_key": "nginx-cors-preflight",
+  "title": "Nginx CORS Preflight Example",
+  "language": "Configuration",
+  "summary": "Handle CORS preflight requests in Nginx for one API origin.",
+  "tags": ["nginx", "cors", "preflight", "configuration", "http", "devops"],
+  "highlights": [
+    "Returns 204 for preflight",
+    "Uses one explicit origin",
+    "Keeps API proxying unchanged"
+  ],
+  "repo_path": "snippets/config/nginx-cors-preflight-example",
+  "entry_file": "nginx-cors-preflight.md",
+  "source_files": ["nginx-cors-preflight.md"],
+  "test_files": [],
+  "dependencies": [],
+  "test_environment": {
+    "runtime": "Nginx 1.24+",
+    "os": ["Linux"]
+  },
+  "test_type": "ManualVerification",
+  "test_framework": "manual verification",
+  "test_case_count": 0,
+  "verification_workdir": ".",
+  "verification_setup": [
+    "Install Nginx on a staging host.",
+    "Replace the sample frontend origin, allowed methods, allowed headers, and sample upstream before validation.",
+    "Use a browser or HTTP client that can send an OPTIONS preflight request during validation."
+  ],
+  "verification_command": "Manual verification only; see README.md for the staging checklist.",
+  "verification_notes": "Not executed. The example uses documented Nginx add_header and return directives, but it still requires nginx -t and a real preflight request against a staging host before use.",
+  "status": "Draft"
+}

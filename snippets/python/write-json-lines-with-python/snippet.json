@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "slug": "write-json-lines-with-python",
+  "use_case_key": "write-json-lines",
+  "title": "Write JSON Lines with Python",
+  "language": "Python",
+  "summary": "Write Python values to a UTF-8 JSON Lines file and replace the output file atomically.",
+  "tags": ["jsonl", "json", "files", "export", "etl"],
+  "highlights": [
+    "Writes files atomically",
+    "Preserves readable Unicode",
+    "Serializes one value per line"
+  ],
+  "repo_path": "snippets/python/write-json-lines-with-python",
+  "entry_file": "src/write_json_lines.py",
+  "source_files": ["src/write_json_lines.py"],
+  "test_files": ["tests/test_write_json_lines.py"],
+  "dependencies": [],
+  "test_environment": {
+    "runtime": "Python 3.9",
+    "os": ["macOS", "Linux", "Windows"]
+  },
+  "test_type": "UnitTest",
+  "test_framework": "unittest",
+  "test_case_count": 6,
+  "verification_workdir": ".",
+  "verification_setup": [],
+  "verification_command": "python -m unittest discover -s tests -p \"test_*.py\"",
+  "verification_notes": "Executed from the snippet root with Python 3.9 on macOS. Verified behavior covers ordered writes, empty iterables, Unicode text, atomic replacement of existing files, missing parent directories, and cleanup after serialization failures.",
+  "status": "Verified"
+}

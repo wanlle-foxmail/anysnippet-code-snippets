@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "slug": "nginx-ip-allow-deny-example",
+  "use_case_key": "nginx-ip-allow-deny",
+  "title": "Nginx IP Allow Deny Example",
+  "language": "Configuration",
+  "summary": "Restrict a Nginx location by client IP ranges.",
+  "tags": ["nginx", "access-control", "ip-allowlist", "configuration", "http", "devops"],
+  "highlights": [
+    "Allows only trusted IP ranges",
+    "Closes access with deny all",
+    "Works with IPv4 and IPv6"
+  ],
+  "repo_path": "snippets/config/nginx-ip-allow-deny-example",
+  "entry_file": "nginx-ip-allow-deny.md",
+  "source_files": ["nginx-ip-allow-deny.md"],
+  "test_files": [],
+  "dependencies": [],
+  "test_environment": {
+    "runtime": "Nginx 1.24+",
+    "os": ["Linux"]
+  },
+  "test_type": "ManualVerification",
+  "test_framework": "manual verification",
+  "test_case_count": 0,
+  "verification_workdir": ".",
+  "verification_setup": [
+    "Install Nginx on a staging host.",
+    "Replace the sample IP ranges with the exact networks you control before validation.",
+    "If Nginx is behind a trusted proxy, configure real-IP handling before validation."
+  ],
+  "verification_command": "Manual verification only; see README.md for the staging checklist.",
+  "verification_notes": "Not executed. The example follows the official Nginx access module syntax, but it still requires nginx -t and staging requests from both allowed and denied source addresses before use.",
+  "status": "Draft"
+}

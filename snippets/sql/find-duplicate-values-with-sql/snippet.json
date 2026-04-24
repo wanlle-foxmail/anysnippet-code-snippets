@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "slug": "find-duplicate-values-with-sql",
+  "use_case_key": "find-duplicate-values",
+  "title": "Find Duplicate Values in MySQL",
+  "language": "SQL",
+  "summary": "Return repeated non-null values in one MySQL column with GROUP BY and HAVING.",
+  "tags": ["sql", "mysql", "duplicates", "group-by", "having", "data-quality"],
+  "highlights": [
+    "Lists repeated column values",
+    "Ignores NULL values cleanly",
+    "Sorts larger duplicates first"
+  ],
+  "repo_path": "snippets/sql/find-duplicate-values-with-sql",
+  "entry_file": "src/find_duplicate_values.sql",
+  "source_files": ["src/find_duplicate_values.sql"],
+  "test_files": ["tests/test_find_duplicate_values.py"],
+  "dependencies": ["mysql"],
+  "test_environment": {
+    "runtime": "Python 3.9.6 + MySQL 8.4.0",
+    "os": ["macOS", "Linux"]
+  },
+  "test_type": "IntegrationTest",
+  "test_framework": "unittest",
+  "test_case_count": 5,
+  "verification_workdir": ".",
+  "verification_setup": [
+    "Ensure mysql, mysqladmin, and mysqld are available on PATH."
+  ],
+  "verification_command": "python -m unittest discover -s tests -p \"test_*.py\"",
+  "verification_notes": "Executed from the snippet root with Python 3.9.6 and MySQL 8.4.0 on macOS. The tests start a temporary MySQL instance with local mysql binaries, then verify duplicate counts, exclusion of unique values, NULL filtering, result ordering, and empty-result behavior.",
+  "status": "Verified"
+}

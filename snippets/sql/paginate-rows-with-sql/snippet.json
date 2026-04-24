@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "slug": "paginate-rows-with-sql",
+  "use_case_key": "paginate-rows",
+  "title": "Paginate Rows with LIMIT and OFFSET in MySQL",
+  "language": "SQL",
+  "summary": "Return one stable page of rows in MySQL with ORDER BY, LIMIT, and OFFSET.",
+  "tags": ["sql", "mysql", "pagination", "limit", "offset", "order-by"],
+  "highlights": [
+    "Uses stable two-column sorting",
+    "Shows one fixed page slice",
+    "Works for basic page-based lists"
+  ],
+  "repo_path": "snippets/sql/paginate-rows-with-sql",
+  "entry_file": "src/paginate_rows.sql",
+  "source_files": ["src/paginate_rows.sql"],
+  "test_files": ["tests/test_paginate_rows.py"],
+  "dependencies": ["mysql"],
+  "test_environment": {
+    "runtime": "Python 3.9.6 + MySQL 8.4.0",
+    "os": ["macOS", "Linux"]
+  },
+  "test_type": "IntegrationTest",
+  "test_framework": "unittest",
+  "test_case_count": 5,
+  "verification_workdir": ".",
+  "verification_setup": [
+    "Ensure mysql, mysqladmin, and mysqld are available on PATH."
+  ],
+  "verification_command": "python -m unittest discover -s tests -p \"test_*.py\"",
+  "verification_notes": "Executed from the snippet root with Python 3.9.6 and MySQL 8.4.0 on macOS. The tests start a temporary MySQL instance with local mysql binaries, then verify page size, stable ordering, tie-breaking, partial pages, and empty results.",
+  "status": "Verified"
+}

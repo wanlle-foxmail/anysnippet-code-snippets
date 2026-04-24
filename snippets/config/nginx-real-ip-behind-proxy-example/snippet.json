@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "slug": "nginx-real-ip-behind-proxy-example",
+  "use_case_key": "nginx-real-ip-behind-proxy",
+  "title": "Nginx Real IP Behind Proxy Example",
+  "language": "Configuration",
+  "summary": "Restore client IP addresses behind a trusted proxy in Nginx.",
+  "tags": ["nginx", "real-ip", "reverse-proxy", "configuration", "http", "devops"],
+  "highlights": [
+    "Restores client IP from proxy",
+    "Uses trusted proxy ranges",
+    "Enables recursive lookup"
+  ],
+  "repo_path": "snippets/config/nginx-real-ip-behind-proxy-example",
+  "entry_file": "nginx-real-ip-behind-proxy.md",
+  "source_files": ["nginx-real-ip-behind-proxy.md"],
+  "test_files": [],
+  "dependencies": [],
+  "test_environment": {
+    "runtime": "Nginx 1.24+ with ngx_http_realip_module",
+    "os": ["Linux"]
+  },
+  "test_type": "ManualVerification",
+  "test_framework": "manual verification",
+  "test_case_count": 0,
+  "verification_workdir": ".",
+  "verification_setup": [
+    "Install Nginx on a staging host.",
+    "Confirm the build or package includes ngx_http_realip_module before validation.",
+    "Replace the trusted CIDR with the exact proxy or load balancer range before validation."
+  ],
+  "verification_command": "Manual verification only; see README.md for the staging checklist.",
+  "verification_notes": "Not executed. The example follows the official Nginx real-IP module syntax, but it still requires nginx -t and a real trusted proxy path on a staging host before use.",
+  "status": "Draft"
+}

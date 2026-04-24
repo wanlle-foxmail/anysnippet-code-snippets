@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "slug": "read-large-json-arrays-with-ijson",
+  "use_case_key": "read-large-json-arrays",
+  "title": "Read Large JSON Arrays with ijson",
+  "language": "Python",
+  "summary": "Stream a top-level JSON array with ijson and yield one parsed item at a time.",
+  "tags": ["json", "ijson", "streaming", "large-file", "etl"],
+  "highlights": [
+    "Streams one array item at a time",
+    "Avoids full-file memory loads",
+    "Keeps nested JSON objects intact"
+  ],
+  "repo_path": "snippets/python/read-large-json-arrays-with-ijson",
+  "entry_file": "src/read_large_json_array.py",
+  "source_files": ["src/read_large_json_array.py"],
+  "test_files": ["tests/test_read_large_json_array.py"],
+  "dependencies": ["ijson"],
+  "test_environment": {
+    "runtime": "Python 3.9",
+    "os": ["macOS", "Linux", "Windows"]
+  },
+  "test_type": "UnitTest",
+  "test_framework": "unittest",
+  "test_case_count": 6,
+  "verification_workdir": ".",
+  "verification_setup": ["python -m pip install ijson"],
+  "verification_command": "python -m unittest discover -s tests -p \"test_*.py\"",
+  "verification_notes": "Executed from the snippet root with Python 3.9 on macOS. Verified behavior covers ordered reads, nested objects and lists, empty arrays, malformed JSON arrays, missing files, and Unicode values.",
+  "status": "Verified"
+}

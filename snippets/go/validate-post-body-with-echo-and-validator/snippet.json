@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "slug": "validate-post-body-with-echo-and-validator",
+  "use_case_key": "echo-post-body-validation",
+  "title": "Echo POST Validation with Go",
+  "language": "Go",
+  "summary": "Validate a Book JSON body in Echo with go-playground/validator and return friendly field messages.",
+  "tags": ["echo", "validator", "post", "json", "validation"],
+  "highlights": [
+    "Validates Echo JSON request bodies",
+    "Returns friendly field messages",
+    "Runs next step only on success"
+  ],
+  "repo_path": "snippets/go/validate-post-body-with-echo-and-validator",
+  "entry_file": "book_validation_handler.go",
+  "source_files": ["book_validation_handler.go"],
+  "test_files": ["book_validation_handler_test.go"],
+  "dependencies": [
+    "github.com/go-playground/validator/v10",
+    "github.com/labstack/echo/v4"
+  ],
+  "test_environment": {
+    "runtime": "Go 1.24",
+    "os": ["macOS", "Linux", "Windows"]
+  },
+  "test_type": "UnitTest",
+  "test_framework": "go test",
+  "test_case_count": 8,
+  "verification_workdir": ".",
+  "verification_setup": ["go mod tidy"],
+  "verification_command": "go test -race ./...",
+  "verification_notes": "Executed from the snippet root with Go 1.24.4 on macOS. Verified behavior covers valid POST requests, friendly validation messages for name, page, type, and description, malformed JSON handling, multiple field errors, and skipping the next step when validation fails.",
+  "status": "Verified"
+}

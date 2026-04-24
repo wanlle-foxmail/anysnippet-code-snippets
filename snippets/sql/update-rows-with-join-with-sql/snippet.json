@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "slug": "update-rows-with-join-with-sql",
+  "use_case_key": "update-rows-with-join",
+  "title": "Update Rows with JOIN in MySQL",
+  "language": "SQL",
+  "summary": "Fill missing row values in MySQL from a lookup table with UPDATE and JOIN.",
+  "tags": ["sql", "mysql", "update", "join", "backfill", "lookup-table"],
+  "highlights": [
+    "Uses MySQL update join syntax",
+    "Fills only missing target values",
+    "Reuses one lookup table cleanly"
+  ],
+  "repo_path": "snippets/sql/update-rows-with-join-with-sql",
+  "entry_file": "src/update_rows_with_join.sql",
+  "source_files": ["src/update_rows_with_join.sql"],
+  "test_files": ["tests/test_update_rows_with_join.py"],
+  "dependencies": ["mysql"],
+  "test_environment": {
+    "runtime": "Python 3.9.6 + MySQL 8.4.0",
+    "os": ["macOS", "Linux"]
+  },
+  "test_type": "IntegrationTest",
+  "test_framework": "unittest",
+  "test_case_count": 5,
+  "verification_workdir": ".",
+  "verification_setup": [
+    "Ensure mysql, mysqladmin, and mysqld are available on PATH."
+  ],
+  "verification_command": "python -m unittest discover -s tests -p \"test_*.py\"",
+  "verification_notes": "Executed from the snippet root with Python 3.9.6 and MySQL 8.4.0 on macOS. The tests start a temporary MySQL instance with local mysql binaries, then verify matching updates, preservation of existing values, unmatched rows, repeated category updates, and the empty-lookup case.",
+  "status": "Verified"
+}

@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "slug": "read-parquet-files-as-records-with-pandas",
+  "use_case_key": "read-parquet-files-as-records",
+  "title": "Read Parquet Files as Records with pandas",
+  "language": "Python",
+  "summary": "Load a Parquet file with pandas and return Python row dictionaries.",
+  "tags": ["parquet", "pandas", "pyarrow", "records", "data-processing"],
+  "highlights": [
+    "Reads parquet with pyarrow",
+    "Returns one dict per row",
+    "Keeps row order stable"
+  ],
+  "repo_path": "snippets/python/read-parquet-files-as-records-with-pandas",
+  "entry_file": "src/read_parquet_records.py",
+  "source_files": ["src/read_parquet_records.py"],
+  "test_files": ["tests/test_read_parquet_records.py"],
+  "dependencies": ["pandas", "pyarrow"],
+  "test_environment": {
+    "runtime": "Python 3.9",
+    "os": ["macOS", "Linux", "Windows"]
+  },
+  "test_type": "UnitTest",
+  "test_framework": "unittest",
+  "test_case_count": 7,
+  "verification_workdir": ".",
+  "verification_setup": ["python -m pip install pandas pyarrow"],
+  "verification_command": "python -m unittest discover -s tests -p \"test_*.py\"",
+  "verification_notes": "Executed from the snippet root with Python 3.9 on macOS after installing pandas and pyarrow. Verified behavior covers multi-row reads in order, empty parquet files, Unicode values, null values in object columns, missing files, non-string paths, and empty path validation.",
+  "status": "Verified"
+}

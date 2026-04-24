@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "slug": "merge-overlapping-time-ranges-with-python",
+  "use_case_key": "merge-overlapping-time-ranges",
+  "title": "Merge Overlapping Time Ranges with Python",
+  "language": "Python",
+  "summary": "Sort numeric time ranges by start time and merge overlapping intervals.",
+  "tags": ["time-ranges", "intervals", "scheduling", "algorithms", "sorting"],
+  "highlights": [
+    "Sorts ranges before merging",
+    "Merges overlaps in one pass",
+    "Rejects invalid ranges"
+  ],
+  "repo_path": "snippets/python/merge-overlapping-time-ranges-with-python",
+  "entry_file": "src/merge_overlapping_time_ranges.py",
+  "source_files": ["src/merge_overlapping_time_ranges.py"],
+  "test_files": ["tests/test_merge_overlapping_time_ranges.py"],
+  "dependencies": [],
+  "test_environment": {
+    "runtime": "Python 3.9",
+    "os": ["macOS", "Linux", "Windows"]
+  },
+  "test_type": "UnitTest",
+  "test_framework": "unittest",
+  "test_case_count": 7,
+  "verification_workdir": ".",
+  "verification_setup": [],
+  "verification_command": "python -m unittest discover -s tests -p \"test_*.py\"",
+  "verification_notes": "Executed from the snippet root with Python 3.9 on macOS. Verified behavior covers unsorted overlaps, separate ranges, shared-boundary merges, nested ranges, empty input, reversed range errors, and bool rejection for integer fields.",
+  "status": "Verified"
+}

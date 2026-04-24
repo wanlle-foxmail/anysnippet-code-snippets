@@ -9,6 +9,11 @@ def process_csv_in_chunks(
     chunk_size: int = 10000,
 ) -> list[object]:
     """Read a CSV in chunks and return one processed result per chunk."""
+    # Flow:
+    #   CSV reader -> yield one chunk at a time
+    #                 |
+    #                 +-> empty chunk -> skip it
+    #                 `-> non-empty chunk -> process it and collect one result
     if isinstance(chunk_size, bool) or not isinstance(chunk_size, int) or chunk_size <= 0:
         raise ValueError("chunk_size must be a positive integer")
 

@@ -1,6 +1,11 @@
 -- Use this query when a dashboard needs order counts, paid revenue,
 -- and refund totals for one reporting window.
 -- Order metrics use created_at. Refund metrics use refunded_at.
+-- Flow:
+-- reporting window
+--   |- created_at  -> order_metrics  -> counts + paid revenue
+--   |- refunded_at -> refund_metrics -> refund count + refund amount
+--   `- cross join both one-row summaries into one dashboard row
 
 WITH order_metrics AS (
     SELECT

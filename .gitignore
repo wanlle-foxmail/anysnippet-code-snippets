@@ -1,10 +1,6 @@
 # macOS
 .DS_Store
 
-# Local agent notes
-AGENTS.md
-CLAUDE.md
-
 # Editor settings and metadata
 .vscode/
 .idea/
@@ -14,11 +10,10 @@ CLAUDE.md
 .history/
 .venv/
 .claude/
-
-# Local utility directories
-/tests/
-/scripts/
-/docs/
+.tmp/
+AGENTS.md
+CLAUDE.md
+docs/
 
 # Python cache and test artifacts
 __pycache__/
@@ -30,4 +25,6 @@ snippets/**/__pycache__/
 snippets/**/*.pyc
 
 # Local Go build artifacts
-snippets/go/**/echo-health-check
+# Pattern: snippets/go/<snippet-slug>/<module-name-from-go.mod>
+snippets/go/echo-health-check-endpoint-with-go/echo-health-check
+snippets/go/request-id-middleware-with-echo/request-id-middleware-with-echo

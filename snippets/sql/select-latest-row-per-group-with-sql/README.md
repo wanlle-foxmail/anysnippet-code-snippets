@@ -1,6 +1,6 @@
-# Select Latest Row per Group with ROW_NUMBER()
+# Select Latest Row per Group in SQLite
 
-Return one newest status row per device with `ROW_NUMBER()` and a stable tie-breaker.
+Return one newest status row per device in SQLite with `ROW_NUMBER()` and a stable tie-breaker.
 
 This snippet is useful when a device or entity keeps many history rows and you need exactly one latest status row for each group.
 

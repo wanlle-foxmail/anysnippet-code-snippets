@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "slug": "nginx-websocket-proxy-example",
+  "use_case_key": "nginx-websocket-proxy",
+  "title": "Nginx WebSocket Proxy Example",
+  "language": "Configuration",
+  "summary": "Proxy WebSocket connections through Nginx.",
+  "tags": ["nginx", "websocket", "reverse-proxy", "configuration", "http", "devops"],
+  "highlights": [
+    "Passes Upgrade headers explicitly",
+    "Uses HTTP/1.1 for proxying",
+    "Extends idle read timeout"
+  ],
+  "repo_path": "snippets/config/nginx-websocket-proxy-example",
+  "entry_file": "nginx-websocket-proxy.md",
+  "source_files": ["nginx-websocket-proxy.md"],
+  "test_files": [],
+  "dependencies": [],
+  "test_environment": {
+    "runtime": "Nginx 1.24+",
+    "os": ["Linux"]
+  },
+  "test_type": "ManualVerification",
+  "test_framework": "manual verification",
+  "test_case_count": 0,
+  "verification_workdir": ".",
+  "verification_setup": [
+    "Install Nginx on a staging host.",
+    "Replace the sample upstream with a real WebSocket service before validation.",
+    "Keep proxy_http_version 1.1 explicit during validation so the config behaves consistently across mixed Nginx versions."
+  ],
+  "verification_command": "Manual verification only; see README.md for the staging checklist.",
+  "verification_notes": "Not executed. The example follows the official Nginx WebSocket proxying guidance, but it still requires nginx -t and a real WebSocket upstream on a staging host before use.",
+  "status": "Draft"
+}

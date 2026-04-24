@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "slug": "read-large-jsonl-files-with-python",
+  "use_case_key": "read-large-jsonl-files",
+  "title": "Read Large JSONL Files with Python",
+  "language": "Python",
+  "summary": "Read a JSON Lines file lazily and yield one parsed value per non-empty line.",
+  "tags": ["jsonl", "streaming", "json", "files", "etl"],
+  "highlights": [
+    "Yields one JSON value per line",
+    "Skips blank lines safely",
+    "Reports invalid line numbers"
+  ],
+  "repo_path": "snippets/python/read-large-jsonl-files-with-python",
+  "entry_file": "src/read_jsonl_file.py",
+  "source_files": ["src/read_jsonl_file.py"],
+  "test_files": ["tests/test_read_jsonl_file.py"],
+  "dependencies": [],
+  "test_environment": {
+    "runtime": "Python 3.9",
+    "os": ["macOS", "Linux", "Windows"]
+  },
+  "test_type": "UnitTest",
+  "test_framework": "unittest",
+  "test_case_count": 6,
+  "verification_workdir": ".",
+  "verification_setup": [],
+  "verification_command": "python -m unittest discover -s tests -p \"test_*.py\"",
+  "verification_notes": "Executed from the snippet root with Python 3.9 on macOS. Verified behavior covers ordered reads, blank line skipping, empty files, invalid JSON line numbers, missing files, and Unicode values.",
+  "status": "Verified"
+}

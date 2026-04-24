@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "slug": "sort-tasks-by-dependency-order-with-python",
+  "use_case_key": "sort-tasks-by-dependency-order",
+  "title": "Sort Tasks by Dependency Order with Python",
+  "language": "Python",
+  "summary": "Return a stable task order that satisfies declared task dependencies.",
+  "tags": ["topological-sort", "dependencies", "task-ordering", "algorithms", "workflow"],
+  "highlights": [
+    "Produces stable task order",
+    "Detects cycles early",
+    "Rejects unknown dependencies"
+  ],
+  "repo_path": "snippets/python/sort-tasks-by-dependency-order-with-python",
+  "entry_file": "src/sort_tasks_by_dependency_order.py",
+  "source_files": ["src/sort_tasks_by_dependency_order.py"],
+  "test_files": ["tests/test_sort_tasks_by_dependency_order.py"],
+  "dependencies": [],
+  "test_environment": {
+    "runtime": "Python 3.9",
+    "os": ["macOS", "Linux", "Windows"]
+  },
+  "test_type": "UnitTest",
+  "test_framework": "unittest",
+  "test_case_count": 7,
+  "verification_workdir": ".",
+  "verification_setup": [],
+  "verification_command": "python -m unittest discover -s tests -p \"test_*.py\"",
+  "verification_notes": "Executed from the snippet root with Python 3.9 on macOS. Verified behavior covers linear dependency chains, stable ordering for independent tasks, shared dependencies, empty input, unknown dependencies, duplicate dependencies, and cyclic dependencies.",
+  "status": "Verified"
+}

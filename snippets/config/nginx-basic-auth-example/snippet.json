@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "slug": "nginx-basic-auth-example",
+  "use_case_key": "nginx-basic-auth",
+  "title": "Nginx Basic Auth Example",
+  "language": "Configuration",
+  "summary": "Simple Nginx basic auth example.",
+  "tags": ["nginx", "basic-auth", "authentication", "configuration", "http", "devops"],
+  "highlights": [
+    "Shows the auth request flow",
+    "Uses official auth directives",
+    "Protects one location block"
+  ],
+  "repo_path": "snippets/config/nginx-basic-auth-example",
+  "entry_file": "nginx-basic-auth.md",
+  "source_files": ["nginx-basic-auth.md"],
+  "test_files": [],
+  "dependencies": [],
+  "test_environment": {
+    "runtime": "Nginx 1.24+",
+    "os": ["Linux"]
+  },
+  "test_type": "ManualVerification",
+  "test_framework": "manual verification",
+  "test_case_count": 0,
+  "verification_workdir": ".",
+  "verification_setup": [
+    "Install Nginx on a staging host.",
+    "Create the htpasswd-compatible password file referenced by auth_basic_user_file before validation.",
+    "Paste the example into an existing server block that already serves or proxies the protected path."
+  ],
+  "verification_command": "Manual verification only; see README.md for the staging checklist.",
+  "verification_notes": "Not executed. The example follows the official Nginx auth_basic module syntax, but it still requires nginx -t and a real password file on a staging host before use.",
+  "status": "Draft"
+}

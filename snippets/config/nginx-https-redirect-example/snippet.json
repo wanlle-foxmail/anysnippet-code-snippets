@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "slug": "nginx-https-redirect-example",
+  "use_case_key": "nginx-https-redirect",
+  "title": "Nginx HTTPS Redirect Example",
+  "language": "Configuration",
+  "summary": "Redirect HTTP traffic to HTTPS in Nginx.",
+  "tags": ["nginx", "https", "redirect", "configuration", "http", "devops"],
+  "highlights": [
+    "Shows one-line redirect path",
+    "Uses official return syntax",
+    "Preserves host and URI"
+  ],
+  "repo_path": "snippets/config/nginx-https-redirect-example",
+  "entry_file": "nginx-https-redirect.md",
+  "source_files": ["nginx-https-redirect.md"],
+  "test_files": [],
+  "dependencies": [],
+  "test_environment": {
+    "runtime": "Nginx 1.24+",
+    "os": ["Linux"]
+  },
+  "test_type": "ManualVerification",
+  "test_framework": "manual verification",
+  "test_case_count": 0,
+  "verification_workdir": ".",
+  "verification_setup": [
+    "Install Nginx on a staging host.",
+    "Configure a working HTTPS server for the same host names before validation.",
+    "Replace the example host names before validation."
+  ],
+  "verification_command": "Manual verification only; see README.md for the staging checklist.",
+  "verification_notes": "Not executed. The example follows the official Nginx return directive syntax, but it still requires nginx -t and a real HTTPS server on a staging host before use.",
+  "status": "Draft"
+}

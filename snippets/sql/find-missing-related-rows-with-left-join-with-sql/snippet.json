@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "slug": "find-missing-related-rows-with-left-join-with-sql",
+  "use_case_key": "find-missing-related-rows-with-left-join",
+  "title": "Find Missing Related Rows with LEFT JOIN in MySQL",
+  "language": "SQL",
+  "summary": "Return rows in MySQL that still have no related row with LEFT JOIN and IS NULL.",
+  "tags": ["sql", "mysql", "left-join", "anti-join", "missing-rows", "null-check"],
+  "highlights": [
+    "Uses a standard anti-join",
+    "Returns only unmatched rows",
+    "Keeps result ordering simple"
+  ],
+  "repo_path": "snippets/sql/find-missing-related-rows-with-left-join-with-sql",
+  "entry_file": "src/find_missing_related_rows_with_left_join.sql",
+  "source_files": ["src/find_missing_related_rows_with_left_join.sql"],
+  "test_files": ["tests/test_find_missing_related_rows_with_left_join.py"],
+  "dependencies": ["mysql"],
+  "test_environment": {
+    "runtime": "Python 3.9.6 + MySQL 8.4.0",
+    "os": ["macOS", "Linux"]
+  },
+  "test_type": "IntegrationTest",
+  "test_framework": "unittest",
+  "test_case_count": 5,
+  "verification_workdir": ".",
+  "verification_setup": [
+    "Ensure mysql, mysqladmin, and mysqld are available on PATH."
+  ],
+  "verification_command": "python -m unittest discover -s tests -p \"test_*.py\"",
+  "verification_notes": "Executed from the snippet root with Python 3.9.6 and MySQL 8.4.0 on macOS. The tests start a temporary MySQL instance with local mysql binaries, then verify unmatched-row detection, the fully matched case, the empty-related-table case, NULL keys on the right table, and stable ordering by the left-table key.",
+  "status": "Verified"
+}

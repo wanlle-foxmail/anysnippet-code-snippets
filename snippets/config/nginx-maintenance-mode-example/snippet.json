@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "slug": "nginx-maintenance-mode-example",
+  "use_case_key": "nginx-maintenance-mode",
+  "title": "Nginx Maintenance Mode Example",
+  "language": "Configuration",
+  "summary": "Serve a maintenance page from Nginx.",
+  "tags": ["nginx", "maintenance", "error-page", "configuration", "http", "devops"],
+  "highlights": [
+    "Returns 503 for all paths",
+    "Serves an internal page",
+    "Uses error_page redirect"
+  ],
+  "repo_path": "snippets/config/nginx-maintenance-mode-example",
+  "entry_file": "nginx-maintenance-mode.md",
+  "source_files": ["nginx-maintenance-mode.md"],
+  "test_files": [],
+  "dependencies": [],
+  "test_environment": {
+    "runtime": "Nginx 1.24+",
+    "os": ["Linux"]
+  },
+  "test_type": "ManualVerification",
+  "test_framework": "manual verification",
+  "test_case_count": 0,
+  "verification_workdir": ".",
+  "verification_setup": [
+    "Install Nginx on a staging host.",
+    "Put a real maintenance.html file under the configured root path before validation.",
+    "Ensure the Nginx worker user and any host security policy can read the configured directory before validation.",
+    "Add any required health-check or ACME exceptions before validation."
+  ],
+  "verification_command": "Manual verification only; see README.md for the staging checklist.",
+  "verification_notes": "Not executed. The example uses the official Nginx return, error_page, and internal directives, but it still requires nginx -t and a real maintenance page on a staging host before use.",
+  "status": "Draft"
+}

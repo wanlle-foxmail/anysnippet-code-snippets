@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "slug": "nginx-spa-history-fallback-example",
+  "use_case_key": "nginx-spa-history-fallback",
+  "title": "Nginx SPA History Fallback Example",
+  "language": "Configuration",
+  "summary": "Serve a single-page app with history fallback in Nginx.",
+  "tags": ["nginx", "spa", "try_files", "configuration", "http", "frontend"],
+  "highlights": [
+    "Shows SPA route fallback",
+    "Serves assets before index",
+    "Uses official try_files flow"
+  ],
+  "repo_path": "snippets/config/nginx-spa-history-fallback-example",
+  "entry_file": "nginx-spa-history-fallback.md",
+  "source_files": ["nginx-spa-history-fallback.md"],
+  "test_files": [],
+  "dependencies": [],
+  "test_environment": {
+    "runtime": "Nginx 1.24+",
+    "os": ["Linux"]
+  },
+  "test_type": "ManualVerification",
+  "test_framework": "manual verification",
+  "test_case_count": 0,
+  "verification_workdir": ".",
+  "verification_setup": [
+    "Install Nginx on a staging host.",
+    "Replace the sample document root with a real SPA build directory before validation.",
+    "Ensure the Nginx worker user and any host security policy can read the configured directory before validation.",
+    "Keep more specific API or upload locations outside this catch-all before validation."
+  ],
+  "verification_command": "Manual verification only; see README.md for the staging checklist.",
+  "verification_notes": "Not executed. The example follows the official Nginx try_files directive behavior, but it still requires nginx -t and a real SPA build on a staging host before use.",
+  "status": "Draft"
+}

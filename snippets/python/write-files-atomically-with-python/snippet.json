@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "slug": "write-files-atomically-with-python",
+  "use_case_key": "write-files-atomically",
+  "title": "Write Files Atomically with Python",
+  "language": "Python",
+  "summary": "Write UTF-8 text to a temporary file in the target directory, then replace the target file atomically.",
+  "tags": ["files", "atomic-write", "filesystem", "utf-8", "safety"],
+  "highlights": [
+    "Replaces files atomically",
+    "Keeps temp files local",
+    "Cleans up on replace failure"
+  ],
+  "repo_path": "snippets/python/write-files-atomically-with-python",
+  "entry_file": "src/write_file_atomically.py",
+  "source_files": ["src/write_file_atomically.py"],
+  "test_files": ["tests/test_write_file_atomically.py"],
+  "dependencies": [],
+  "test_environment": {
+    "runtime": "Python 3.9",
+    "os": ["macOS", "Linux", "Windows"]
+  },
+  "test_type": "UnitTest",
+  "test_framework": "unittest",
+  "test_case_count": 6,
+  "verification_workdir": ".",
+  "verification_setup": [],
+  "verification_command": "python -m unittest discover -s tests -p \"test_*.py\"",
+  "verification_notes": "Executed from the snippet root with Python 3.9 on macOS. Verified behavior covers new-file writes, replacements, empty text, missing parent directories, cleanup after replace failures, and Unicode text.",
+  "status": "Verified"
+}

@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "slug": "nginx-stub-status-example",
+  "use_case_key": "nginx-stub-status",
+  "title": "Nginx Stub Status Example",
+  "language": "Configuration",
+  "summary": "Expose a local-only Nginx stub_status endpoint.",
+  "tags": ["nginx", "monitoring", "stub-status", "configuration", "http", "devops"],
+  "highlights": [
+    "Exposes basic connection metrics",
+    "Restricts access to loopback",
+    "Uses Nginx stub_status output"
+  ],
+  "repo_path": "snippets/config/nginx-stub-status-example",
+  "entry_file": "nginx-stub-status.md",
+  "source_files": ["nginx-stub-status.md"],
+  "test_files": [],
+  "dependencies": [],
+  "test_environment": {
+    "runtime": "Nginx 1.24+ with ngx_http_stub_status_module",
+    "os": ["Linux"]
+  },
+  "test_type": "ManualVerification",
+  "test_framework": "manual verification",
+  "test_case_count": 0,
+  "verification_workdir": ".",
+  "verification_setup": [
+    "Install Nginx on a staging host.",
+    "Confirm the build or package includes ngx_http_stub_status_module before validation.",
+    "Run the check from the local host because the example binds only to loopback."
+  ],
+  "verification_command": "Manual verification only; see README.md for the staging checklist.",
+  "verification_notes": "Not executed. The example follows the official Nginx stub_status syntax, but it still requires nginx -t and a local curl check on a staging host before use.",
+  "status": "Draft"
+}

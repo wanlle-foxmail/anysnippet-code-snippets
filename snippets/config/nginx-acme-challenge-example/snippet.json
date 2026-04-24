@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "slug": "nginx-acme-challenge-example",
+  "use_case_key": "nginx-acme-challenge",
+  "title": "Nginx ACME Challenge Example",
+  "language": "Configuration",
+  "summary": "Expose the ACME HTTP-01 challenge path in Nginx.",
+  "tags": ["nginx", "acme", "https", "configuration", "http", "devops"],
+  "highlights": [
+    "Keeps challenge path isolated",
+    "Redirects other HTTP traffic",
+    "Uses location plus alias"
+  ],
+  "repo_path": "snippets/config/nginx-acme-challenge-example",
+  "entry_file": "nginx-acme-challenge.md",
+  "source_files": ["nginx-acme-challenge.md"],
+  "test_files": [],
+  "dependencies": [],
+  "test_environment": {
+    "runtime": "Nginx 1.24+",
+    "os": ["Linux"]
+  },
+  "test_type": "ManualVerification",
+  "test_framework": "manual verification",
+  "test_case_count": 0,
+  "verification_workdir": ".",
+  "verification_setup": [
+    "Install Nginx on a staging host.",
+    "Configure a working HTTPS server for the same host names before validation.",
+    "Ensure the Nginx worker user and any host security policy can read the configured challenge directory before validation.",
+    "Point the alias path at a real ACME challenge directory before validation."
+  ],
+  "verification_command": "Manual verification only; see README.md for the staging checklist.",
+  "verification_notes": "Not executed. The example uses standard Nginx location, alias, and return directives, but it still requires nginx -t, a real challenge file, and a working HTTPS server on a staging host before use.",
+  "status": "Draft"
+}

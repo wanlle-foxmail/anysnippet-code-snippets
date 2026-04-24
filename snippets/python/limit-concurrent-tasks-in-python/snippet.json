@@ -8,7 +8,7 @@
   "tags": ["concurrency", "threadpoolexecutor", "io-bound", "batch-processing"],
   "highlights": [
     "Caps thread concurrency",
-    "Keeps result order",
+    "Keeps task result order stable",
     "Uses Python stdlib only"
   ],
   "repo_path": "snippets/python/limit-concurrent-tasks-in-python",

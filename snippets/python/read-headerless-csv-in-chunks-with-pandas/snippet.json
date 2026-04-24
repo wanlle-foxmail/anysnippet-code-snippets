@@ -8,8 +8,8 @@
   "tags": ["csv", "pandas", "headerless", "chunks"],
   "highlights": [
     "Reads headerless CSV files",
-    "Defines column names",
-    "Yields row dicts"
+    "Defines column names explicitly",
+    "Yields one row dict at a time"
   ],
   "repo_path": "snippets/python/read-headerless-csv-in-chunks-with-pandas",
   "entry_file": "src/read_headerless_csv_in_chunks.py",

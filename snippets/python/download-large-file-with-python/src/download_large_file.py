@@ -17,6 +17,11 @@ def stream_write_and_hash(chunks, file_handle):
 
 def download_large_file(url: str, save_path: str, chunk_size: int = 1024 * 1024, timeout: int = 30) -> dict:
     """Download a large file in chunks, compute MD5 on the fly, clean up on failure."""
+    # Flow:
+    #   HTTP stream -> write chunks to disk while updating MD5
+    #                  |
+    #                  +-> success -> return path, hash, and size
+    #                  `-> request or file error -> remove partial file and re-raise
     try:
         with requests.get(url, stream=True, timeout=timeout) as resp:
             resp.raise_for_status()

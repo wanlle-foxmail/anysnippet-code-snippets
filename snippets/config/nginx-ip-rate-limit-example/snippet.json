@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "slug": "nginx-ip-rate-limit-example",
+  "use_case_key": "nginx-ip-rate-limit",
+  "title": "Nginx IP Rate Limit Example",
+  "language": "Configuration",
+  "summary": "A simple Nginx IP rate limit example.",
+  "tags": ["nginx", "rate-limiting", "ip", "configuration", "http", "devops"],
+  "highlights": [
+    "Shows per-IP request flow",
+    "Uses official limit_req syntax",
+    "Explains zone and burst"
+  ],
+  "repo_path": "snippets/config/nginx-ip-rate-limit-example",
+  "entry_file": "nginx-ip-rate-limit.md",
+  "source_files": ["nginx-ip-rate-limit.md"],
+  "test_files": [],
+  "dependencies": [],
+  "test_environment": {
+    "runtime": "Nginx 1.24+",
+    "os": ["Linux"]
+  },
+  "test_type": "ManualVerification",
+  "test_framework": "manual verification",
+  "test_case_count": 0,
+  "verification_workdir": ".",
+  "verification_setup": [
+    "Install Nginx on a staging host.",
+    "Paste the example into an active nginx.conf where the limit_req_zone line remains inside the http context.",
+    "Replace the sample upstream and path before validation."
+  ],
+  "verification_command": "Manual verification only; see README.md for the staging checklist.",
+  "verification_notes": "Not executed. The example follows the official Nginx limit_req module syntax, but it still requires nginx -t and real traffic from one client IP on a staging host before use.",
+  "status": "Draft"
+}

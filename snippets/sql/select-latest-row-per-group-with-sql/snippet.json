@@ -2,7 +2,7 @@
   "schema_version": 1,
   "slug": "select-latest-row-per-group-with-sql",
   "use_case_key": "select-latest-row-per-group",
-  "title": "Select Latest Row per Group with ROW_NUMBER()",
+  "title": "Select Latest Row per Group in SQLite",
   "language": "SQL",
   "summary": "Return one newest status row per device with ROW_NUMBER() and a stable tie-break on event_id.",
   "tags": ["sql", "sqlite", "window-functions", "row-number", "latest-row", "device-status", "history-table"],

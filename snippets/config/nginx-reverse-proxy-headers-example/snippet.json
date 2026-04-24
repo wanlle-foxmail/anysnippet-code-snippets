@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "slug": "nginx-reverse-proxy-headers-example",
+  "use_case_key": "nginx-reverse-proxy-headers",
+  "title": "Nginx Reverse Proxy Headers Example",
+  "language": "Configuration",
+  "summary": "Forward standard reverse proxy headers in Nginx.",
+  "tags": ["nginx", "reverse-proxy", "headers", "configuration", "http", "devops"],
+  "highlights": [
+    "Forwards standard proxy headers",
+    "Uses official proxy_set_header",
+    "Preserves host and client IP"
+  ],
+  "repo_path": "snippets/config/nginx-reverse-proxy-headers-example",
+  "entry_file": "nginx-reverse-proxy-headers.md",
+  "source_files": ["nginx-reverse-proxy-headers.md"],
+  "test_files": [],
+  "dependencies": [],
+  "test_environment": {
+    "runtime": "Nginx 1.24+",
+    "os": ["Linux"]
+  },
+  "test_type": "ManualVerification",
+  "test_framework": "manual verification",
+  "test_case_count": 0,
+  "verification_workdir": ".",
+  "verification_setup": [
+    "Install Nginx on a staging host.",
+    "Replace the sample upstream with a real application before validation.",
+    "If Nginx sits behind another trusted proxy, configure real-IP handling before validation."
+  ],
+  "verification_command": "Manual verification only; see README.md for the staging checklist.",
+  "verification_notes": "Not executed. The example follows the official Nginx proxy_set_header directive syntax, but it still requires nginx -t and an upstream app that can inspect forwarded headers on a staging host before use.",
+  "status": "Draft"
+}

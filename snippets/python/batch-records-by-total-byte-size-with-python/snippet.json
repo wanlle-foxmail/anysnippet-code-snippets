@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "slug": "batch-records-by-total-byte-size-with-python",
+  "use_case_key": "batch-records-by-total-byte-size",
+  "title": "Batch Records by Total Byte Size with Python",
+  "language": "Python",
+  "summary": "Group UTF-8 string records into batches whose total encoded byte size stays under a limit.",
+  "tags": ["batching", "utf-8", "payload-size", "streaming", "text-processing"],
+  "highlights": [
+    "Batches by byte budget",
+    "Preserves input order",
+    "Handles Unicode byte sizes"
+  ],
+  "repo_path": "snippets/python/batch-records-by-total-byte-size-with-python",
+  "entry_file": "src/batch_records_by_total_byte_size.py",
+  "source_files": ["src/batch_records_by_total_byte_size.py"],
+  "test_files": ["tests/test_batch_records_by_total_byte_size.py"],
+  "dependencies": [],
+  "test_environment": {
+    "runtime": "Python 3.9",
+    "os": ["macOS", "Linux", "Windows"]
+  },
+  "test_type": "UnitTest",
+  "test_framework": "unittest",
+  "test_case_count": 7,
+  "verification_workdir": ".",
+  "verification_setup": [],
+  "verification_command": "python -m unittest discover -s tests -p \"test_*.py\"",
+  "verification_notes": "Executed from the snippet root with Python 3.9 on macOS. Verified behavior covers ASCII batching, Unicode byte handling, generator input ordering, empty input, oversized records, invalid byte-limit errors, and non-string record errors.",
+  "status": "Verified"
+}

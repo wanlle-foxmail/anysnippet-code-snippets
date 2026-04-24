@@ -2,6 +2,12 @@
 -- latest status row per device.
 -- The secondary sort on event_id keeps results deterministic when
 -- recorded_at values match.
+-- Flow:
+-- device_status_events
+--   -> partition rows by device_id
+--   -> rank newest first by recorded_at DESC, event_id DESC
+--   -> keep row_rank = 1
+--   -> return one latest row per device
 
 WITH ranked_events AS (
     SELECT

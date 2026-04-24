@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "slug": "redis-systemd-service",
+  "use_case_key": "redis-systemd-service-unit",
+  "title": "Redis systemd Service Unit",
+  "language": "Configuration",
+  "summary": "A Linux systemd unit for running Redis in the foreground with automatic restarts, file descriptor limits, and an example 8 GB memory cap.",
+  "tags": ["redis", "systemd", "linux", "configuration", "operations", "service"],
+  "highlights": [
+    "Uses foreground systemd mode",
+    "Restarts on unexpected failure",
+    "Shows 8 GB cgroup cap"
+  ],
+  "repo_path": "snippets/config/redis-systemd-service",
+  "entry_file": "redis-server.service",
+  "source_files": ["redis-server.service"],
+  "test_files": [],
+  "dependencies": [],
+  "test_environment": {
+    "runtime": "Redis 7.4 with systemd",
+    "os": ["Linux"]
+  },
+  "test_type": "ManualVerification",
+  "test_framework": "manual verification",
+  "test_case_count": 0,
+  "verification_workdir": ".",
+  "verification_setup": [
+    "Install Redis with a redis-server binary and systemd support.",
+    "Create the redis user and group if your distribution does not provide them.",
+    "Adjust the ExecStart binary path, redis.conf path, and MemoryMax value for your distribution before verification."
+  ],
+  "verification_command": "Manual verification only; see README.md for the systemd verification checklist.",
+  "verification_notes": "Not executed. The unit is adapted from the official Redis 7.4 systemd example, but it still requires validation on a Linux host with systemd and a Redis build that supports systemd supervision.",
+  "status": "Draft"
+}
