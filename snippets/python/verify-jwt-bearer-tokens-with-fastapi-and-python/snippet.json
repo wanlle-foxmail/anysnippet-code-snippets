@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "slug": "verify-jwt-bearer-tokens-with-fastapi-and-python",
+  "use_case_key": "verify-jwt-bearer-tokens",
+  "title": "Verify JWT Bearer Tokens with FastAPI",
+  "language": "Python",
+  "summary": "Protect one FastAPI route by validating HS256 bearer tokens and exposing claims to the handler.",
+  "tags": ["fastapi", "jwt", "authentication", "bearer-token", "python"],
+  "highlights": [
+    "Validates HS256 bearer tokens",
+    "Rejects bad or expired tokens",
+    "Exposes claims to handlers"
+  ],
+  "repo_path": "snippets/python/verify-jwt-bearer-tokens-with-fastapi-and-python",
+  "entry_file": "src/jwt_bearer_auth.py",
+  "source_files": ["src/jwt_bearer_auth.py"],
+  "test_files": ["tests/test_jwt_bearer_auth.py"],
+  "dependencies": ["fastapi", "uvicorn", "httpx", "PyJWT"],
+  "test_environment": {
+    "runtime": "Python 3.9.6",
+    "os": ["macOS", "Linux", "Windows"]
+  },
+  "test_type": "UnitTest",
+  "test_framework": "unittest",
+  "test_case_count": 9,
+  "verification_workdir": ".",
+  "verification_setup": [
+    "Install fastapi, uvicorn, httpx, and PyJWT in the active Python environment."
+  ],
+  "verification_command": "python -m unittest discover -s tests -p \"test_*.py\"",
+  "verification_notes": "Validated with Python 3.9.6 on macOS using unittest and FastAPI TestClient. Verified behavior covers a valid token, missing authorization headers, malformed authorization headers, blank bearer tokens, malformed JWT strings, invalid signatures, expired tokens, missing exp claims, and unexpected signing methods.",
+  "status": "Verified"
+}

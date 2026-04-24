@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "slug": "limit-request-rate-with-token-bucket-in-echo",
+  "use_case_key": "limit-request-rate-with-token-bucket",
+  "title": "Limit Request Rate with Token Bucket in Echo",
+  "language": "Go",
+  "summary": "Limit one Echo route per client IP with an in-memory token bucket and 429 responses.",
+  "tags": ["echo", "rate-limit", "token-bucket", "middleware", "http"],
+  "highlights": [
+    "Limits requests per client IP",
+    "Returns 429 with Retry-After",
+    "Refills tokens over time"
+  ],
+  "repo_path": "snippets/go/limit-request-rate-with-token-bucket-in-echo",
+  "entry_file": "token_bucket_rate_limit.go",
+  "source_files": ["token_bucket_rate_limit.go"],
+  "test_files": ["token_bucket_rate_limit_test.go"],
+  "dependencies": ["github.com/labstack/echo/v4"],
+  "test_environment": {
+    "runtime": "Go 1.24.4",
+    "os": ["macOS", "Linux", "Windows"]
+  },
+  "test_type": "UnitTest",
+  "test_framework": "go test",
+  "test_case_count": 7,
+  "verification_workdir": ".",
+  "verification_setup": ["go mod tidy"],
+  "verification_command": "go test -race ./...",
+  "verification_notes": "Executed from the snippet root with Go 1.24.4 on macOS. Verified behavior covers allowing requests within capacity, returning 429 with Retry-After when the bucket is empty, refilling tokens after the interval, separating client buckets by IP, handling missing client IPs, and panicking on invalid capacity or refill interval settings at setup time.",
+  "status": "Verified"
+}

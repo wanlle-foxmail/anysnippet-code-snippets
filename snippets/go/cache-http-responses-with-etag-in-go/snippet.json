@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "slug": "cache-http-responses-with-etag-in-go",
+  "use_case_key": "cache-http-responses-with-etag",
+  "title": "Cache HTTP Responses with ETag in Go",
+  "language": "Go",
+  "summary": "Cache one JSON HTTP response in Go with an ETag header and 304 Not Modified handling.",
+  "tags": ["go", "http", "etag", "caching", "conditional-request"],
+  "highlights": [
+    "Writes JSON with ETag",
+    "Returns 304 on cache hits",
+    "Uses stdlib only"
+  ],
+  "repo_path": "snippets/go/cache-http-responses-with-etag-in-go",
+  "entry_file": "etag_response.go",
+  "source_files": ["etag_response.go"],
+  "test_files": ["etag_response_test.go"],
+  "dependencies": [],
+  "test_environment": {
+    "runtime": "Go 1.24.4",
+    "os": ["macOS", "Linux", "Windows"]
+  },
+  "test_type": "UnitTest",
+  "test_framework": "go test",
+  "test_case_count": 7,
+  "verification_workdir": ".",
+  "verification_setup": [],
+  "verification_command": "go test ./...",
+  "verification_notes": "Executed from the snippet root with Go 1.24.4 on macOS. Verified behavior covers writing JSON bodies with an ETag, returning 304 on matching validators, ignoring non-matching validators, matching wildcard validators, matching one tag in a validator list, rejecting nil inputs, and propagating write errors.",
+  "status": "Verified"
+}

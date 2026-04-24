@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "slug": "stream-jsonl-http-responses-with-go",
+  "use_case_key": "stream-jsonl-http-responses",
+  "title": "Stream JSONL HTTP Responses with Go",
+  "language": "Go",
+  "summary": "Stream JSONL HTTP responses from Go with one record channel and per-record flushes.",
+  "tags": ["go", "jsonl", "streaming", "http", "ndjson"],
+  "highlights": [
+    "Streams one JSONL record per line",
+    "Flushes after each record",
+    "Uses stdlib only"
+  ],
+  "repo_path": "snippets/go/stream-jsonl-http-responses-with-go",
+  "entry_file": "jsonl_stream.go",
+  "source_files": ["jsonl_stream.go"],
+  "test_files": ["jsonl_stream_test.go"],
+  "dependencies": [],
+  "test_environment": {
+    "runtime": "Go 1.24.4",
+    "os": ["macOS", "Linux", "Windows"]
+  },
+  "test_type": "UnitTest",
+  "test_framework": "go test",
+  "test_case_count": 7,
+  "verification_workdir": ".",
+  "verification_setup": [],
+  "verification_command": "go test -race ./...",
+  "verification_notes": "Executed from the snippet root with Go 1.24.4 on macOS. Verified behavior covers JSONL headers and records, per-record flushes, client disconnect handling, channel close handling, missing streaming support, marshal failures, and nil input or write error handling.",
+  "status": "Verified"
+}

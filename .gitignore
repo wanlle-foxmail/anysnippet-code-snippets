@@ -28,3 +28,7 @@ snippets/**/*.pyc
 # Pattern: snippets/go/<snippet-slug>/<module-name-from-go.mod>
 snippets/go/echo-health-check-endpoint-with-go/echo-health-check
 snippets/go/request-id-middleware-with-echo/request-id-middleware-with-echo
+snippets/go/limit-request-rate-with-token-bucket-in-echo/limit-request-rate-with-token-bucket-in-echo
+snippets/go/return-problem-json-errors-with-echo/return-problem-json-errors-with-echo
+snippets/go/cache-http-responses-with-etag-in-go/cache-http-responses-with-etag-in-go
+snippets/go/stream-jsonl-http-responses-with-go/stream-jsonl-http-responses-with-go

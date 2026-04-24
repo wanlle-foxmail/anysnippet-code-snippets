@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "slug": "return-problem-json-errors-with-echo",
+  "use_case_key": "return-problem-json-errors",
+  "title": "Return Problem JSON Errors with Echo",
+  "language": "Go",
+  "summary": "Return application/problem+json errors from Echo with one small error handler and one reusable writer helper.",
+  "tags": ["echo", "errors", "problem-json", "http", "api"],
+  "highlights": [
+    "Writes problem+json responses",
+    "Handles Echo and generic errors",
+    "Preserves committed responses"
+  ],
+  "repo_path": "snippets/go/return-problem-json-errors-with-echo",
+  "entry_file": "problem_json_error_handler.go",
+  "source_files": ["problem_json_error_handler.go"],
+  "test_files": ["problem_json_error_handler_test.go"],
+  "dependencies": ["github.com/labstack/echo/v4"],
+  "test_environment": {
+    "runtime": "Go 1.24.4",
+    "os": ["macOS", "Linux", "Windows"]
+  },
+  "test_type": "UnitTest",
+  "test_framework": "go test",
+  "test_case_count": 6,
+  "verification_workdir": ".",
+  "verification_setup": ["go mod tidy"],
+  "verification_command": "go test -race ./...",
+  "verification_notes": "Executed from the snippet root with Go 1.24.4 on macOS. Verified behavior covers Echo HTTPError formatting, generic 500 errors, fallback detail text for non-string HTTPError messages, preserving already committed responses, default type and title filling, and nil context rejection in the writer helper.",
+  "status": "Verified"
+}
