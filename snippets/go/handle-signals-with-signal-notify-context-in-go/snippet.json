@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "slug": "handle-signals-with-signal-notify-context-in-go",
+  "use_case_key": "handle-process-signals-with-context",
+  "title": "Handle Signals with signal.NotifyContext in Go",
+  "language": "Go",
+  "summary": "Bridge OS signals into a Go context with signal.NotifyContext so shutdown code can wait on ctx.Done().",
+  "tags": ["go", "signals", "context", "shutdown", "os"],
+  "highlights": [
+    "Turns signals into context cancellation",
+    "Supports parent context propagation",
+    "Uses one explicit stop function"
+  ],
+  "repo_path": "snippets/go/handle-signals-with-signal-notify-context-in-go",
+  "entry_file": "signal_notify_context.go",
+  "source_files": ["signal_notify_context.go"],
+  "test_files": ["signal_notify_context_test.go"],
+  "dependencies": [],
+  "test_environment": {
+    "runtime": "Go 1.24.4",
+    "os": ["macOS", "Linux"]
+  },
+  "test_type": "UnitTest",
+  "test_framework": "go test",
+  "test_case_count": 5,
+  "verification_workdir": ".",
+  "verification_setup": [],
+  "verification_command": "go test -race ./...",
+  "verification_notes": "Run from the snippet root with Go 1.24.4. Verified on macOS with a helper process that receives os.Interrupt. Parent cancellation, stop, and empty signal validation are also covered.",
+  "status": "Verified"
+}

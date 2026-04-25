@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "slug": "coalesce-bursty-events-with-select-in-go",
+  "use_case_key": "coalesce-bursty-events",
+  "title": "Coalesce Bursty Events with select in Go",
+  "language": "Go",
+  "summary": "Merge rapid Go events into fewer downstream batches with select, one timer, and a quiet window.",
+  "tags": ["go", "select", "channels", "events", "debounce"],
+  "highlights": [
+    "Merges rapid events into one batch",
+    "Flushes pending events on input close",
+    "Stops cleanly on context cancel"
+  ],
+  "repo_path": "snippets/go/coalesce-bursty-events-with-select-in-go",
+  "entry_file": "coalesce_events.go",
+  "source_files": ["coalesce_events.go"],
+  "test_files": ["coalesce_events_test.go"],
+  "dependencies": [],
+  "test_environment": {
+    "runtime": "Go 1.24.4",
+    "os": ["macOS", "Linux", "Windows"]
+  },
+  "test_type": "UnitTest",
+  "test_framework": "go test",
+  "test_case_count": 7,
+  "verification_workdir": ".",
+  "verification_setup": [],
+  "verification_command": "go test -race ./...",
+  "verification_notes": "Run from the snippet root with Go 1.24.4. The verified test suite covers input validation, quiet-window batching, flush-on-close behavior, and context cancellation.",
+  "status": "Verified"
+}

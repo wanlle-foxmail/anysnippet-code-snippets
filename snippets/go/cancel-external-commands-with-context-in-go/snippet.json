@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "slug": "cancel-external-commands-with-context-in-go",
+  "use_case_key": "cancel-external-commands",
+  "title": "Cancel External Commands with Context in Go",
+  "language": "Go",
+  "summary": "Run an external command from Go with exec.CommandContext so timeouts and cancellations stop the process cleanly.",
+  "tags": ["go", "exec", "context", "process", "timeout"],
+  "highlights": [
+    "Uses exec.CommandContext directly",
+    "Maps process cancellation to context errors",
+    "Returns combined stdout and stderr"
+  ],
+  "repo_path": "snippets/go/cancel-external-commands-with-context-in-go",
+  "entry_file": "command_context.go",
+  "source_files": ["command_context.go"],
+  "test_files": ["command_context_test.go"],
+  "dependencies": [],
+  "test_environment": {
+    "runtime": "Go 1.24.4",
+    "os": ["macOS", "Linux", "Windows"]
+  },
+  "test_type": "UnitTest",
+  "test_framework": "go test",
+  "test_case_count": 6,
+  "verification_workdir": ".",
+  "verification_setup": [],
+  "verification_command": "go test -race ./...",
+  "verification_notes": "Run from the snippet root with Go 1.24.4. The verified test suite uses the current test binary as a helper process to cover successful commands, stderr output, timeouts, parent cancellation, and invalid input handling.",
+  "status": "Verified"
+}

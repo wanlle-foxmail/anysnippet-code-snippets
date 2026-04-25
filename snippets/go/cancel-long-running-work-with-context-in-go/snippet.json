@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "slug": "cancel-long-running-work-with-context-in-go",
+  "use_case_key": "cancel-long-running-work",
+  "title": "Cancel Long-Running Work with Context in Go",
+  "language": "Go",
+  "summary": "Run batch work in Go while checking context cancellation between units of work.",
+  "tags": ["go", "context", "cancellation", "batch", "worker"],
+  "highlights": [
+    "Checks cancellation before each item",
+    "Passes context into the worker callback",
+    "Wraps item-specific worker errors"
+  ],
+  "repo_path": "snippets/go/cancel-long-running-work-with-context-in-go",
+  "entry_file": "process_batch_with_context.go",
+  "source_files": ["process_batch_with_context.go"],
+  "test_files": ["process_batch_with_context_test.go"],
+  "dependencies": [],
+  "test_environment": {
+    "runtime": "Go 1.24.4",
+    "os": ["macOS", "Linux", "Windows"]
+  },
+  "test_type": "UnitTest",
+  "test_framework": "go test",
+  "test_case_count": 6,
+  "verification_workdir": ".",
+  "verification_setup": [],
+  "verification_command": "go test -race ./...",
+  "verification_notes": "Run from the snippet root with Go 1.24.4. The verified test suite covers normal processing, cooperative cancellation, wrapped worker errors, nil context handling, and empty input.",
+  "status": "Verified"
+}
