@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "slug": "lsof-commands-for-finding-ports-and-file-locks",
+  "use_case_key": "lsof-commands-for-finding-ports-and-file-locks",
+  "title": "6 lsof Commands for Finding Ports and File Locks",
+  "language": "Shell",
+  "summary": "See what is holding a port or file with lsof commands for process lookup, listening sockets, open directories, and per-process inspection.",
+  "tags": ["lsof", "ports", "file-locks", "shell", "cli", "debugging", "processes"],
+  "highlights": [
+    "Find who owns a port",
+    "Inspect one process quickly",
+    "Check open files by path"
+  ],
+  "repo_path": "snippets/shell/lsof-commands-for-finding-ports-and-file-locks",
+  "entry_file": "src/lsof_commands_for_finding_ports_and_file_locks.sh",
+  "source_files": ["src/lsof_commands_for_finding_ports_and_file_locks.sh"],
+  "test_files": [],
+  "dependencies": ["lsof"],
+  "test_environment": {
+    "runtime": "lsof available on the local system",
+    "os": ["macOS", "Linux"]
+  },
+  "test_type": "ManualVerification",
+  "test_framework": "manual verification",
+  "test_case_count": 0,
+  "verification_workdir": ".",
+  "verification_setup": [
+    "Confirm lsof is installed.",
+    "Replace the example ports, process id, and paths before running the commands.",
+    "Use local processes or files you are allowed to inspect."
+  ],
+  "verification_command": "Manual verification only; run the commands from src/lsof_commands_for_finding_ports_and_file_locks.sh against real local ports, paths, or processes.",
+  "verification_notes": "Manual verification only. Run against local ports, paths, or processes you are allowed to inspect; results vary by privilege level.",
+  "status": "Draft"
+}

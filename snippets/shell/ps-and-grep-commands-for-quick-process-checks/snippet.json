@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "slug": "ps-and-grep-commands-for-quick-process-checks",
+  "use_case_key": "ps-and-grep-commands-for-quick-process-checks",
+  "title": "6 ps and grep Commands for Quick Process Checks",
+  "language": "Shell",
+  "summary": "Inspect running processes faster with ps and grep commands for service lookup, process-name checks, and lightweight runtime debugging.",
+  "tags": ["ps", "grep", "processes", "shell", "cli", "debugging", "services"],
+  "highlights": [
+    "Check service processes fast",
+    "Avoid matching grep itself",
+    "Verify runtime commands quickly"
+  ],
+  "repo_path": "snippets/shell/ps-and-grep-commands-for-quick-process-checks",
+  "entry_file": "src/ps_and_grep_commands_for_quick_process_checks.sh",
+  "source_files": ["src/ps_and_grep_commands_for_quick_process_checks.sh"],
+  "test_files": [],
+  "dependencies": ["ps", "grep"],
+  "test_environment": {
+    "runtime": "POSIX shell with ps and grep",
+    "os": ["macOS", "Linux"]
+  },
+  "test_type": "ManualVerification",
+  "test_framework": "manual verification",
+  "test_case_count": 0,
+  "verification_workdir": ".",
+  "verification_setup": [
+    "Confirm ps and grep are installed.",
+    "Replace the example process names or command fragments before running the commands.",
+    "Run the commands while the target services are active if you want meaningful matches."
+  ],
+  "verification_command": "Manual verification only; run the commands from src/ps_and_grep_commands_for_quick_process_checks.sh on a local machine with running processes.",
+  "verification_notes": "Manual verification only. Spot-checked locally with disposable helper processes whose command lines matched the examples. Broader patterns such as redis or postgres can still return multiple related matches.",
+  "status": "Draft"
+}

@@ -1,5 +1,3 @@
-# Download YouTube Video with yt-dlp
-
 A commented `yt-dlp` command for downloading one YouTube video with resumable fragments, explicit format sorting, and optional proxy support.
 
 ## What This Snippet Covers

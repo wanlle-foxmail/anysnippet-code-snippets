@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "slug": "find-and-grep-commands-for-targeted-code-search",
+  "use_case_key": "find-and-grep-commands-for-targeted-code-search",
+  "title": "6 find and grep Commands for Targeted Code Search",
+  "language": "Shell",
+  "summary": "Search codebases more precisely with find and grep commands for language-specific file selection, recursive keyword scans, and noise reduction.",
+  "tags": ["find", "grep", "code-search", "shell", "cli", "source-code", "debugging"],
+  "highlights": [
+    "Search only the right files",
+    "Skip noisy repo folders",
+    "Match lines or file names"
+  ],
+  "repo_path": "snippets/shell/find-and-grep-commands-for-targeted-code-search",
+  "entry_file": "src/find_and_grep_commands_for_targeted_code_search.sh",
+  "source_files": ["src/find_and_grep_commands_for_targeted_code_search.sh"],
+  "test_files": [],
+  "dependencies": ["find", "grep"],
+  "test_environment": {
+    "runtime": "POSIX shell with find and grep",
+    "os": ["macOS", "Linux"]
+  },
+  "test_type": "ManualVerification",
+  "test_framework": "manual verification",
+  "test_case_count": 0,
+  "verification_workdir": ".",
+  "verification_setup": [
+    "Confirm find and grep are installed.",
+    "Replace the example paths, file globs, and patterns before running the commands.",
+    "Use a codebase that contains known matches to confirm each search shape."
+  ],
+  "verification_command": "Manual verification only; run the commands from src/find_and_grep_commands_for_targeted_code_search.sh with a real local repository.",
+  "verification_notes": "Manual verification only. Spot-checked locally in a disposable sample repository. Single-file grep output may omit the file name, so confirm the match format in your environment.",
+  "status": "Draft"
+}

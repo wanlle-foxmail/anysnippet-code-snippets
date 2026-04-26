@@ -4,7 +4,7 @@
   "use_case_key": "download-youtube-video-with-yt-dlp",
   "title": "Download YouTube Video with yt-dlp",
   "language": "Shell",
-  "summary": "A commented yt-dlp command for downloading one YouTube video with resumable fragments, explicit format sorting, and optional proxy support.",
+  "summary": "Download YouTube videos with resumable fragments, explicit format sorting, and optional proxy support.",
   "tags": ["yt-dlp", "youtube", "shell", "cli", "video-download", "proxy", "ffmpeg"],
   "highlights": [
     "Comments explain each option",
@@ -30,6 +30,6 @@
     "Run the command from a writable directory."
   ],
   "verification_command": "Manual verification only; see README.md for the substitution and execution checklist.",
-  "verification_notes": "Not executed. Command contains placeholder values for the proxy URL and YouTube video URL. Actual verification requires yt-dlp, ffmpeg, network access, and a real video URL.",
+  "verification_notes": "Manual verification only. Replace the proxy URL and video URL placeholders before running with yt-dlp, ffmpeg, and network access.",
   "status": "Draft"
 }

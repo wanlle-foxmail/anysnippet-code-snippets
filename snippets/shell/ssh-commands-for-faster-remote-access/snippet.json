@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "slug": "ssh-commands-for-faster-remote-access",
+  "use_case_key": "ssh-commands-for-faster-remote-access",
+  "title": "6 ssh Commands for Faster Remote Access",
+  "language": "Shell",
+  "summary": "Work on remote machines more efficiently with ssh commands for aliases, one-off checks, key files, custom ports, local forwarding, and jump hosts.",
+  "tags": ["ssh", "remote-access", "tunneling", "shell", "cli", "servers", "networking"],
+  "highlights": [
+    "Connect in several ways",
+    "Tunnel remote services locally",
+    "Use keys or jump hosts"
+  ],
+  "repo_path": "snippets/shell/ssh-commands-for-faster-remote-access",
+  "entry_file": "src/ssh_commands_for_faster_remote_access.sh",
+  "source_files": ["src/ssh_commands_for_faster_remote_access.sh"],
+  "test_files": [],
+  "dependencies": ["ssh"],
+  "test_environment": {
+    "runtime": "OpenSSH client or compatible",
+    "os": ["macOS", "Linux"]
+  },
+  "test_type": "ManualVerification",
+  "test_framework": "manual verification",
+  "test_case_count": 0,
+  "verification_workdir": ".",
+  "verification_setup": [
+    "Confirm ssh is installed.",
+    "Replace the example hosts, users, key paths, and ports before running the commands.",
+    "Use only real hosts and credentials you are allowed to access."
+  ],
+  "verification_command": "Manual verification only; run the commands from src/ssh_commands_for_faster_remote_access.sh with real SSH targets and credentials.",
+  "verification_notes": "Manual verification only. Replace the example hosts, users, and ports with reachable SSH targets and valid credentials.",
+  "status": "Draft"
+}

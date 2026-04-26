@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "slug": "curl-and-jq-commands-for-faster-api-triage",
+  "use_case_key": "curl-and-jq-commands-for-faster-api-triage",
+  "title": "6 curl and jq Commands for Faster API Triage",
+  "language": "Shell",
+  "summary": "Triage API responses faster with curl and jq commands for health checks, auth checks, failure extraction, item counts, and quick status summaries.",
+  "tags": ["curl", "jq", "api", "shell", "cli", "json", "debugging"],
+  "highlights": [
+    "Answer API triage fast",
+    "Filter raw JSON to signals",
+    "Count and group failures"
+  ],
+  "repo_path": "snippets/shell/curl-and-jq-commands-for-faster-api-triage",
+  "entry_file": "src/curl_and_jq_commands_for_faster_api_triage.sh",
+  "source_files": ["src/curl_and_jq_commands_for_faster_api_triage.sh"],
+  "test_files": [],
+  "dependencies": ["curl", "jq"],
+  "test_environment": {
+    "runtime": "POSIX shell with curl and jq",
+    "os": ["macOS", "Linux"]
+  },
+  "test_type": "ManualVerification",
+  "test_framework": "manual verification",
+  "test_case_count": 0,
+  "verification_workdir": ".",
+  "verification_setup": [
+    "Confirm curl and jq are installed.",
+    "Replace the example URLs, tokens, and JSON field names before running the commands.",
+    "Use endpoints that return JSON matching the example filters."
+  ],
+  "verification_command": "Manual verification only; run the commands from src/curl_and_jq_commands_for_faster_api_triage.sh against real API endpoints.",
+  "verification_notes": "Manual verification only. Spot-checked locally against a disposable HTTP server serving sample JSON payloads. Replace the example endpoints, auth values, and field names before running against real APIs.",
+  "status": "Draft"
+}

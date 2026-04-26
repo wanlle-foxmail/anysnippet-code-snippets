@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "slug": "openssl-commands-for-certs-and-secrets",
+  "use_case_key": "openssl-commands-for-certs-and-secrets",
+  "title": "7 OpenSSL Commands for Certs and Secrets",
+  "language": "Shell",
+  "summary": "Handle common TLS and secret tasks faster with OpenSSL commands for random keys, file hashes, certificate inspection, live HTTPS checks, CSRs, and file encryption.",
+  "tags": ["openssl", "tls", "certificates", "encryption", "shell", "cli", "security"],
+  "highlights": [
+    "Inspect certs and dates",
+    "Generate keys and CSRs",
+    "Hash or encrypt files"
+  ],
+  "repo_path": "snippets/shell/openssl-commands-for-certs-and-secrets",
+  "entry_file": "src/openssl_commands_for_certs_and_secrets.sh",
+  "source_files": ["src/openssl_commands_for_certs_and_secrets.sh"],
+  "test_files": [],
+  "dependencies": ["openssl"],
+  "test_environment": {
+    "runtime": "OpenSSL 3.x or compatible",
+    "os": ["macOS", "Linux"]
+  },
+  "test_type": "ManualVerification",
+  "test_framework": "manual verification",
+  "test_case_count": 0,
+  "verification_workdir": ".",
+  "verification_setup": [
+    "Confirm OpenSSL is installed.",
+    "Replace the example host and file names before running the commands.",
+    "Run file-writing commands from a writable directory."
+  ],
+  "verification_command": "Manual verification only; run the commands from src/openssl_commands_for_certs_and_secrets.sh with real hosts and local files.",
+  "verification_notes": "Manual verification only. Replace the example hosts and file names; some commands also require local certificates, writable paths, or passphrase input.",
+  "status": "Draft"
+}

@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "slug": "chmod-and-chown-commands-for-everyday-permission-fixes",
+  "use_case_key": "chmod-and-chown-commands-for-everyday-permission-fixes",
+  "title": "6 chmod and chown Commands for Everyday Permission Fixes",
+  "language": "Shell",
+  "summary": "Fix common file permission problems faster with chmod and chown commands for scripts, shared directories, recursive updates, and ownership changes.",
+  "tags": ["chmod", "chown", "permissions", "shell", "cli", "filesystem", "deployment"],
+  "highlights": [
+    "Fix common file modes fast",
+    "Apply safer recursive perms",
+    "Change file ownership cleanly"
+  ],
+  "repo_path": "snippets/shell/chmod-and-chown-commands-for-everyday-permission-fixes",
+  "entry_file": "src/chmod_and_chown_commands_for_everyday_permission_fixes.sh",
+  "source_files": ["src/chmod_and_chown_commands_for_everyday_permission_fixes.sh"],
+  "test_files": [],
+  "dependencies": ["chmod", "chown", "find"],
+  "test_environment": {
+    "runtime": "chmod and chown available in a POSIX shell",
+    "os": ["macOS", "Linux"]
+  },
+  "test_type": "ManualVerification",
+  "test_framework": "manual verification",
+  "test_case_count": 0,
+  "verification_workdir": ".",
+  "verification_setup": [
+    "Confirm chmod and chown are installed.",
+    "Replace the example user names and paths before running the commands.",
+    "Use disposable files or directories first, especially for recursive commands."
+  ],
+  "verification_command": "Manual verification only; run the commands from src/chmod_and_chown_commands_for_everyday_permission_fixes.sh with real local users and paths.",
+  "verification_notes": "Manual verification only. Replace the example users and paths, and test recursive permission changes on disposable files first.",
+  "status": "Draft"
+}

@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "slug": "grep-commands-for-faster-terminal-search",
+  "use_case_key": "grep-commands-for-faster-terminal-search",
+  "title": "6 grep Commands for Faster Terminal Search",
+  "language": "Shell",
+  "summary": "Find the exact lines you need with grep commands for recursive search, context output, exact matches, inverted matches, and multi-pattern filters.",
+  "tags": ["grep", "search", "logs", "shell", "cli", "debugging", "text-processing"],
+  "highlights": [
+    "Search logs and source fast",
+    "Show context around matches",
+    "Filter comments or noise"
+  ],
+  "repo_path": "snippets/shell/grep-commands-for-faster-terminal-search",
+  "entry_file": "src/grep_commands_for_faster_terminal_search.sh",
+  "source_files": ["src/grep_commands_for_faster_terminal_search.sh"],
+  "test_files": [],
+  "dependencies": ["grep"],
+  "test_environment": {
+    "runtime": "grep available in a POSIX shell",
+    "os": ["macOS", "Linux"]
+  },
+  "test_type": "ManualVerification",
+  "test_framework": "manual verification",
+  "test_case_count": 0,
+  "verification_workdir": ".",
+  "verification_setup": [
+    "Confirm grep is installed.",
+    "Replace the example file and directory paths before running the commands.",
+    "Use sample text files with known matches to confirm each search shape."
+  ],
+  "verification_command": "Manual verification only; run the commands from src/grep_commands_for_faster_terminal_search.sh with real files or folders.",
+  "verification_notes": "Manual verification only. Replace the example paths and patterns; narrow recursive searches on large projects when needed.",
+  "status": "Draft"
+}

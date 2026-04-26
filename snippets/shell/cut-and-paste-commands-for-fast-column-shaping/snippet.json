@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "slug": "cut-and-paste-commands-for-fast-column-shaping",
+  "use_case_key": "cut-and-paste-commands-for-fast-column-shaping",
+  "title": "6 cut and paste Commands for Fast Column Shaping",
+  "language": "Shell",
+  "summary": "Reshape plain-text columns quickly with cut and paste commands for field extraction, character slicing, delimiter handling, and lightweight file merging.",
+  "tags": ["cut", "paste", "columns", "shell", "cli", "csv", "text-processing"],
+  "highlights": [
+    "Extract only needed columns",
+    "Slice fields or characters",
+    "Merge files side by side"
+  ],
+  "repo_path": "snippets/shell/cut-and-paste-commands-for-fast-column-shaping",
+  "entry_file": "src/cut_and_paste_commands_for_fast_column_shaping.sh",
+  "source_files": ["src/cut_and_paste_commands_for_fast_column_shaping.sh"],
+  "test_files": [],
+  "dependencies": ["cut", "paste"],
+  "test_environment": {
+    "runtime": "cut and paste available in a POSIX shell",
+    "os": ["macOS", "Linux"]
+  },
+  "test_type": "ManualVerification",
+  "test_framework": "manual verification",
+  "test_case_count": 0,
+  "verification_workdir": ".",
+  "verification_setup": [
+    "Confirm cut and paste are installed.",
+    "Replace the example file names before running the commands.",
+    "Use sample files whose delimiters or line counts match the examples."
+  ],
+  "verification_command": "Manual verification only; run the commands from src/cut_and_paste_commands_for_fast_column_shaping.sh with real local files.",
+  "verification_notes": "Manual verification only. Replace the example file names and delimiters with inputs that match your actual file format.",
+  "status": "Draft"
+}

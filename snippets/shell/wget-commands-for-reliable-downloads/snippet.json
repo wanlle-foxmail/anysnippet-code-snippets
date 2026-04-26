@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "slug": "wget-commands-for-reliable-downloads",
+  "use_case_key": "wget-commands-for-reliable-downloads",
+  "title": "6 wget Commands for Reliable Downloads",
+  "language": "Shell",
+  "summary": "Keep downloads moving with practical wget commands for resume support, custom file names, timestamp checks, retries, bandwidth limits, and small site mirrors.",
+  "tags": ["wget", "downloads", "shell", "cli", "http", "mirroring", "retries"],
+  "highlights": [
+    "Resume interrupted downloads",
+    "Mirror small static sites",
+    "Throttle or retry cleanly"
+  ],
+  "repo_path": "snippets/shell/wget-commands-for-reliable-downloads",
+  "entry_file": "src/wget_commands_for_reliable_downloads.sh",
+  "source_files": ["src/wget_commands_for_reliable_downloads.sh"],
+  "test_files": [],
+  "dependencies": ["wget"],
+  "test_environment": {
+    "runtime": "wget 1.21 or compatible",
+    "os": ["macOS", "Linux"]
+  },
+  "test_type": "ManualVerification",
+  "test_framework": "manual verification",
+  "test_case_count": 0,
+  "verification_workdir": ".",
+  "verification_setup": [
+    "Confirm wget is installed.",
+    "Replace the example URLs before running the commands.",
+    "Run file-saving and mirror commands from a writable directory."
+  ],
+  "verification_command": "Manual verification only; run the commands from src/wget_commands_for_reliable_downloads.sh with real download targets.",
+  "verification_notes": "Manual verification only. Replace the example URLs with real download targets and run file-saving commands from a writable directory.",
+  "status": "Draft"
+}

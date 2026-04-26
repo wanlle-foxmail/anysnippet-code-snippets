@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "slug": "du-and-df-commands-for-quick-disk-checks",
+  "use_case_key": "du-and-df-commands-for-quick-disk-checks",
+  "title": "6 du and df Commands for Quick Disk Checks",
+  "language": "Shell",
+  "summary": "Spot disk pressure faster with du and df commands for directory size checks, human-readable output, filesystem usage, and quick inode visibility.",
+  "tags": ["du", "df", "disk-space", "shell", "cli", "filesystem", "troubleshooting"],
+  "highlights": [
+    "Check folders and filesystems",
+    "Find large paths quickly",
+    "Inspect inode pressure too"
+  ],
+  "repo_path": "snippets/shell/du-and-df-commands-for-quick-disk-checks",
+  "entry_file": "src/du_and_df_commands_for_quick_disk_checks.sh",
+  "source_files": ["src/du_and_df_commands_for_quick_disk_checks.sh"],
+  "test_files": [],
+  "dependencies": ["du", "df", "sort"],
+  "test_environment": {
+    "runtime": "du and df available in a POSIX shell",
+    "os": ["macOS", "Linux"]
+  },
+  "test_type": "ManualVerification",
+  "test_framework": "manual verification",
+  "test_case_count": 0,
+  "verification_workdir": ".",
+  "verification_setup": [
+    "Confirm du and df are installed.",
+    "Run the commands inside a local directory or filesystem you can inspect safely.",
+    "Use inode checks only on platforms or filesystems that report them meaningfully."
+  ],
+  "verification_command": "Manual verification only; run the commands from src/du_and_df_commands_for_quick_disk_checks.sh in a real local directory.",
+  "verification_notes": "Manual verification only. Run in the local directory or filesystem you want to inspect; results depend on current disk state.",
+  "status": "Draft"
+}

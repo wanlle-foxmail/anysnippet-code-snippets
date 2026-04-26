@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "slug": "tar-and-openssl-commands-for-safer-archive-verification",
+  "use_case_key": "tar-and-openssl-commands-for-safer-archive-verification",
+  "title": "6 tar and OpenSSL Commands for Safer Archive Verification",
+  "language": "Shell",
+  "summary": "Package handoff files more safely with tar and OpenSSL commands for archive creation, content checks, and checksum verification.",
+  "tags": ["tar", "openssl", "archives", "shell", "cli", "checksums", "verification"],
+  "highlights": [
+    "Hash archives right away",
+    "Save checksum sidecar files",
+    "Spot-check extracted files"
+  ],
+  "repo_path": "snippets/shell/tar-and-openssl-commands-for-safer-archive-verification",
+  "entry_file": "src/tar_and_openssl_commands_for_safer_archive_verification.sh",
+  "source_files": ["src/tar_and_openssl_commands_for_safer_archive_verification.sh"],
+  "test_files": [],
+  "dependencies": ["tar", "openssl"],
+  "test_environment": {
+    "runtime": "POSIX shell with tar and openssl",
+    "os": ["macOS", "Linux"]
+  },
+  "test_type": "ManualVerification",
+  "test_framework": "manual verification",
+  "test_case_count": 0,
+  "verification_workdir": ".",
+  "verification_setup": [
+    "Confirm tar and openssl are installed.",
+    "Replace the example directories, file names, and exclusions before running the commands.",
+    "Create sample folders and disposable archive files for testing."
+  ],
+  "verification_command": "Manual verification only; run the commands from src/tar_and_openssl_commands_for_safer_archive_verification.sh with local files and folders.",
+  "verification_notes": "Manual verification only. Spot-checked locally with disposable folders and archive files covering creation, exclusion, checksum output, extraction, and digest comparison. Run extraction examples from a writable working directory.",
+  "status": "Draft"
+}

@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "slug": "find-commands-for-safer-file-discovery",
+  "use_case_key": "find-commands-for-safer-file-discovery",
+  "title": "6 find Commands for Safer File Discovery",
+  "language": "Shell",
+  "summary": "Find the right files faster with practical find commands for names, modified times, large files, empty files, pruned folders, and per-file inspection.",
+  "tags": ["find", "files", "filesystem", "shell", "cli", "search", "cleanup"],
+  "highlights": [
+    "Find files by useful rules",
+    "Skip noisy folders safely",
+    "Inspect each match quickly"
+  ],
+  "repo_path": "snippets/shell/find-commands-for-safer-file-discovery",
+  "entry_file": "src/find_commands_for_safer_file_discovery.sh",
+  "source_files": ["src/find_commands_for_safer_file_discovery.sh"],
+  "test_files": [],
+  "dependencies": ["find", "ls"],
+  "test_environment": {
+    "runtime": "find available in a POSIX shell",
+    "os": ["macOS", "Linux"]
+  },
+  "test_type": "ManualVerification",
+  "test_framework": "manual verification",
+  "test_case_count": 0,
+  "verification_workdir": ".",
+  "verification_setup": [
+    "Confirm find is installed.",
+    "Replace the example paths before running the commands.",
+    "Use local directories that contain files with known names, sizes, or ages."
+  ],
+  "verification_command": "Manual verification only; run the commands from src/find_commands_for_safer_file_discovery.sh with real local folders.",
+  "verification_notes": "Manual verification only. Replace the example paths and run against directories with known files or metadata.",
+  "status": "Draft"
+}

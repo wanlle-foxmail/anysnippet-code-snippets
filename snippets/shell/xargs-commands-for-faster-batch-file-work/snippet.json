@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "slug": "xargs-commands-for-faster-batch-file-work",
+  "use_case_key": "xargs-commands-for-faster-batch-file-work",
+  "title": "6 xargs Commands for Faster Batch File Work",
+  "language": "Shell",
+  "summary": "Run bulk shell operations with less typing and fewer mistakes using xargs commands for safe file pipelines, parallel jobs, and repeated command execution.",
+  "tags": ["xargs", "shell", "cli", "batch-processing", "files", "parallelism", "find"],
+  "highlights": [
+    "Batch file actions safely",
+    "Parallelize repeat commands",
+    "Handle spaced file names"
+  ],
+  "repo_path": "snippets/shell/xargs-commands-for-faster-batch-file-work",
+  "entry_file": "src/xargs_commands_for_faster_batch_file_work.sh",
+  "source_files": ["src/xargs_commands_for_faster_batch_file_work.sh"],
+  "test_files": [],
+  "dependencies": ["find", "xargs", "curl"],
+  "test_environment": {
+    "runtime": "POSIX shell with xargs and find",
+    "os": ["macOS", "Linux"]
+  },
+  "test_type": "ManualVerification",
+  "test_framework": "manual verification",
+  "test_case_count": 0,
+  "verification_workdir": ".",
+  "verification_setup": [
+    "Confirm xargs and find are available.",
+    "Create local sample files that match the example file patterns.",
+    "Create ./tmp-backup/ before running the move example."
+  ],
+  "verification_command": "Manual verification only; run the commands from src/xargs_commands_for_faster_batch_file_work.sh with local sample files and directories.",
+  "verification_notes": "Manual verification only. Replace the example file patterns or URLs, and test delete or move commands on disposable files first.",
+  "status": "Draft"
+}

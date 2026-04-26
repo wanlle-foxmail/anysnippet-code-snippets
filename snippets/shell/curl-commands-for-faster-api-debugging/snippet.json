@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "slug": "curl-commands-for-faster-api-debugging",
+  "use_case_key": "curl-commands-for-faster-api-debugging",
+  "title": "7 curl Commands for Faster API Debugging",
+  "language": "Shell",
+  "summary": "Speed up API debugging and request testing with copy-paste curl commands for health checks, query strings, JSON requests, uploads, downloads, and retries.",
+  "tags": ["curl", "api", "http", "shell", "cli", "uploads", "downloads"],
+  "highlights": [
+    "Check API health fast",
+    "Send JSON and uploads",
+    "Retry and save responses"
+  ],
+  "repo_path": "snippets/shell/curl-commands-for-faster-api-debugging",
+  "entry_file": "src/curl_commands_for_faster_api_debugging.sh",
+  "source_files": ["src/curl_commands_for_faster_api_debugging.sh"],
+  "test_files": [],
+  "dependencies": ["curl"],
+  "test_environment": {
+    "runtime": "curl 8.x or compatible",
+    "os": ["macOS", "Linux"]
+  },
+  "test_type": "ManualVerification",
+  "test_framework": "manual verification",
+  "test_case_count": 0,
+  "verification_workdir": ".",
+  "verification_setup": [
+    "Confirm curl is installed.",
+    "Replace the example URLs, bearer token, and file path placeholders before running the commands.",
+    "Run download examples from a writable directory."
+  ],
+  "verification_command": "Manual verification only; run the commands from src/curl_commands_for_faster_api_debugging.sh with real endpoints and placeholders replaced.",
+  "verification_notes": "Manual verification only. Replace the example URLs, tokens, and file paths with real values before running.",
+  "status": "Draft"
+}

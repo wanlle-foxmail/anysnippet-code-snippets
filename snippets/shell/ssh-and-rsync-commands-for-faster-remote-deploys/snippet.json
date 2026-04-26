@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "slug": "ssh-and-rsync-commands-for-faster-remote-deploys",
+  "use_case_key": "ssh-and-rsync-commands-for-faster-remote-deploys",
+  "title": "6 ssh and rsync Commands for Faster Remote Deploys",
+  "language": "Shell",
+  "summary": "Ship remote updates with less friction using ssh and rsync commands for previewing changes, syncing releases, restarting services, and checking hosts after deploys.",
+  "tags": ["ssh", "rsync", "deployments", "shell", "cli", "remote", "servers"],
+  "highlights": [
+    "Preview remote sync changes",
+    "Deploy and verify faster",
+    "Handle ports and jump hosts"
+  ],
+  "repo_path": "snippets/shell/ssh-and-rsync-commands-for-faster-remote-deploys",
+  "entry_file": "src/ssh_and_rsync_commands_for_faster_remote_deploys.sh",
+  "source_files": ["src/ssh_and_rsync_commands_for_faster_remote_deploys.sh"],
+  "test_files": [],
+  "dependencies": ["ssh", "rsync"],
+  "test_environment": {
+    "runtime": "POSIX shell with ssh and rsync",
+    "os": ["macOS", "Linux"]
+  },
+  "test_type": "ManualVerification",
+  "test_framework": "manual verification",
+  "test_case_count": 0,
+  "verification_workdir": ".",
+  "verification_setup": [
+    "Confirm ssh and rsync are installed.",
+    "Replace the example hosts, usernames, ports, paths, and service names before running the commands.",
+    "Verify SSH access and remote permissions in a safe environment."
+  ],
+  "verification_command": "Manual verification only; run the commands from src/ssh_and_rsync_commands_for_faster_remote_deploys.sh against a reachable remote environment.",
+  "verification_notes": "Manual verification only. Replace the example hosts, ports, paths, and service names with a reachable SSH target, and test rsync --delete in a safe environment first.",
+  "status": "Draft"
+}

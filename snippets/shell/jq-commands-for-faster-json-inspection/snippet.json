@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "slug": "jq-commands-for-faster-json-inspection",
+  "use_case_key": "jq-commands-for-faster-json-inspection",
+  "title": "7 jq Commands for Faster JSON Inspection",
+  "language": "Shell",
+  "summary": "Read messy JSON faster and pull out exactly what you need with jq commands for formatting, filtering, field selection, aggregation, and clean terminal output.",
+  "tags": ["jq", "json", "shell", "cli", "filtering", "debugging", "api"],
+  "highlights": [
+    "Pretty-print JSON fast",
+    "Filter arrays and fields",
+    "Aggregate JSON quickly"
+  ],
+  "repo_path": "snippets/shell/jq-commands-for-faster-json-inspection",
+  "entry_file": "src/jq_commands_for_faster_json_inspection.sh",
+  "source_files": ["src/jq_commands_for_faster_json_inspection.sh"],
+  "test_files": [],
+  "dependencies": ["jq", "curl"],
+  "test_environment": {
+    "runtime": "jq 1.6 or compatible",
+    "os": ["macOS", "Linux"]
+  },
+  "test_type": "ManualVerification",
+  "test_framework": "manual verification",
+  "test_case_count": 0,
+  "verification_workdir": ".",
+  "verification_setup": [
+    "Confirm jq is installed.",
+    "Replace the placeholder JSON file path and API URL before running the commands.",
+    "Use JSON input whose field names match the example expressions."
+  ],
+  "verification_command": "Manual verification only; run the commands from src/jq_commands_for_faster_json_inspection.sh with real JSON files or API responses.",
+  "verification_notes": "Manual verification only. Replace the example JSON file paths, field names, and API URL before running.",
+  "status": "Draft"
+}

@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "slug": "jq-and-sort-commands-for-quick-json-ranking",
+  "use_case_key": "jq-and-sort-commands-for-quick-json-ranking",
+  "title": "6 jq and sort Commands for Quick JSON Ranking",
+  "language": "Shell",
+  "summary": "Rank JSON fields quickly with jq and sort commands for names, durations, timestamps, grouped pairs, and unique owner lists.",
+  "tags": ["jq", "sort", "json", "shell", "cli", "ranking", "reporting"],
+  "highlights": [
+    "Rank saved JSON fast",
+    "Sort numbers and timestamps",
+    "Extract unique owner lists"
+  ],
+  "repo_path": "snippets/shell/jq-and-sort-commands-for-quick-json-ranking",
+  "entry_file": "src/jq_and_sort_commands_for_quick_json_ranking.sh",
+  "source_files": ["src/jq_and_sort_commands_for_quick_json_ranking.sh"],
+  "test_files": [],
+  "dependencies": ["jq", "sort", "head"],
+  "test_environment": {
+    "runtime": "POSIX shell with jq and sort",
+    "os": ["macOS", "Linux"]
+  },
+  "test_type": "ManualVerification",
+  "test_framework": "manual verification",
+  "test_case_count": 0,
+  "verification_workdir": ".",
+  "verification_setup": [
+    "Confirm jq and sort are installed.",
+    "Replace the example file name and field paths before running the commands.",
+    "Use a JSON file that contains an .items array with numeric and text fields."
+  ],
+  "verification_command": "Manual verification only; run the commands from src/jq_and_sort_commands_for_quick_json_ranking.sh with a real JSON file.",
+  "verification_notes": "Manual verification only. Spot-checked locally with a disposable JSON file containing the documented .items array and sortable values. Replace the example file and field paths to match your JSON.",
+  "status": "Draft"
+}

@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "slug": "ffmpeg-commands-for-everyday-media-tasks",
+  "use_case_key": "ffmpeg-commands-for-everyday-media-tasks",
+  "title": "8 ffmpeg Commands for Everyday Media Tasks",
+  "language": "Shell",
+  "summary": "Save time on common video and audio work with ffmpeg commands for conversion, trimming, resizing, screenshots, GIF previews, audio extraction, compression, and subtitles.",
+  "tags": ["ffmpeg", "video", "audio", "media", "shell", "cli", "gif"],
+  "highlights": [
+    "Convert and trim fast",
+    "Extract audio or frames",
+    "Resize or compress clips"
+  ],
+  "repo_path": "snippets/shell/ffmpeg-commands-for-everyday-media-tasks",
+  "entry_file": "src/ffmpeg_commands_for_everyday_media_tasks.sh",
+  "source_files": ["src/ffmpeg_commands_for_everyday_media_tasks.sh"],
+  "test_files": [],
+  "dependencies": ["ffmpeg"],
+  "test_environment": {
+    "runtime": "ffmpeg 6.x or compatible",
+    "os": ["macOS", "Linux"]
+  },
+  "test_type": "ManualVerification",
+  "test_framework": "manual verification",
+  "test_case_count": 0,
+  "verification_workdir": ".",
+  "verification_setup": [
+    "Confirm ffmpeg is installed.",
+    "Replace the example media file names before running the commands.",
+    "Run the commands from a writable directory."
+  ],
+  "verification_command": "Manual verification only; run the commands from src/ffmpeg_commands_for_everyday_media_tasks.sh with real local media files.",
+  "verification_notes": "Manual verification only. Replace the example media file names with local files and run the commands from a writable directory.",
+  "status": "Draft"
+}

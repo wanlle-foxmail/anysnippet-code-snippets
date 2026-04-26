@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "slug": "netstat-commands-for-quick-network-inspection",
+  "use_case_key": "netstat-commands-for-quick-network-inspection",
+  "title": "6 netstat Commands for Quick Network Inspection",
+  "language": "Shell",
+  "summary": "Inspect connections and listening ports faster with netstat commands for socket state checks, routing tables, interface counters, and protocol statistics.",
+  "tags": ["netstat", "networking", "ports", "shell", "cli", "debugging", "routes"],
+  "highlights": [
+    "Inspect sockets and routes",
+    "Filter listeners or clients",
+    "Check interface activity"
+  ],
+  "repo_path": "snippets/shell/netstat-commands-for-quick-network-inspection",
+  "entry_file": "src/netstat_commands_for_quick_network_inspection.sh",
+  "source_files": ["src/netstat_commands_for_quick_network_inspection.sh"],
+  "test_files": [],
+  "dependencies": ["netstat", "grep"],
+  "test_environment": {
+    "runtime": "netstat available on the local system",
+    "os": ["macOS", "Linux"]
+  },
+  "test_type": "ManualVerification",
+  "test_framework": "manual verification",
+  "test_case_count": 0,
+  "verification_workdir": ".",
+  "verification_setup": [
+    "Confirm netstat is installed.",
+    "Use a machine with active listeners or network connections for meaningful output.",
+    "Check which socket-state words your platform uses before relying on grep filters."
+  ],
+  "verification_command": "Manual verification only; run the commands from src/netstat_commands_for_quick_network_inspection.sh on a real local machine.",
+  "verification_notes": "Manual verification only. Run on the target machine; socket-state output varies by operating system.",
+  "status": "Draft"
+}

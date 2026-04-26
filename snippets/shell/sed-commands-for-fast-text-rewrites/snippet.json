@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "slug": "sed-commands-for-fast-text-rewrites",
+  "use_case_key": "sed-commands-for-fast-text-rewrites",
+  "title": "7 sed Commands for Fast Text Rewrites",
+  "language": "Shell",
+  "summary": "Rewrite files and streams faster with sed commands for substitutions, whitespace cleanup, line filtering, range printing, and quick text reshaping.",
+  "tags": ["sed", "text-processing", "rewrites", "shell", "cli", "regex", "logs"],
+  "highlights": [
+    "Rewrite text streams fast",
+    "Trim, filter, and replace",
+    "Print only needed ranges"
+  ],
+  "repo_path": "snippets/shell/sed-commands-for-fast-text-rewrites",
+  "entry_file": "src/sed_commands_for_fast_text_rewrites.sh",
+  "source_files": ["src/sed_commands_for_fast_text_rewrites.sh"],
+  "test_files": [],
+  "dependencies": ["sed"],
+  "test_environment": {
+    "runtime": "sed available in a POSIX shell",
+    "os": ["macOS", "Linux"]
+  },
+  "test_type": "ManualVerification",
+  "test_framework": "manual verification",
+  "test_case_count": 0,
+  "verification_workdir": ".",
+  "verification_setup": [
+    "Confirm sed is installed.",
+    "Replace the example file names before running the commands.",
+    "Use sample text with known matches, whitespace, or line ranges."
+  ],
+  "verification_command": "Manual verification only; run the commands from src/sed_commands_for_fast_text_rewrites.sh with real local files.",
+  "verification_notes": "Manual verification only. Replace the example file names and patterns; the commands avoid platform-specific in-place flags for macOS/Linux portability.",
+  "status": "Draft"
+}

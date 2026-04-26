@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "slug": "awk-commands-for-quick-column-and-log-analysis",
+  "use_case_key": "awk-commands-for-quick-column-and-log-analysis",
+  "title": "7 awk Commands for Quick Column and Log Analysis",
+  "language": "Shell",
+  "summary": "Pull useful values out of text files faster with awk commands for column selection, filters, sums, counts, header skipping, and simple reports.",
+  "tags": ["awk", "columns", "logs", "shell", "cli", "csv", "reporting"],
+  "highlights": [
+    "Select or filter columns",
+    "Count and sum fast",
+    "Skip headers cleanly"
+  ],
+  "repo_path": "snippets/shell/awk-commands-for-quick-column-and-log-analysis",
+  "entry_file": "src/awk_commands_for_quick_column_and_log_analysis.sh",
+  "source_files": ["src/awk_commands_for_quick_column_and_log_analysis.sh"],
+  "test_files": [],
+  "dependencies": ["awk"],
+  "test_environment": {
+    "runtime": "awk available in a POSIX shell",
+    "os": ["macOS", "Linux"]
+  },
+  "test_type": "ManualVerification",
+  "test_framework": "manual verification",
+  "test_case_count": 0,
+  "verification_workdir": ".",
+  "verification_setup": [
+    "Confirm awk is installed.",
+    "Replace the example file names before running the commands.",
+    "Use sample files with known delimiters and numeric columns."
+  ],
+  "verification_command": "Manual verification only; run the commands from src/awk_commands_for_quick_column_and_log_analysis.sh with real local files.",
+  "verification_notes": "Manual verification only. Replace the example file names and confirm field positions before running sums or filters.",
+  "status": "Draft"
+}

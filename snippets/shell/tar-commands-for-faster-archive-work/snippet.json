@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "slug": "tar-commands-for-faster-archive-work",
+  "use_case_key": "tar-commands-for-faster-archive-work",
+  "title": "6 tar Commands for Faster Archive Work",
+  "language": "Shell",
+  "summary": "Pack, inspect, and extract archives with tar commands for backups, compressed bundles, selective extraction, and cleaner archive exports.",
+  "tags": ["tar", "archives", "backups", "shell", "cli", "compression", "files"],
+  "highlights": [
+    "Create and inspect archives",
+    "Extract only what you need",
+    "Skip noisy folders cleanly"
+  ],
+  "repo_path": "snippets/shell/tar-commands-for-faster-archive-work",
+  "entry_file": "src/tar_commands_for_faster_archive_work.sh",
+  "source_files": ["src/tar_commands_for_faster_archive_work.sh"],
+  "test_files": [],
+  "dependencies": ["tar"],
+  "test_environment": {
+    "runtime": "tar available in a POSIX shell",
+    "os": ["macOS", "Linux"]
+  },
+  "test_type": "ManualVerification",
+  "test_framework": "manual verification",
+  "test_case_count": 0,
+  "verification_workdir": ".",
+  "verification_setup": [
+    "Confirm tar is installed.",
+    "Replace the example files and folders before running the commands.",
+    "Run create or extract commands from a writable directory."
+  ],
+  "verification_command": "Manual verification only; run the commands from src/tar_commands_for_faster_archive_work.sh with real local files and folders.",
+  "verification_notes": "Manual verification only. Replace the example files or folders and run create or extract commands from a writable directory.",
+  "status": "Draft"
+}

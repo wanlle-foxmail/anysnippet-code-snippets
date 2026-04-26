@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "slug": "sort-and-uniq-commands-for-quick-dedup-and-ranking",
+  "use_case_key": "sort-and-uniq-commands-for-quick-dedup-and-ranking",
+  "title": "6 sort and uniq Commands for Quick Dedup and Ranking",
+  "language": "Shell",
+  "summary": "Clean and rank repeated text fast with sort and uniq commands for deduplication, duplicate checks, frequency reports, and field-based ordering.",
+  "tags": ["sort", "uniq", "deduplication", "shell", "cli", "ranking", "text-processing"],
+  "highlights": [
+    "Dedup repeated lines fast",
+    "Count top repeated values",
+    "Sort text by chosen fields"
+  ],
+  "repo_path": "snippets/shell/sort-and-uniq-commands-for-quick-dedup-and-ranking",
+  "entry_file": "src/sort_and_uniq_commands_for_quick_dedup_and_ranking.sh",
+  "source_files": ["src/sort_and_uniq_commands_for_quick_dedup_and_ranking.sh"],
+  "test_files": [],
+  "dependencies": ["sort", "uniq"],
+  "test_environment": {
+    "runtime": "sort and uniq available in a POSIX shell",
+    "os": ["macOS", "Linux"]
+  },
+  "test_type": "ManualVerification",
+  "test_framework": "manual verification",
+  "test_case_count": 0,
+  "verification_workdir": ".",
+  "verification_setup": [
+    "Confirm sort and uniq are installed.",
+    "Replace the example file names before running the commands.",
+    "Use sample text that contains duplicates or sortable fields."
+  ],
+  "verification_command": "Manual verification only; run the commands from src/sort_and_uniq_commands_for_quick_dedup_and_ranking.sh with real local files.",
+  "verification_notes": "Manual verification only. Replace the example file names with local files that contain duplicates or sortable fields.",
+  "status": "Draft"
+}

@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "slug": "scp-commands-for-simple-remote-file-transfer",
+  "use_case_key": "scp-commands-for-simple-remote-file-transfer",
+  "title": "6 scp Commands for Simple Remote File Transfer",
+  "language": "Shell",
+  "summary": "Move files between local and remote machines with scp commands for uploads, downloads, recursive copies, custom ports, and key-based transfers.",
+  "tags": ["scp", "file-transfer", "ssh", "shell", "cli", "servers", "deployment"],
+  "highlights": [
+    "Upload or download quickly",
+    "Copy folders recursively",
+    "Use ports or key files"
+  ],
+  "repo_path": "snippets/shell/scp-commands-for-simple-remote-file-transfer",
+  "entry_file": "src/scp_commands_for_simple_remote_file_transfer.sh",
+  "source_files": ["src/scp_commands_for_simple_remote_file_transfer.sh"],
+  "test_files": [],
+  "dependencies": ["scp"],
+  "test_environment": {
+    "runtime": "OpenSSH scp or compatible",
+    "os": ["macOS", "Linux"]
+  },
+  "test_type": "ManualVerification",
+  "test_framework": "manual verification",
+  "test_case_count": 0,
+  "verification_workdir": ".",
+  "verification_setup": [
+    "Confirm scp is installed.",
+    "Replace the example hosts, users, key paths, ports, and file paths before running the commands.",
+    "Use only real hosts and destinations you are allowed to access."
+  ],
+  "verification_command": "Manual verification only; run the commands from src/scp_commands_for_simple_remote_file_transfer.sh with real hosts, files, and credentials.",
+  "verification_notes": "Manual verification only. Replace the example hosts, paths, and credentials with targets you are allowed to access.",
+  "status": "Draft"
+}

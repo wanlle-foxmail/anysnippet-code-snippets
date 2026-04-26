@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "slug": "rsync-commands-for-fast-sync-and-backup",
+  "use_case_key": "rsync-commands-for-fast-sync-and-backup",
+  "title": "6 rsync Commands for Fast Sync and Backup",
+  "language": "Shell",
+  "summary": "Make backups and deployments quicker and safer with rsync commands for previewing changes, skipping noisy folders, resuming large transfers, and syncing remote targets.",
+  "tags": ["rsync", "backup", "sync", "shell", "cli", "ssh", "deploy"],
+  "highlights": [
+    "Preview syncs before delete",
+    "Resume large transfers",
+    "Mirror local and remote dirs"
+  ],
+  "repo_path": "snippets/shell/rsync-commands-for-fast-sync-and-backup",
+  "entry_file": "src/rsync_commands_for_fast_sync_and_backup.sh",
+  "source_files": ["src/rsync_commands_for_fast_sync_and_backup.sh"],
+  "test_files": [],
+  "dependencies": ["rsync", "ssh"],
+  "test_environment": {
+    "runtime": "rsync 3.x with ssh",
+    "os": ["macOS", "Linux"]
+  },
+  "test_type": "ManualVerification",
+  "test_framework": "manual verification",
+  "test_case_count": 0,
+  "verification_workdir": ".",
+  "verification_setup": [
+    "Confirm rsync is installed.",
+    "Confirm SSH access works for remote transfer examples.",
+    "Replace the example hosts and paths before running the commands."
+  ],
+  "verification_command": "Manual verification only; run the commands from src/rsync_commands_for_fast_sync_and_backup.sh with real paths and SSH targets.",
+  "verification_notes": "Manual verification only. Replace the example hosts and paths, and preview delete-based syncs with --dry-run first.",
+  "status": "Draft"
+}

@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "slug": "grep-and-awk-commands-for-faster-log-triage",
+  "use_case_key": "grep-and-awk-commands-for-faster-log-triage",
+  "title": "6 grep and awk Commands for Faster Log Triage",
+  "language": "Shell",
+  "summary": "Narrow noisy logs down to the fields that matter with grep and awk commands for error sampling, timeout checks, status-path extraction, and quick counts.",
+  "tags": ["grep", "awk", "logs", "shell", "cli", "debugging", "triage"],
+  "highlights": [
+    "Shrink logs to key fields",
+    "Count levels without scripts",
+    "Extract paths and timings"
+  ],
+  "repo_path": "snippets/shell/grep-and-awk-commands-for-faster-log-triage",
+  "entry_file": "src/grep_and_awk_commands_for_faster_log_triage.sh",
+  "source_files": ["src/grep_and_awk_commands_for_faster_log_triage.sh"],
+  "test_files": [],
+  "dependencies": ["grep", "awk"],
+  "test_environment": {
+    "runtime": "POSIX shell with grep and awk",
+    "os": ["macOS", "Linux"]
+  },
+  "test_type": "ManualVerification",
+  "test_framework": "manual verification",
+  "test_case_count": 0,
+  "verification_workdir": ".",
+  "verification_setup": [
+    "Confirm grep and awk are installed.",
+    "Replace the example log file names and field positions before running the commands.",
+    "Use logs that contain known error, timeout, and completion patterns."
+  ],
+  "verification_command": "Manual verification only; run the commands from src/grep_and_awk_commands_for_faster_log_triage.sh with real local logs.",
+  "verification_notes": "Manual verification only. Spot-checked locally with disposable sample logs matching the documented field positions. Replace the example files and field references to fit your log format.",
+  "status": "Draft"
+}

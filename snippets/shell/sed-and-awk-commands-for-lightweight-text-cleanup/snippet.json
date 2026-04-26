@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "slug": "sed-and-awk-commands-for-lightweight-text-cleanup",
+  "use_case_key": "sed-and-awk-commands-for-lightweight-text-cleanup",
+  "title": "6 sed and awk Commands for Lightweight Text Cleanup",
+  "language": "Shell",
+  "summary": "Clean messy text files quickly with sed and awk commands for trimming, replacing, filtering, splitting, and small report-style transforms.",
+  "tags": ["sed", "awk", "text-cleanup", "shell", "cli", "logs", "csv"],
+  "highlights": [
+    "Trim and filter text fast",
+    "Switch cleanly between tools",
+    "Fix small messy exports"
+  ],
+  "repo_path": "snippets/shell/sed-and-awk-commands-for-lightweight-text-cleanup",
+  "entry_file": "src/sed_and_awk_commands_for_lightweight_text_cleanup.sh",
+  "source_files": ["src/sed_and_awk_commands_for_lightweight_text_cleanup.sh"],
+  "test_files": [],
+  "dependencies": ["sed", "awk"],
+  "test_environment": {
+    "runtime": "POSIX shell with sed and awk",
+    "os": ["macOS", "Linux"]
+  },
+  "test_type": "ManualVerification",
+  "test_framework": "manual verification",
+  "test_case_count": 0,
+  "verification_workdir": ".",
+  "verification_setup": [
+    "Confirm sed and awk are installed.",
+    "Replace the example file names before running the commands.",
+    "Use sample files with known delimiters, whitespace, or field positions."
+  ],
+  "verification_command": "Manual verification only; run the commands from src/sed_and_awk_commands_for_lightweight_text_cleanup.sh with real local files.",
+  "verification_notes": "Manual verification only. Spot-checked locally with disposable text files that matched the documented delimiters and field positions. Replace the example files and confirm field layout before running.",
+  "status": "Draft"
+}

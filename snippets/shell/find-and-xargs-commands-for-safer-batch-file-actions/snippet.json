@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "slug": "find-and-xargs-commands-for-safer-batch-file-actions",
+  "use_case_key": "find-and-xargs-commands-for-safer-batch-file-actions",
+  "title": "6 find and xargs Commands for Safer Batch File Actions",
+  "language": "Shell",
+  "summary": "Turn large file lists into safe batch operations with find and xargs commands for previews, deletes, moves, permission fixes, size inspection, and bulk compression.",
+  "tags": ["find", "xargs", "files", "shell", "cli", "batch-processing", "safety"],
+  "highlights": [
+    "Preview batch deletes first",
+    "Move or chmod many files",
+    "Use null-safe path handling"
+  ],
+  "repo_path": "snippets/shell/find-and-xargs-commands-for-safer-batch-file-actions",
+  "entry_file": "src/find_and_xargs_commands_for_safer_batch_file_actions.sh",
+  "source_files": ["src/find_and_xargs_commands_for_safer_batch_file_actions.sh"],
+  "test_files": [],
+  "dependencies": ["find", "xargs", "mv", "chmod", "ls", "gzip"],
+  "test_environment": {
+    "runtime": "POSIX shell with find and xargs",
+    "os": ["macOS", "Linux"]
+  },
+  "test_type": "ManualVerification",
+  "test_framework": "manual verification",
+  "test_case_count": 0,
+  "verification_workdir": ".",
+  "verification_setup": [
+    "Confirm find and xargs are installed.",
+    "Create local sample files that match the example file patterns.",
+    "Create ./images-backup/ before running the move command."
+  ],
+  "verification_command": "Manual verification only; run the commands from src/find_and_xargs_commands_for_safer_batch_file_actions.sh with local sample files and directories.",
+  "verification_notes": "Manual verification only. Spot-checked locally in a disposable temp directory with sample files covering preview, delete, move, chmod, listing, and CSV compression. Test file-changing commands on disposable files first.",
+  "status": "Draft"
+}

@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "slug": "dig-commands-for-faster-dns-debugging",
+  "use_case_key": "dig-commands-for-faster-dns-debugging",
+  "title": "6 dig Commands for Faster DNS Debugging",
+  "language": "Shell",
+  "summary": "Check DNS records faster with dig commands for full answers, short A and AAAA results, MX and TXT lookups, resolver checks, and trace-style debugging.",
+  "tags": ["dig", "dns", "networking", "shell", "cli", "debugging", "domains"],
+  "highlights": [
+    "Check common DNS records",
+    "Query one resolver directly",
+    "Trace lookups end to end"
+  ],
+  "repo_path": "snippets/shell/dig-commands-for-faster-dns-debugging",
+  "entry_file": "src/dig_commands_for_faster_dns_debugging.sh",
+  "source_files": ["src/dig_commands_for_faster_dns_debugging.sh"],
+  "test_files": [],
+  "dependencies": ["dig"],
+  "test_environment": {
+    "runtime": "dig from BIND tools or compatible",
+    "os": ["macOS", "Linux"]
+  },
+  "test_type": "ManualVerification",
+  "test_framework": "manual verification",
+  "test_case_count": 0,
+  "verification_workdir": ".",
+  "verification_setup": [
+    "Confirm dig is installed.",
+    "Replace the example domain or resolver if needed.",
+    "Use a network that allows outbound DNS lookups."
+  ],
+  "verification_command": "Manual verification only; run the commands from src/dig_commands_for_faster_dns_debugging.sh against real domains or resolvers.",
+  "verification_notes": "Manual verification only. Replace the example domain or resolver; responses vary with live DNS and network conditions.",
+  "status": "Draft"
+}

@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "slug": "du-and-sort-commands-for-faster-large-folder-cleanup",
+  "use_case_key": "du-and-sort-commands-for-faster-large-folder-cleanup",
+  "title": "6 du and sort Commands for Faster Large Folder Cleanup",
+  "language": "Shell",
+  "summary": "Find space-heavy folders faster with du and sort commands for directory ranking, top-N cleanup candidates, and quick storage triage.",
+  "tags": ["du", "sort", "disk-space", "shell", "cli", "cleanup", "directories"],
+  "highlights": [
+    "Rank large folders quickly",
+    "Spot top cleanup targets",
+    "Triage caches and downloads"
+  ],
+  "repo_path": "snippets/shell/du-and-sort-commands-for-faster-large-folder-cleanup",
+  "entry_file": "src/du_and_sort_commands_for_faster_large_folder_cleanup.sh",
+  "source_files": ["src/du_and_sort_commands_for_faster_large_folder_cleanup.sh"],
+  "test_files": [],
+  "dependencies": ["du", "sort", "head"],
+  "test_environment": {
+    "runtime": "POSIX shell with du and sort",
+    "os": ["macOS", "Linux"]
+  },
+  "test_type": "ManualVerification",
+  "test_framework": "manual verification",
+  "test_case_count": 0,
+  "verification_workdir": ".",
+  "verification_setup": [
+    "Confirm du and sort are installed.",
+    "Replace the example paths before running the commands.",
+    "Use directories that contain files or subfolders with meaningful size differences."
+  ],
+  "verification_command": "Manual verification only; run the commands from src/du_and_sort_commands_for_faster_large_folder_cleanup.sh with real local directories.",
+  "verification_notes": "Manual verification only. Spot-checked locally against disposable directories with known size differences. Replace the example paths to match folders on your machine.",
+  "status": "Draft"
+}

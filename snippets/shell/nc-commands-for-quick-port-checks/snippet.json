@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "slug": "nc-commands-for-quick-port-checks",
+  "use_case_key": "nc-commands-for-quick-port-checks",
+  "title": "6 nc Commands for Quick Port Checks",
+  "language": "Shell",
+  "summary": "Probe ports and test simple TCP or UDP connectivity with nc commands for reachability checks, listeners, short payloads, and timed connection attempts.",
+  "tags": ["nc", "netcat", "ports", "shell", "cli", "networking", "debugging"],
+  "highlights": [
+    "Probe ports in seconds",
+    "Start a simple listener",
+    "Test TCP or UDP reachability"
+  ],
+  "repo_path": "snippets/shell/nc-commands-for-quick-port-checks",
+  "entry_file": "src/nc_commands_for_quick_port_checks.sh",
+  "source_files": ["src/nc_commands_for_quick_port_checks.sh"],
+  "test_files": [],
+  "dependencies": ["nc"],
+  "test_environment": {
+    "runtime": "OpenBSD netcat or compatible",
+    "os": ["macOS", "Linux"]
+  },
+  "test_type": "ManualVerification",
+  "test_framework": "manual verification",
+  "test_case_count": 0,
+  "verification_workdir": ".",
+  "verification_setup": [
+    "Confirm nc is installed.",
+    "Replace the example hosts and ports before running the commands.",
+    "Check which nc variant is installed because supported flags may vary."
+  ],
+  "verification_command": "Manual verification only; run the commands from src/nc_commands_for_quick_port_checks.sh with real local or remote targets.",
+  "verification_notes": "Manual verification only. Replace the example hosts and ports; UDP checks are less definitive than TCP probes.",
+  "status": "Draft"
+}
