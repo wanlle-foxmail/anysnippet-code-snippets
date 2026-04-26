@@ -21,13 +21,14 @@ Then call `GET /admin` or `GET /reports` with an `X-User-Role` header.
 - This snippet keeps role extraction simple by reading `X-User-Role`.
 - Use it after authentication if another middleware or proxy already resolved the caller role.
 - The middleware denies routes that are not listed in the mapping.
+- Route keys must match Echo route patterns such as `/users/:id`, not concrete request paths such as `/users/42`.
 
 ## Verification
 
 Run the tests from the snippet root:
 
 ```bash
-go test ./...
+go test -race ./...
 ```
 
 Verified behavior covers:
@@ -36,6 +37,7 @@ Verified behavior covers:
 - a missing role header
 - a forbidden role
 - a shared route with multiple allowed roles
+- a parameterized Echo route pattern
 - an unmapped route
 - whitespace and case normalization for the role header
 

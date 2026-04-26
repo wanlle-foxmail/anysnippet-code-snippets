@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "slug": "read-large-json-arrays-with-go",
+  "use_case_key": "read-large-json-arrays",
+  "title": "Read Large JSON Arrays with Go",
+  "language": "Go",
+  "summary": "Stream a top-level JSON array in Go and decode one item at a time.",
+  "tags": ["go", "json", "streaming", "large-file", "decoder"],
+  "highlights": [
+    "Streams one item at a time",
+    "Avoids full-array unmarshalling",
+    "Keeps nested JSON values intact"
+  ],
+  "repo_path": "snippets/go/read-large-json-arrays-with-go",
+  "entry_file": "read_large_json_array.go",
+  "source_files": ["read_large_json_array.go"],
+  "test_files": ["read_large_json_array_test.go"],
+  "dependencies": [],
+  "test_environment": {
+    "runtime": "Go 1.24.4",
+    "os": ["macOS", "Linux", "Windows"]
+  },
+  "test_type": "UnitTest",
+  "test_framework": "go test",
+  "test_case_count": 9,
+  "verification_workdir": ".",
+  "verification_setup": [],
+  "verification_command": "go test -race ./...",
+  "verification_notes": "Executed from the snippet root with Go 1.24.4 on macOS. Verified behavior covers ordered item reads, nested objects and lists, empty arrays, malformed arrays, non-array inputs, trailing content after one array, handler errors, nil readers, and nil handlers.",
+  "status": "Verified"
+}

@@ -14,6 +14,12 @@ type AppSettings struct {
 	Debug  bool
 }
 
+const (
+	defaultPort = 8000
+	minPort     = 1
+	maxPort     = 65535
+)
+
 func LoadTypedEnvSettings(env map[string]string) (AppSettings, error) {
 	// Flow:
 	//   read APP_ENV, PORT, and DEBUG from the provided map or OS environment
@@ -25,7 +31,7 @@ func LoadTypedEnvSettings(env map[string]string) (AppSettings, error) {
 		return AppSettings{}, err
 	}
 
-	port, err := readInt(env, "PORT", 8000)
+	port, err := readPort(env, "PORT", defaultPort)
 	if err != nil {
 		return AppSettings{}, err
 	}
@@ -46,6 +52,17 @@ func readRequiredText(env map[string]string, key string) (string, error) {
 	return strings.TrimSpace(value), nil
 }
 
+func readPort(env map[string]string, key string, defaultValue int) (int, error) {
+	port, err := readInt(env, key, defaultValue)
+	if err != nil {
+		return 0, err
+	}
+	if port < minPort || port > maxPort {
+		return 0, fmt.Errorf("%s must be between %d and %d", key, minPort, maxPort)
+	}
+	return port, nil
+}
+
 func readInt(env map[string]string, key string, defaultValue int) (int, error) {
 	value, ok := lookupValue(env, key)
 	if !ok {
@@ -54,7 +71,7 @@ func readInt(env map[string]string, key string, defaultValue int) (int, error) {
 
 	parsedValue, err := strconv.Atoi(strings.TrimSpace(value))
 	if err != nil {
-		return 0, fmt.Errorf("%s must be a valid integer", key)
+		return 0, fmt.Errorf("%s must be a valid integer: %w", key, err)
 	}
 	return parsedValue, nil
 }

@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "slug": "prevent-overlapping-scheduled-jobs-with-atomic-cas-in-go",
+  "use_case_key": "prevent-overlapping-scheduled-jobs-with-atomic-cas",
+  "title": "Prevent Overlapping Scheduled Jobs with Atomic CAS in Go",
+  "language": "Go",
+  "summary": "Prevent overlapping scheduled job runs in Go with one atomic compare-and-swap guard.",
+  "tags": ["go", "atomic", "scheduler", "cron", "concurrency"],
+  "highlights": [
+    "Skips overlapping job runs",
+    "Clears the flag on every exit",
+    "Uses one atomic CAS check"
+  ],
+  "repo_path": "snippets/go/prevent-overlapping-scheduled-jobs-with-atomic-cas-in-go",
+  "entry_file": "atomic_cas_job_guard.go",
+  "source_files": ["atomic_cas_job_guard.go"],
+  "test_files": ["atomic_cas_job_guard_test.go"],
+  "dependencies": [],
+  "test_environment": {
+    "runtime": "Go 1.24.4",
+    "os": ["macOS", "Linux", "Windows"]
+  },
+  "test_type": "UnitTest",
+  "test_framework": "go test",
+  "test_case_count": 6,
+  "verification_workdir": ".",
+  "verification_setup": [],
+  "verification_command": "go test -race ./...",
+  "verification_notes": "Executed from the snippet root with Go 1.24.4 on macOS. Verified behavior covers idle runs, overlapping runs, flag reset after success, flag reset after errors, flag reset after panics, and invalid input handling.",
+  "status": "Verified"
+}

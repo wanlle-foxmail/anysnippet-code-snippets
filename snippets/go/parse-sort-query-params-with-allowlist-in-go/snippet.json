@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "slug": "parse-sort-query-params-with-allowlist-in-go",
+  "use_case_key": "parse-sort-query-params-with-an-allowlist",
+  "title": "Parse Sort Query Params with an Allowlist in Go",
+  "language": "Go",
+  "summary": "Parse a comma-separated sort query parameter against a fixed allowlist of field names in Go.",
+  "tags": ["go", "sort", "query-params", "allowlist", "api"],
+  "highlights": [
+    "Parses asc and desc terms",
+    "Rejects unknown sort fields",
+    "Prevents duplicate sort keys"
+  ],
+  "repo_path": "snippets/go/parse-sort-query-params-with-allowlist-in-go",
+  "entry_file": "parse_sort_query_params.go",
+  "source_files": ["parse_sort_query_params.go"],
+  "test_files": ["parse_sort_query_params_test.go"],
+  "dependencies": [],
+  "test_environment": {
+    "runtime": "Go 1.24.4",
+    "os": ["macOS", "Linux", "Windows"]
+  },
+  "test_type": "UnitTest",
+  "test_framework": "go test",
+  "test_case_count": 6,
+  "verification_workdir": ".",
+  "verification_setup": [],
+  "verification_command": "go test -race ./...",
+  "verification_notes": "Executed from the snippet root with Go 1.24.4 on macOS. Verified behavior covers one ascending field, multiple mixed-direction fields, a missing sort param, unknown fields, empty terms, and repeated fields.",
+  "status": "Verified"
+}

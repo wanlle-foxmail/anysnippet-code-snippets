@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "slug": "parse-pagination-query-params-safely-with-go",
+  "use_case_key": "parse-pagination-query-params-safely",
+  "title": "Parse Pagination Query Params Safely in Go",
+  "language": "Go",
+  "summary": "Parse page and page_size query parameters with defaults, validation, and a fixed maximum in Go.",
+  "tags": ["go", "pagination", "query-params", "validation", "api"],
+  "highlights": [
+    "Uses safe pagination defaults",
+    "Caps large page sizes",
+    "Returns a ready offset value"
+  ],
+  "repo_path": "snippets/go/parse-pagination-query-params-safely-with-go",
+  "entry_file": "parse_pagination_query_params.go",
+  "source_files": ["parse_pagination_query_params.go"],
+  "test_files": ["parse_pagination_query_params_test.go"],
+  "dependencies": [],
+  "test_environment": {
+    "runtime": "Go 1.24.4",
+    "os": ["macOS", "Linux", "Windows"]
+  },
+  "test_type": "UnitTest",
+  "test_framework": "go test",
+  "test_case_count": 9,
+  "verification_workdir": ".",
+  "verification_setup": [],
+  "verification_command": "go test -race ./...",
+  "verification_notes": "Executed from the snippet root with Go 1.24.4 on macOS. Verified behavior covers valid page and page_size parsing, missing values, page size capping, invalid integers, non-positive values, invalid default pages, invalid default page sizes, invalid max page sizes, and surrounding whitespace.",
+  "status": "Verified"
+}

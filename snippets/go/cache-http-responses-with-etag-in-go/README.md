@@ -31,6 +31,7 @@ This snippet is useful when a small read endpoint should let clients skip downlo
 - This snippet hashes the rendered JSON body, so response changes automatically produce a new `ETag`.
 - The helper focuses on one JSON response at a time and does not add a separate cache store.
 - `If-None-Match` matching stays intentionally small: exact tag matches, wildcard matches, and comma-separated validator lists.
+- Add `Cache-Control` separately based on the data: `public` for shared public data, `private` for user-specific data, or `no-store` for sensitive responses.
 
 ## Verification
 

@@ -36,3 +36,5 @@ snippets/go/load-typed-environment-settings-with-go/loadtypedenvsettings
 snippets/go/rbac-middleware-with-role-to-route-mapping-in-echo/rbacmiddlewarewithroletoroutemappinginecho
 snippets/go/reject-unknown-json-fields-with-go/rejectunknownjsonfields
 snippets/go/validate-multipart-uploads-with-echo/validatemultipartuploadswithecho
+snippets/go/cancel-http-client-requests-with-context-timeout-in-go/cancel-http-client-requests-with-context-timeout-in-go
+snippets/go/handle-signals-with-signal-notify-context-in-go/handle-signals-with-signal-notify-context-in-go

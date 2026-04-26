@@ -29,6 +29,7 @@ This snippet is useful when one small API should allow short bursts but still re
 ## Notes
 
 - This snippet keeps rate limiting state in one process only.
+- Client buckets are not evicted, so production services should add idle-bucket cleanup, a maximum bucket count, or a shared limiter such as Redis.
 - Client buckets are keyed by `c.RealIP()` and fall back to one shared `unknown` bucket when the client IP is missing.
 - When the app runs behind a proxy, configure Echo's trusted proxy handling before relying on `c.RealIP()` for security-sensitive rate limits.
 - Use a distributed store instead of in-memory state when multiple instances must share the same limit.

@@ -20,21 +20,24 @@ Then send one multipart `POST` request to `/upload` with a `file` part.
 
 - Allowed content types stay explicit: `text/plain` and `text/csv`.
 - The handler sanitizes the returned filename down to its basename.
-- File size is measured by reading the uploaded body, not by trusting metadata alone.
+- File size and content type are checked by reading the uploaded body, not by trusting metadata alone.
+- Store accepted uploads outside the web root and generate your own storage names instead of reusing client filenames directly.
 
 ## Verification
 
 Run the tests from the snippet root:
 
 ```bash
-go test ./...
+go test -race ./...
 ```
 
 Verified behavior covers:
 
 - valid uploads
 - blank filenames
+- unsafe filenames
 - unsupported content types
+- spoofed content types
 - empty files
 - oversized files
 - exact-limit files

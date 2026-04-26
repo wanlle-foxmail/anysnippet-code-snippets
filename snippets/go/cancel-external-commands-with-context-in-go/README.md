@@ -31,6 +31,7 @@ This snippet is useful when one command should respect the same `context.Context
 - `CombinedOutput` is convenient when you want one error path with the full process output.
 - Wrapping `ctx.Err()` keeps timeout and cancellation handling clearer than a generic killed-process error.
 - The local test suite uses the current test binary as a helper process so no shell dependency is required.
+- `exec.CommandContext` does not invoke a shell, but production code should still allowlist command names and validate arguments before using user-controlled input.
 
 ## Verification
 

@@ -10,9 +10,11 @@ import (
 const RoleHeader = "X-User-Role"
 
 func RBACMiddleware(allowedRolesByRoute map[string][]string) echo.MiddlewareFunc {
+	normalizedRolesByRoute := normalizeAllowedRolesByRoute(allowedRolesByRoute)
+
 	return func(next echo.HandlerFunc) echo.HandlerFunc {
 		return func(c echo.Context) error {
-			allowedRoles, ok := allowedRolesByRoute[c.Path()]
+			allowedRoles, ok := normalizedRolesByRoute[c.Path()]
 			if !ok {
 				return c.JSON(http.StatusForbidden, map[string]string{"message": "route is not allowed"})
 			}
@@ -23,7 +25,7 @@ func RBACMiddleware(allowedRolesByRoute map[string][]string) echo.MiddlewareFunc
 			}
 
 			for _, allowedRole := range allowedRoles {
-				if role == strings.ToLower(strings.TrimSpace(allowedRole)) {
+				if role == allowedRole {
 					return next(c)
 				}
 			}
@@ -31,6 +33,21 @@ func RBACMiddleware(allowedRolesByRoute map[string][]string) echo.MiddlewareFunc
 			return c.JSON(http.StatusForbidden, map[string]string{"message": "role is not allowed"})
 		}
 	}
+}
+
+func normalizeAllowedRolesByRoute(allowedRolesByRoute map[string][]string) map[string][]string {
+	normalizedRolesByRoute := make(map[string][]string, len(allowedRolesByRoute))
+	for route, allowedRoles := range allowedRolesByRoute {
+		normalizedRoles := make([]string, 0, len(allowedRoles))
+		for _, allowedRole := range allowedRoles {
+			normalizedRole := strings.ToLower(strings.TrimSpace(allowedRole))
+			if normalizedRole != "" {
+				normalizedRoles = append(normalizedRoles, normalizedRole)
+			}
+		}
+		normalizedRolesByRoute[route] = normalizedRoles
+	}
+	return normalizedRolesByRoute
 }
 
 func NewServer() *echo.Echo {

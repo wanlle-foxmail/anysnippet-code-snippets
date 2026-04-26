@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "slug": "run-parallel-tasks-with-errgroup-in-go",
+  "use_case_key": "run-parallel-tasks-with-errgroup",
+  "title": "Run Parallel Tasks with errgroup in Go",
+  "language": "Go",
+  "summary": "Run several context-aware tasks in parallel in Go and cancel siblings on the first error with errgroup.",
+  "tags": ["go", "errgroup", "context", "concurrency", "parallelism"],
+  "highlights": [
+    "Cancels sibling tasks on error",
+    "Waits for every goroutine cleanly",
+    "Uses one shared group context"
+  ],
+  "repo_path": "snippets/go/run-parallel-tasks-with-errgroup-in-go",
+  "entry_file": "run_parallel_tasks.go",
+  "source_files": ["run_parallel_tasks.go"],
+  "test_files": ["run_parallel_tasks_test.go"],
+  "dependencies": ["golang.org/x/sync"],
+  "test_environment": {
+    "runtime": "Go 1.24.4",
+    "os": ["macOS", "Linux", "Windows"]
+  },
+  "test_type": "UnitTest",
+  "test_framework": "go test",
+  "test_case_count": 6,
+  "verification_workdir": ".",
+  "verification_setup": [],
+  "verification_command": "go test -race ./...",
+  "verification_notes": "Executed from the snippet root with Go 1.24.4 on macOS. Verified behavior covers all-success runs, first-error returns, sibling cancellation, nil parent contexts, nil tasks, and empty task lists.",
+  "status": "Verified"
+}

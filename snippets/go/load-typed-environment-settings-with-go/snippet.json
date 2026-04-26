@@ -22,10 +22,10 @@
   },
   "test_type": "UnitTest",
   "test_framework": "go test",
-  "test_case_count": 6,
+  "test_case_count": 9,
   "verification_workdir": ".",
   "verification_setup": [],
-  "verification_command": "go test ./...",
-  "verification_notes": "Executed from the snippet root with Go 1.24.4 on macOS. Verified behavior covers required values, optional defaults, invalid integer input, invalid boolean input, and reading from the OS environment when the input map is nil.",
+  "verification_command": "go test -race ./...",
+  "verification_notes": "Executed from the snippet root with Go 1.24.4 on macOS. Verified behavior covers required values, optional defaults, invalid integer input, out-of-range port values, invalid boolean input, and reading from the OS environment when the input map is nil.",
   "status": "Verified"
 }

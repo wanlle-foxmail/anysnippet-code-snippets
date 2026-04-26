@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "slug": "limit-json-request-body-size-with-go",
+  "use_case_key": "limit-json-request-body-size",
+  "title": "Limit JSON Request Body Size in Go",
+  "language": "Go",
+  "summary": "Decode one JSON request body in Go while enforcing a fixed maximum size.",
+  "tags": ["go", "json", "http", "request-body", "validation"],
+  "highlights": [
+    "Enforces one fixed body limit",
+    "Uses http.MaxBytesReader directly",
+    "Accepts exactly one JSON value"
+  ],
+  "repo_path": "snippets/go/limit-json-request-body-size-with-go",
+  "entry_file": "limit_json_body_size.go",
+  "source_files": ["limit_json_body_size.go"],
+  "test_files": ["limit_json_body_size_test.go"],
+  "dependencies": [],
+  "test_environment": {
+    "runtime": "Go 1.24.4",
+    "os": ["macOS", "Linux", "Windows"]
+  },
+  "test_type": "UnitTest",
+  "test_framework": "go test",
+  "test_case_count": 6,
+  "verification_workdir": ".",
+  "verification_setup": [],
+  "verification_command": "go test -race ./...",
+  "verification_notes": "Executed from the snippet root with Go 1.24.4 on macOS. Verified behavior covers bodies under and at the limit, oversized bodies, malformed JSON, multiple JSON values, and invalid input handling.",
+  "status": "Verified"
+}

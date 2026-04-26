@@ -22,10 +22,10 @@
   },
   "test_type": "UnitTest",
   "test_framework": "go test",
-  "test_case_count": 6,
+  "test_case_count": 7,
   "verification_workdir": ".",
   "verification_setup": ["go mod tidy"],
-  "verification_command": "go test ./...",
-  "verification_notes": "Executed from the snippet root with Go 1.24.4 on macOS. Verified behavior covers an allowed role on a mapped route, a missing role header, a forbidden role, a shared route with multiple allowed roles, an unmapped route, and whitespace plus case normalization.",
+  "verification_command": "go test -race ./...",
+  "verification_notes": "Executed from the snippet root with Go 1.24.4 on macOS. Verified behavior covers an allowed role on a mapped route, a missing role header, a forbidden role, a shared route with multiple allowed roles, a parameterized Echo route pattern, an unmapped route, and whitespace plus case normalization.",
   "status": "Verified"
 }

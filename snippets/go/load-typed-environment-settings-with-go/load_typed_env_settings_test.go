@@ -58,6 +58,32 @@ func TestLoadTypedEnvSettingsReturnsErrorForInvalidPort(t *testing.T) {
 	}
 }
 
+func TestLoadTypedEnvSettingsReturnsErrorForOutOfRangePort(t *testing.T) {
+	tests := []struct {
+		name string
+		port string
+	}{
+		{name: "zero", port: "0"},
+		{name: "negative", port: "-1"},
+		{name: "too large", port: "65536"},
+	}
+
+	for _, test := range tests {
+		t.Run(test.name, func(t *testing.T) {
+			_, err := LoadTypedEnvSettings(map[string]string{
+				"APP_ENV": "test",
+				"PORT":    test.port,
+			})
+			if err == nil {
+				t.Fatal("expected an error, got nil")
+			}
+			if !strings.Contains(err.Error(), "PORT") {
+				t.Fatalf("expected PORT error, got %v", err)
+			}
+		})
+	}
+}
+
 func TestLoadTypedEnvSettingsReturnsErrorForInvalidDebugValue(t *testing.T) {
 	_, err := LoadTypedEnvSettings(map[string]string{
 		"APP_ENV": "test",

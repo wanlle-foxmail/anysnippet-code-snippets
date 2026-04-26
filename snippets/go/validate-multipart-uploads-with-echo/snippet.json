@@ -22,10 +22,10 @@
   },
   "test_type": "UnitTest",
   "test_framework": "go test",
-  "test_case_count": 8,
+  "test_case_count": 10,
   "verification_workdir": ".",
   "verification_setup": ["go mod tidy"],
-  "verification_command": "go test ./...",
-  "verification_notes": "Executed from the snippet root with Go 1.24.4 on macOS. Verified behavior covers valid uploads, blank filenames, unsupported content types, empty files, oversized files, exact-limit files, sanitized basenames, and the explicit content-type allowlist.",
+  "verification_command": "go test -race ./...",
+  "verification_notes": "Executed from the snippet root with Go 1.24.4 on macOS. Verified behavior covers valid uploads, blank filenames, unsafe filenames, unsupported content types, spoofed content types, empty files, oversized files, exact-limit files, sanitized basenames, and the explicit content-type allowlist.",
   "status": "Verified"
 }

@@ -29,6 +29,23 @@ func TestRBACMiddlewareAllowsAnyMappedRoleForSharedRoute(t *testing.T) {
 	assertJSONMessage(t, response, http.StatusOK, "reports ok")
 }
 
+func TestRBACMiddlewareAllowsParameterizedRoutePattern(t *testing.T) {
+	e := echo.New()
+	e.Use(RBACMiddleware(map[string][]string{
+		"/users/:id": {"admin"},
+	}))
+	e.GET("/users/:id", func(c echo.Context) error {
+		return c.JSON(http.StatusOK, map[string]string{"message": "user ok"})
+	})
+
+	request := httptest.NewRequest(http.MethodGet, "/users/42", nil)
+	request.Header.Set(RoleHeader, "admin")
+	response := httptest.NewRecorder()
+
+	e.ServeHTTP(response, request)
+	assertJSONMessage(t, response, http.StatusOK, "user ok")
+}
+
 func TestRBACMiddlewareRejectsUnmappedRoute(t *testing.T) {
 	e := echoTestServerWithUnmappedRoute()
 	request := httptest.NewRequest(http.MethodGet, "/billing", nil)

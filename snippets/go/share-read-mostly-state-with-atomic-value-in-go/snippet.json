@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "slug": "share-read-mostly-state-with-atomic-value-in-go",
+  "use_case_key": "share-read-mostly-state-with-atomic-value",
+  "title": "Share Read-Mostly State with atomic.Value in Go",
+  "language": "Go",
+  "summary": "Share read-mostly state in Go by swapping whole immutable snapshots with atomic.Value.",
+  "tags": ["go", "atomic", "concurrency", "shared-state", "lock-free"],
+  "highlights": [
+    "Reads without read locks",
+    "Swaps whole state snapshots",
+    "Works cleanly under race tests"
+  ],
+  "repo_path": "snippets/go/share-read-mostly-state-with-atomic-value-in-go",
+  "entry_file": "atomic_value_state.go",
+  "source_files": ["atomic_value_state.go"],
+  "test_files": ["atomic_value_state_test.go"],
+  "dependencies": [],
+  "test_environment": {
+    "runtime": "Go 1.24.4",
+    "os": ["macOS", "Linux", "Windows"]
+  },
+  "test_type": "UnitTest",
+  "test_framework": "go test",
+  "test_case_count": 5,
+  "verification_workdir": ".",
+  "verification_setup": [],
+  "verification_command": "go test -race ./...",
+  "verification_notes": "Executed from the snippet root with Go 1.24.4 on macOS. Verified behavior covers initial snapshot reads, updated snapshot writes, concurrent loads and stores, nil receivers, and zero-value snapshots.",
+  "status": "Verified"
+}

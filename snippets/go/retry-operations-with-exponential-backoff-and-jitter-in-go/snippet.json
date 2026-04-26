@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "slug": "retry-operations-with-exponential-backoff-and-jitter-in-go",
+  "use_case_key": "retry-failed-operations",
+  "title": "Retry Operations with Exponential Backoff and Jitter in Go",
+  "language": "Go",
+  "summary": "Retry one operation in Go with exponential backoff, jitter, and retryable error filtering.",
+  "tags": ["go", "retry", "backoff", "jitter", "resilience"],
+  "highlights": [
+    "Retries only selected errors",
+    "Adds jitter to each delay",
+    "Stops on context cancellation"
+  ],
+  "repo_path": "snippets/go/retry-operations-with-exponential-backoff-and-jitter-in-go",
+  "entry_file": "retry_backoff.go",
+  "source_files": ["retry_backoff.go"],
+  "test_files": ["retry_backoff_test.go"],
+  "dependencies": [],
+  "test_environment": {
+    "runtime": "Go 1.24.4",
+    "os": ["macOS", "Linux", "Windows"]
+  },
+  "test_type": "UnitTest",
+  "test_framework": "go test",
+  "test_case_count": 7,
+  "verification_workdir": ".",
+  "verification_setup": [],
+  "verification_command": "go test -race ./...",
+  "verification_notes": "Executed from the snippet root with Go 1.24.4 on macOS. Verified behavior covers first-attempt success, retry before success, non-retryable failures, retry exhaustion, context cancellation during backoff, invalid input handling, and large-attempt delay clamping.",
+  "status": "Verified"
+}

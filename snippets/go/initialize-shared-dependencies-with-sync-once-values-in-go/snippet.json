@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "slug": "initialize-shared-dependencies-with-sync-once-values-in-go",
+  "use_case_key": "initialize-shared-dependencies-with-sync-once-values",
+  "title": "Initialize Shared Dependencies with sync.OnceValues in Go",
+  "language": "Go",
+  "summary": "Initialize one shared dependency in Go with sync.OnceValues so every caller sees the same first result.",
+  "tags": ["go", "sync", "lazy-init", "concurrency", "shared-dependency"],
+  "highlights": [
+    "Runs the initializer once",
+    "Replays the first value or error",
+    "Handles concurrent callers safely"
+  ],
+  "repo_path": "snippets/go/initialize-shared-dependencies-with-sync-once-values-in-go",
+  "entry_file": "sync_once_values.go",
+  "source_files": ["sync_once_values.go"],
+  "test_files": ["sync_once_values_test.go"],
+  "dependencies": [],
+  "test_environment": {
+    "runtime": "Go 1.24.4",
+    "os": ["macOS", "Linux", "Windows"]
+  },
+  "test_type": "UnitTest",
+  "test_framework": "go test",
+  "test_case_count": 5,
+  "verification_workdir": ".",
+  "verification_setup": [],
+  "verification_command": "go test -race ./...",
+  "verification_notes": "Executed from the snippet root with Go 1.24.4 on macOS. Verified behavior covers cached success values, cached errors, concurrent callers, nil initializer functions, and repeated panics.",
+  "status": "Verified"
+}

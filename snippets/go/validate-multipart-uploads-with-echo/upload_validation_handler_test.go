@@ -39,9 +39,20 @@ func TestUploadValidationHandlerRejectsBlankFilename(t *testing.T) {
 	assertMessage(t, response, http.StatusBadRequest, "filename is required")
 }
 
+func TestUploadValidationHandlerRejectsUnsafeFilename(t *testing.T) {
+	response := performUploadRequest(t, "..", []byte("hello"), "text/plain")
+	assertMessage(t, response, http.StatusBadRequest, "filename is required")
+}
+
 func TestUploadValidationHandlerRejectsUnsupportedContentType(t *testing.T) {
 	response := performUploadRequest(t, "data.json", []byte("{}"), "application/json")
 	assertMessage(t, response, http.StatusUnsupportedMediaType, "unsupported content type")
+}
+
+func TestUploadValidationHandlerRejectsSpoofedContentType(t *testing.T) {
+	gifBytes := []byte("GIF89a\x01\x00\x01\x00\x80\x00\x00\x00\x00\x00\xff\xff\xff,\x00\x00\x00\x00\x01\x00\x01\x00\x00\x02\x02L\x01\x00;")
+	response := performUploadRequest(t, "image.txt", gifBytes, "text/plain")
+	assertMessage(t, response, http.StatusUnsupportedMediaType, "file content does not match declared content type")
 }
 
 func TestUploadValidationHandlerRejectsEmptyFiles(t *testing.T) {
